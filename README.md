@@ -1,6 +1,6 @@
 <h2 align='center'>
     Portfolio Website<br/>
-    <a href='http://jonathanlusk.dev/' target='_blank'>jonathanlusk.dev</a>
+    <a href='https://jonathanlusk.dev/' target='_blank'>jonathanlusk.dev</a>
 </h2>
 <div align='center'>
     <img alt='Demo' src='https://i.imgur.com/Iby0rMW.png' />
