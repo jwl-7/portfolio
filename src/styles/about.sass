@@ -1,0 +1,55 @@
+.about-card-title
+    color: #b2cecf !important
+
+.about-card-body
+    background-color: #5a5d7a !important
+
+.input-text
+    color: #dadfe1
+
+.output-text
+    color: #fada98
+
+.input-text, .output-text
+    font-family: 'Courier New'
+    font-size: 1.15rem
+
+.terminal-cursor
+    display: inline-block
+    color: #b2cecf
+    font-size: 1.15rem
+    transform: scale(7, 1)
+    animation: softblink 1s infinite
+
+@keyframes softblink
+    0%
+        opacity: 1
+    50%
+        opacity: 0
+    100%
+        opacity: 1
+
+.wave
+    animation-name: wave-animation
+    animation-duration: 2.5s
+    animation-iteration-count: infinite
+    transform-origin: 70% 70%
+    display: inline-block
+
+@keyframes wave-animation
+    0%
+        transform: rotate(0deg)
+    10%
+        transform: rotate(14deg)
+    20%
+        transform: rotate(-8deg)
+    30%
+        transform: rotate(14deg)
+    40%
+        transform: rotate(-4deg)
+    50%
+        transform: rotate(10deg)
+    60%
+        transform: rotate(0deg)
+    100%
+        transform: rotate(0deg)
