@@ -31,7 +31,11 @@ const NavBar = () => {
         >
             <Container>
                 <Navbar.Brand>JWL</Navbar.Brand>
-                <Navbar.Toggle aria-controls='responsive-navbar-nav' />
+                <Navbar.Toggle aria-controls='responsive-navbar-nav'>
+                    <span className='toggler-icon top-bar' />
+                    <span className='toggler-icon middle-bar' />
+                    <span className='toggler-icon bottom-bar' />
+                </Navbar.Toggle>
                 <Navbar.Collapse id='responsive-navbar-nav'>
                     <div className='me-auto' />
                     <Nav>
