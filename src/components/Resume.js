@@ -44,11 +44,9 @@ const Resume = () => {
                                 <Card.Title className='text-center'>Education</Card.Title>
                                 <hr />
                                 <Card.Text>
-                                    <p>
-                                        <img src={UTC} width='10%' alt='UTC-Logo' />
-                                        &nbsp;&nbsp;University of Tennessee at Chattanooga<br />
-                                        B.S. Computer Science: Information Security and Assurance
-                                    </p>
+                                    <img src={UTC} width='10%' alt='UTC-Logo' />
+                                    &nbsp;&nbsp;University of Tennessee at Chattanooga<br />
+                                    B.S. Computer Science: Information Security and Assurance
                                 </Card.Text>
                             </Card.Body>
                         </Card>
@@ -58,22 +56,20 @@ const Resume = () => {
                             <Card.Title className='text-center'>Programming Languages</Card.Title>
                             <hr />
                             <Card.Text>
-                                <p>
-                                    <img src={Python} width='10%' alt='Python-Logo' />
-                                    &nbsp;&nbsp;Python
-                                </p>
-                                <p>
-                                    <img src={JavaScript} width='10%' alt='JavaScript-Logo' />
-                                    &nbsp;&nbsp;JavaScript
-                                </p>
-                                <p>
-                                    <img src={Java} width='10%' alt='Java-Logo' />
-                                    &nbsp;&nbsp;Java
-                                </p>
-                                <p>
-                                    <img src={SourcePawn} width='10%' alt='SourcePawn-Logo' />
-                                    &nbsp;&nbsp;SourcePawn
-                                </p>
+                                <img src={Python} width='10%' alt='Python-Logo' />
+                                &nbsp;&nbsp;Python
+                            </Card.Text>
+                            <Card.Text>
+                                <img src={JavaScript} width='10%' alt='JavaScript-Logo' />
+                                &nbsp;&nbsp;JavaScript
+                            </Card.Text>
+                            <Card.Text>
+                                <img src={Java} width='10%' alt='Java-Logo' />
+                                &nbsp;&nbsp;Java
+                            </Card.Text>
+                            <Card.Text>
+                                <img src={SourcePawn} width='10%' alt='SourcePawn-Logo' />
+                                &nbsp;&nbsp;SourcePawn
                             </Card.Text>
                         </Card.Body>
                     </Card>
@@ -84,30 +80,28 @@ const Resume = () => {
                             <Card.Title className='text-center'>Frontend</Card.Title>
                             <hr />
                             <Card.Text>
-                                <p>
-                                    <img src={Html5} width='10%' alt='HTML5-Logo' />
-                                    &nbsp;&nbsp;HTML
-                                </p>
-                                <p>
-                                    <img src={Css3} width='10%' alt='Python-Logo' />
-                                    &nbsp;&nbsp;CSS
-                                </p>
-                                <p>
-                                    <img src={Sass} width='10%' alt='Sass-Logo' />
-                                    &nbsp;&nbsp;Sass
-                                </p>
-                                <p>
-                                    <img src={ReactJS} width='10%' alt='ReactJS-Logo' />
-                                    &nbsp;&nbsp;React
-                                </p>
-                                <p>
-                                    <img src={Bootstrap} width='10%' alt='Bootstrap-Logo' />
-                                    &nbsp;&nbsp;Bootstrap
-                                </p>
-                                <p>
-                                    <img src={MaterialUI} width='10%' alt='MaterialUI-Logo' />
-                                    &nbsp;&nbsp;MaterialUI
-                                </p>
+                                <img src={Html5} width='10%' alt='HTML5-Logo' />
+                                &nbsp;&nbsp;HTML
+                            </Card.Text>
+                            <Card.Text>
+                                <img src={Css3} width='10%' alt='Python-Logo' />
+                                &nbsp;&nbsp;CSS
+                            </Card.Text>
+                            <Card.Text>
+                                <img src={Sass} width='10%' alt='Sass-Logo' />
+                                &nbsp;&nbsp;Sass
+                            </Card.Text>
+                            <Card.Text>
+                                <img src={ReactJS} width='10%' alt='ReactJS-Logo' />
+                                &nbsp;&nbsp;React
+                            </Card.Text>
+                            <Card.Text>
+                                <img src={Bootstrap} width='10%' alt='Bootstrap-Logo' />
+                                &nbsp;&nbsp;Bootstrap
+                            </Card.Text>
+                            <Card.Text>
+                                <img src={MaterialUI} width='10%' alt='MaterialUI-Logo' />
+                                &nbsp;&nbsp;MaterialUI
                             </Card.Text>
                         </Card.Body>
                     </Card>
@@ -116,14 +110,12 @@ const Resume = () => {
                             <Card.Title className='text-center'>Database</Card.Title>
                             <hr />
                             <Card.Text>
-                                <p>
-                                    <img src={MySQL} width='10%' alt='MySQL-Logo' />
-                                    &nbsp;&nbsp;MySQL
-                                </p>
-                                <p>
-                                    <img src={SQLite} width='10%' alt='SQLite-Logo' />
-                                    &nbsp;&nbsp;SQLite
-                                </p>
+                                <img src={MySQL} width='10%' alt='MySQL-Logo' />
+                                &nbsp;&nbsp;MySQL
+                            </Card.Text>
+                            <Card.Text>
+                                <img src={SQLite} width='10%' alt='SQLite-Logo' />
+                                &nbsp;&nbsp;SQLite
                             </Card.Text>
                         </Card.Body>
                     </Card>
@@ -134,31 +126,28 @@ const Resume = () => {
                             <Card.Title className='text-center'>Tools</Card.Title>
                             <hr />
                             <Card.Text>
-                                <p>
-                                    <img src={VSCode} width='10%' alt='VSCode-Logo' />
-                                    &nbsp;&nbsp;VSCode
-
-                                </p>
-                                <p>
-                                    <img src={VisualStudio} width='10%' alt='VisualStudio-Logo' />
-                                    &nbsp;&nbsp;Visual Studio
-                                </p>
-                                <p>
-                                    <img src={Linux} width='10%' alt='Linux-Logo' />
-                                    &nbsp;&nbsp;Linux
-                                </p>
-                                <p>
-                                    <img src={Git} width='10%' alt='Git-Logo' />
-                                    &nbsp;&nbsp;Git
-                                </p>
-                                <p>
-                                    <img src={GitHub} width='10%' alt='GitHub-Logo' />
-                                    &nbsp;&nbsp;GitHub
-                                </p>
-                                <p>
-                                    <img src={BitBucket} width='10%' alt='BitBucket-Logo' />
-                                    &nbsp;&nbsp;BitBucket
-                                </p>
+                                <img src={VSCode} width='10%' alt='VSCode-Logo' />
+                                &nbsp;&nbsp;VSCode
+                            </Card.Text>
+                            <Card.Text>
+                                <img src={VisualStudio} width='10%' alt='VisualStudio-Logo' />
+                                &nbsp;&nbsp;Visual Studio
+                            </Card.Text>
+                            <Card.Text>
+                                <img src={Linux} width='10%' alt='Linux-Logo' />
+                                &nbsp;&nbsp;Linux
+                            </Card.Text>
+                            <Card.Text>
+                                <img src={Git} width='10%' alt='Git-Logo' />
+                                &nbsp;&nbsp;Git
+                            </Card.Text>
+                            <Card.Text>
+                                <img src={GitHub} width='10%' alt='GitHub-Logo' />
+                                &nbsp;&nbsp;GitHub
+                            </Card.Text>
+                            <Card.Text>
+                                <img src={BitBucket} width='10%' alt='BitBucket-Logo' />
+                                &nbsp;&nbsp;BitBucket
                             </Card.Text>
                         </Card.Body>
                     </Card>
