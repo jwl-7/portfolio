@@ -22,7 +22,7 @@ const Projects = () => {
                     <h1>Projects</h1>
                     <hr />
                 </Col>
-                <Col md={4}>
+                <Col md={6} lg={4}>
                     <Zoom>
                         <Card className='m-3'>
                             <Card.Img variant='top' src={NadeSpace} />
@@ -35,7 +35,7 @@ const Projects = () => {
                                     variant='primary'
                                     href='https://github.com/jwl-7/nade.space'
                                     target='_blank'
-                                    className='me-3'
+                                    className='me-3 me-lg-1 me-xl-3'
                                 >
                                     <h5><AiFillGithub /> Source</h5>
                                 </Button>
@@ -50,7 +50,7 @@ const Projects = () => {
                         </Card>
                     </Zoom>
                 </Col>
-                <Col md={4}>
+                <Col md={6} lg={4}>
                     <Zoom delay={200}>
                         <Card className='m-3'>
                             <Card.Img variant='top' src={StickBop} />
@@ -63,7 +63,7 @@ const Projects = () => {
                                     variant='primary'
                                     href='https://github.com/jwl-7/Stick-Bop'
                                     target='_blank'
-                                    className='me-3'
+                                    className='me-3 me-lg-1 me-xl-3'
                                 >
                                     <h5><AiFillGithub /> Source</h5>
                                 </Button>
@@ -78,7 +78,7 @@ const Projects = () => {
                         </Card>
                     </Zoom>
                 </Col>
-                <Col md={4}>
+                <Col md={6} lg={4}>
                     <Zoom delay={400}>
                         <Card className='m-3'>
                             <Card.Img variant='top' src={Codex} />
@@ -98,9 +98,7 @@ const Projects = () => {
                         </Card>
                     </Zoom>
                 </Col>
-            </Row>
-            <Row className='justify-content-center'>
-                <Col md={4}>
+                <Col md={6} lg={4}>
                     <Zoom>
                         <Card className='m-3'>
                             <Card.Img variant='top' src={Website} />
@@ -120,7 +118,7 @@ const Projects = () => {
                         </Card>
                     </Zoom>
                 </Col>
-                <Col md={4}>
+                <Col md={6} lg={4}>
                     <Zoom delay={200}>
                         <Card className='m-3'>
                             <Card.Img variant='top' src={CodeGrind} />
@@ -140,7 +138,7 @@ const Projects = () => {
                         </Card>
                     </Zoom>
                 </Col>
-                <Col md={4}>
+                <Col md={6} lg={4}>
                     <Zoom delay={400}>
                         <Card className='m-3'>
                             <Card.Img variant='top' src={KZBot} />
