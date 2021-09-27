@@ -54,7 +54,7 @@ const About = () => {
                                 </Card.Text>
                                 <Card.Text>
                                     <span className='input-text'>&gt; </span>
-                                    <span className='terminal-cursor'>▋</span>
+                                    <span className='terminal-cursor typewriter-cursor'>▋</span>
                                 </Card.Text>
                             </Card.Body>
                         </Card>
