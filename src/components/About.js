@@ -2,8 +2,8 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
-import Hacker from '../images/undraw-hacker.svg'
 import { Slide } from 'react-awesome-reveal'
+import { ReactComponent as Hacker } from '../images/undraw-hacker.svg'
 
 const About = () => {
     return (
@@ -15,7 +15,7 @@ const About = () => {
                 </Col>
                 <Col md={5}>
                     <Slide direction='left' triggerOnce>
-                    <img src={Hacker} width='100%' height='100%' alt='About-Img' className='m-3' />
+                        <Hacker width='100%' height='100%' alt='About-Img' className='m-3' />
                     </Slide>
                 </Col>
                 <Col md={7}>
