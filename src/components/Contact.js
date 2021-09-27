@@ -72,7 +72,7 @@ const Contact = () => {
                     <h1>Contact</h1>
                     <hr />
                 </Col>
-                <Col lg={6} md={8}>
+                <Col lg={10} xl={8} xxl={6}>
                     <Fade>
                         <Card className='m-3'>
                             <Card.Body>
