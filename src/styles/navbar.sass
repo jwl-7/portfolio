@@ -13,20 +13,20 @@
     font-size: 1.2em
     position: relative
 
-.nav-link.active
-    color: rgba(0, 0, 0, 0.55) !important
+    &.active
+        color: rgba(0, 0, 0, 0.55) !important
 
-.nav-link::before
-    content: ''
-    position: absolute
-    display: block
-    width: 100%
-    height: 2px
-    bottom: 0
-    left: 0
-    background-color: #03A9F4
-    transform: scaleX(0)
-    transition: transform 0.3s ease
+    &::before
+        content: ''
+        position: absolute
+        display: block
+        width: 100%
+        height: 2px
+        bottom: 0
+        left: 0
+        background-color: #03A9F4
+        transform: scaleX(0)
+        transition: transform 0.3s ease
 
-.nav-link:hover::before
-    transform: scaleX(1)
+    &:hover::before
+        transform: scaleX(1)
