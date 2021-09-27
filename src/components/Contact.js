@@ -73,7 +73,7 @@ const Contact = () => {
                     <hr />
                 </Col>
                 <Col lg={10} xl={8} xxl={6}>
-                    <Fade>
+                    <Fade direction='up' triggerOnce>
                         <Card className='m-3'>
                             <Card.Body>
                                 <Row>

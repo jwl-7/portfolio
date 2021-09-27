@@ -14,10 +14,12 @@ const About = () => {
                     <hr />
                 </Col>
                 <Col md={5}>
+                    <Slide direction='left' triggerOnce>
                     <img src={Hacker} width='100%' height='100%' alt='About-Img' className='m-3' />
+                    </Slide>
                 </Col>
                 <Col md={7}>
-                    <Slide direction='right'>
+                    <Slide direction='right' triggerOnce>
                         <Card className='m-3'>
                             <Card.Header>
                                 <svg xmlns='http://www.w3.org/2000/svg' width='54' height='14' viewBox='0 0 54 14'>

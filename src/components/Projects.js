@@ -23,7 +23,7 @@ const Projects = () => {
                     <hr />
                 </Col>
                 <Col md={6} lg={4}>
-                    <Zoom>
+                    <Zoom triggerOnce>
                         <Card className='m-3'>
                             <Card.Img variant='top' src={NadeSpace} />
                             <Card.Body>
@@ -51,7 +51,7 @@ const Projects = () => {
                     </Zoom>
                 </Col>
                 <Col md={6} lg={4}>
-                    <Zoom delay={200}>
+                    <Zoom triggerOnce>
                         <Card className='m-3'>
                             <Card.Img variant='top' src={StickBop} />
                             <Card.Body>
@@ -79,7 +79,7 @@ const Projects = () => {
                     </Zoom>
                 </Col>
                 <Col md={6} lg={4}>
-                    <Zoom delay={400}>
+                    <Zoom triggerOnce>
                         <Card className='m-3'>
                             <Card.Img variant='top' src={Codex} />
                             <Card.Body>
@@ -99,7 +99,7 @@ const Projects = () => {
                     </Zoom>
                 </Col>
                 <Col md={6} lg={4}>
-                    <Zoom>
+                    <Zoom triggerOnce>
                         <Card className='m-3'>
                             <Card.Img variant='top' src={Website} />
                             <Card.Body>
@@ -119,7 +119,7 @@ const Projects = () => {
                     </Zoom>
                 </Col>
                 <Col md={6} lg={4}>
-                    <Zoom delay={200}>
+                    <Zoom triggerOnce>
                         <Card className='m-3'>
                             <Card.Img variant='top' src={CodeGrind} />
                             <Card.Body>
@@ -139,7 +139,7 @@ const Projects = () => {
                     </Zoom>
                 </Col>
                 <Col md={6} lg={4}>
-                    <Zoom delay={400}>
+                    <Zoom triggerOnce>
                         <Card className='m-3'>
                             <Card.Img variant='top' src={KZBot} />
                             <Card.Body>
