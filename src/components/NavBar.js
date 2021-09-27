@@ -21,14 +21,21 @@ const NavBar = () => {
     }, [shadow])
 
     return (
-        <Navbar fixed='top' collapseOnSelect expand='md' bg='light' variant='light' className={shadow}>
+        <Navbar
+            fixed='top'
+            collapseOnSelect
+            expand='md'
+            bg='light'
+            variant='light'
+            className={shadow}
+        >
             <Container>
                 <Navbar.Brand>JWL</Navbar.Brand>
                 <Navbar.Toggle aria-controls='responsive-navbar-nav' />
                 <Navbar.Collapse id='responsive-navbar-nav'>
                     <div className='me-auto' />
                     <Nav>
-                        <Nav.Link href='#top' className='me-3'>Home</Nav.Link>
+                        <Nav.Link href='#home' className='me-3'>Home</Nav.Link>
                         <Nav.Link href='#about' className='me-3'>About</Nav.Link>
                         <Nav.Link href='#projects' className='me-3'>Projects</Nav.Link>
                         <Nav.Link href='#resume' className='me-3'>Resume</Nav.Link>
