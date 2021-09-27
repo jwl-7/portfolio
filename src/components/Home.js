@@ -9,10 +9,11 @@ const Home = () => {
         <Container fluid id='home'>
             <Row className='justify-content-center'>
                 <Col xs={12} className='text-center'>
-                    <h1>
+                    <h1 className='display-1'>
                         <Typewriter
                             options={{
                                 loop: true,
+                                cursor: '▋',
                                 wrapperClassName: 'typewriter-text',
                                 cursorClassName: 'typewriter-cursor',
                             }}
