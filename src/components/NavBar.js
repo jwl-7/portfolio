@@ -1,10 +1,27 @@
+import { useState, useEffect } from 'react'
 import Container from 'react-bootstrap/Container'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 
 const NavBar = () => {
+    const [shadow, setShadow] = useState('')
+
+    const listenScroll = (e) => {
+        if (window.scrollY > 70) {
+            return setShadow('navbar-shadow')
+        }
+        return setShadow('')
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', listenScroll)
+
+        return () =>
+            window.removeEventListener('scroll', listenScroll)
+    }, [shadow])
+
     return (
-        <Navbar fixed='top' collapseOnSelect expand='md' bg='light' variant='light'>
+        <Navbar fixed='top' collapseOnSelect expand='md' bg='light' variant='light' className={shadow}>
             <Container>
                 <Navbar.Brand>JWL</Navbar.Brand>
                 <Navbar.Toggle aria-controls='responsive-navbar-nav' />
