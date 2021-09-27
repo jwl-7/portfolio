@@ -11,11 +11,11 @@ const NavBar = () => {
                 <Navbar.Collapse id='responsive-navbar-nav'>
                     <div className='me-auto' />
                     <Nav>
-                        <Nav.Link href='#top'>Home</Nav.Link>
-                        <Nav.Link href='#about'>About</Nav.Link>
-                        <Nav.Link href='#projects'>Projects</Nav.Link>
-                        <Nav.Link href='#resume'>Resume</Nav.Link>
-                        <Nav.Link href='#contact'>Contact</Nav.Link>
+                        <Nav.Link href='#top' className='me-3'>Home</Nav.Link>
+                        <Nav.Link href='#about' className='me-3'>About</Nav.Link>
+                        <Nav.Link href='#projects' className='me-3'>Projects</Nav.Link>
+                        <Nav.Link href='#resume' className='me-3'>Resume</Nav.Link>
+                        <Nav.Link href='#contact' className='me-3'>Contact</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
