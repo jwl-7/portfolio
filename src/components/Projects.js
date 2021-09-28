@@ -5,12 +5,12 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import { Zoom } from 'react-awesome-reveal'
 
-import NadeSpace from '../images/nade-space-ss.png'
-import StickBop from '../images/stick-bop-ss.png'
-import Codex from '../images/codex-ss.png'
-import Website from '../images/website-ss.png'
-import CodeGrind from '../images/codegrind-ss.png'
-import KZBot from '../images/kzbot-ss.png'
+import NadeSpace from '../images/nadespace-ss.webp'
+import StickBop from '../images/stickbop-ss.webp'
+import Codex from '../images/codex-ss.webp'
+import Portfolio from '../images/portfolio-ss.webp'
+import CodeGrind from '../images/codegrind-ss.webp'
+import KZBot from '../images/kzbot-ss.webp'
 import { AiFillGithub } from 'react-icons/ai'
 import { MdDesktopMac } from 'react-icons/md'
 
@@ -25,7 +25,12 @@ const Projects = () => {
                 <Col md={6} lg={4}>
                     <Zoom triggerOnce>
                         <Card className='m-3'>
-                            <Card.Img variant='top' src={NadeSpace} />
+                            <Card.Img
+                                variant='top'
+                                src={NadeSpace}
+                                alt='nade.space-screenshot'
+                                className='img-fluid'
+                            />
                             <Card.Body>
                                 <Card.Title>nade.space</Card.Title>
                                 <Card.Text>
@@ -53,7 +58,12 @@ const Projects = () => {
                 <Col md={6} lg={4}>
                     <Zoom triggerOnce>
                         <Card className='m-3'>
-                            <Card.Img variant='top' src={StickBop} />
+                            <Card.Img
+                                variant='top'
+                                src={StickBop}
+                                alt='Stick Bop!-screenshot'
+                                className='img-fluid'
+                            />
                             <Card.Body>
                                 <Card.Title>Stick Bop!</Card.Title>
                                 <Card.Text>
@@ -81,7 +91,12 @@ const Projects = () => {
                 <Col md={6} lg={4}>
                     <Zoom triggerOnce>
                         <Card className='m-3'>
-                            <Card.Img variant='top' src={Codex} />
+                            <Card.Img
+                                variant='top'
+                                src={Codex}
+                                alt='Codex-screenshot'
+                                className='img-fluid'
+                            />
                             <Card.Body>
                                 <Card.Title>Codex</Card.Title>
                                 <Card.Text>
@@ -101,7 +116,12 @@ const Projects = () => {
                 <Col md={6} lg={4}>
                     <Zoom triggerOnce>
                         <Card className='m-3'>
-                            <Card.Img variant='top' src={Website} />
+                            <Card.Img
+                                variant='top'
+                                src={Portfolio}
+                                alt='Portfolio-screenshot'
+                                className='img-fluid'
+                            />
                             <Card.Body>
                                 <Card.Title>Portfolio Website</Card.Title>
                                 <Card.Text>
@@ -121,7 +141,12 @@ const Projects = () => {
                 <Col md={6} lg={4}>
                     <Zoom triggerOnce>
                         <Card className='m-3'>
-                            <Card.Img variant='top' src={CodeGrind} />
+                            <Card.Img
+                                variant='top'
+                                src={CodeGrind}
+                                alt='CodeGrind-screenshot'
+                                className='img-fluid'
+                            />
                             <Card.Body>
                                 <Card.Title>c0de_gr1nd</Card.Title>
                                 <Card.Text>
@@ -141,7 +166,12 @@ const Projects = () => {
                 <Col md={6} lg={4}>
                     <Zoom triggerOnce>
                         <Card className='m-3'>
-                            <Card.Img variant='top' src={KZBot} />
+                            <Card.Img
+                                variant='top'
+                                src={KZBot}
+                                alt='KZBOT-screenshot'
+                                className='img-fluid'
+                            />
                             <Card.Body>
                                 <Card.Title>KZBOT</Card.Title>
                                 <Card.Text>
