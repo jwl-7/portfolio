@@ -29,6 +29,8 @@ const Projects = () => {
                                 variant='top'
                                 src={NadeSpace}
                                 alt='nade.space-screenshot'
+                                width='600px'
+                                height='400px'
                                 className='img-fluid'
                             />
                             <Card.Body>
@@ -62,6 +64,8 @@ const Projects = () => {
                                 variant='top'
                                 src={StickBop}
                                 alt='Stick Bop!-screenshot'
+                                width='600px'
+                                height='400px'
                                 className='img-fluid'
                             />
                             <Card.Body>
@@ -95,6 +99,8 @@ const Projects = () => {
                                 variant='top'
                                 src={Codex}
                                 alt='Codex-screenshot'
+                                width='600px'
+                                height='400px'
                                 className='img-fluid'
                             />
                             <Card.Body>
@@ -120,6 +126,8 @@ const Projects = () => {
                                 variant='top'
                                 src={Portfolio}
                                 alt='Portfolio-screenshot'
+                                width='600px'
+                                height='400px'
                                 className='img-fluid'
                             />
                             <Card.Body>
@@ -145,6 +153,8 @@ const Projects = () => {
                                 variant='top'
                                 src={CodeGrind}
                                 alt='CodeGrind-screenshot'
+                                width='600px'
+                                height='400px'
                                 className='img-fluid'
                             />
                             <Card.Body>
@@ -170,6 +180,8 @@ const Projects = () => {
                                 variant='top'
                                 src={KZBot}
                                 alt='KZBOT-screenshot'
+                                width='600px'
+                                height='400px'
                                 className='img-fluid'
                             />
                             <Card.Body>
