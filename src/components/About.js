@@ -43,12 +43,8 @@ const About = () => {
                                     <span className='output-text'>Chattanooga, TN</span> <br />
                                 </Card.Text>
                                 <Card.Text>
-                                    <span className='input-text'>&gt; About Me</span> <br />
-                                    <span className='output-text'>I am an aspiring software engineer with a passion for programming.</span>
-                                </Card.Text>
-                                <Card.Text>
-                                    <span className='input-text'>&gt; Job Pursuits</span> <br />
-                                    <span className='output-text'>Front-End, Back-End, Full-Stack, Anything!</span>
+                                    <span className='input-text'>&gt; Current Job</span> <br />
+                                    <span className='output-text'>Junior Software Engineer at Ambition</span>
                                 </Card.Text>
                                 <Card.Text>
                                     <span className='input-text'>&gt; Personal Interests</span> <br />

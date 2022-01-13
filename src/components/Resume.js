@@ -10,13 +10,13 @@ import { ReactComponent as UTC } from '../images/utc-logo.svg'
 import { ReactComponent as Python } from '../images/python.svg'
 import { ReactComponent as JavaScript } from '../images/javascript.svg'
 import { ReactComponent as Java } from '../images/java.svg'
+import { ReactComponent as PHP } from '../images/php.svg'
 import { ReactComponent as SourcePawn } from '../images/sourcemod.svg'
-import { ReactComponent as Html5 } from '../images/html5.svg'
-import { ReactComponent as Css3 } from '../images/css3.svg'
 import { ReactComponent as Sass } from '../images/sass.svg'
 import { ReactComponent as ReactJS } from '../images/react.svg'
 import { ReactComponent as Bootstrap } from '../images/bootstrap.svg'
 import { ReactComponent as MaterialUI } from '../images/materialui.svg'
+import { ReactComponent as Django } from '../images/django.svg'
 import { ReactComponent as MySQL } from '../images/mysql.svg'
 import { ReactComponent as SQLite } from '../images/sqlite.svg'
 import { ReactComponent as VSCode } from '../images/vscode.svg'
@@ -60,6 +60,10 @@ const Resume = () => {
                                     &nbsp;&nbsp;JavaScript
                                 </Card.Text>
                                 <Card.Text>
+                                    <PHP width='10%' height='10%' alt='PHP-Logo' />
+                                    &nbsp;&nbsp;PHP
+                                </Card.Text>
+                                <Card.Text>
                                     <Java width='10%' height='10%' alt='Java-Logo' />
                                     &nbsp;&nbsp;Java
                                 </Card.Text>
@@ -77,14 +81,6 @@ const Resume = () => {
                             <Card.Body>
                                 <Card.Title className='text-center'>Frontend</Card.Title>
                                 <hr />
-                                <Card.Text>
-                                    <Html5 width='10%' height='10%' alt='HTML5-Logo' />
-                                    &nbsp;&nbsp;HTML
-                                </Card.Text>
-                                <Card.Text>
-                                    <Css3 width='10%' height='10%' alt='CSS3-Logo' />
-                                    &nbsp;&nbsp;CSS
-                                </Card.Text>
                                 <Card.Text>
                                     <Sass width='10%' height='10%' alt='Sass-Logo' />
                                     &nbsp;&nbsp;Sass
@@ -105,8 +101,12 @@ const Resume = () => {
                         </Card>
                         <Card className='m-3'>
                             <Card.Body>
-                                <Card.Title className='text-center'>Database</Card.Title>
+                                <Card.Title className='text-center'>Backend</Card.Title>
                                 <hr />
+                                <Card.Text>
+                                    <Django width='10%' height='10%' alt='Django-Logo' />
+                                    &nbsp;&nbsp;Django
+                                </Card.Text>
                                 <Card.Text>
                                     <MySQL width='10%' height='10%' alt='MySQL-Logo' />
                                     &nbsp;&nbsp;MySQL
