@@ -7,7 +7,7 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import { Flip } from 'react-awesome-reveal'
 
-import { AiOutlineFileText } from 'react-icons/ai'
+import { FaRegFileAlt } from 'react-icons/fa'
 import { ReactComponent as BitBucket } from 'images/bitbucket.svg'
 import { ReactComponent as Bootstrap } from 'images/bootstrap.svg'
 import { ReactComponent as CircleCi } from 'images/circleci.svg'
@@ -181,7 +181,7 @@ function Resume() {
                         target="_blank"
                         className="mt-4"
                     >
-                        <h5><AiOutlineFileText /> View Full Resume</h5>
+                        <h5><FaRegFileAlt /> View Full Resume</h5>
                     </Button>
                 </Col>
             </Row>
