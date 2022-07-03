@@ -1,9 +1,11 @@
+import './about.sass'
+
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
 import { Slide } from 'react-awesome-reveal'
-import { ReactComponent as Hacker } from '../images/undraw-hacker.svg'
+import { ReactComponent as Hacker } from 'images/undraw-hacker.svg'
 
 const About = () => {
     return (

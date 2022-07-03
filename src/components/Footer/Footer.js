@@ -1,3 +1,5 @@
+import './footer.sass'
+
 import Container from 'react-bootstrap/Container'
 
 const Footer = () => {
