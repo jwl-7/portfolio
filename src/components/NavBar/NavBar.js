@@ -1,11 +1,13 @@
 import './navbar.sass'
 
 import { useState, useEffect } from 'react'
-import Container from 'react-bootstrap/Container'
-import Navbar from 'react-bootstrap/Navbar'
-import Nav from 'react-bootstrap/Nav'
 
-const NavBar = () => {
+import Container from 'react-bootstrap/Container'
+import Nav from 'react-bootstrap/Nav'
+import Navbar from 'react-bootstrap/Navbar'
+
+
+function NavBar() {
     const [shadow, setShadow] = useState('')
 
     const listenScroll = (e) => {
@@ -52,5 +54,6 @@ const NavBar = () => {
         </Navbar>
     )
 }
+
 
 export default NavBar
