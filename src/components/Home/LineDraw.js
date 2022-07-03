@@ -1,6 +1,7 @@
 import Anime from 'react-anime'
 
-const LineDraw = () => {
+
+function LineDraw() {
     return (
         <svg
             xmlns='http://www.w3.org/2000/svg'
@@ -21,8 +22,8 @@ const LineDraw = () => {
                 delay={(el, index) => index * 200}
                 duration={1500}
                 strokeDashoffset={(el) => {
-                    var pathLength = '0'
-                    for (var key in el.children) {
+                    let pathLength = '0'
+                    for (let key in el.children) {
                         let child = el.children[key]
                         if (child.getTotalLength) {
                             pathLength = child.getTotalLength().toString()
@@ -91,5 +92,6 @@ const LineDraw = () => {
         </svg>
     )
 }
+
 
 export default LineDraw
