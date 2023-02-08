@@ -68,7 +68,7 @@ function renderCard() {
                         </Card.Text>
                         <Card.Text>
                             <span className='input-text'>&gt; Current Job</span> <br />
-                            <span className='output-text'>Junior Software Engineer at Ambition</span>
+                            <span className='output-text'>Software Engineer at Ambition</span>
                         </Card.Text>
                         <Card.Text>
                             <span className='input-text'>&gt; Personal Interests</span> <br />
