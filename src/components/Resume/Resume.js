@@ -13,6 +13,7 @@ import { ReactComponent as Bootstrap } from 'images/bootstrap.svg'
 import { ReactComponent as CircleCi } from 'images/circleci.svg'
 import { ReactComponent as Cypress } from 'images/cypress.svg'
 import { ReactComponent as Django } from 'images/django.svg'
+import { ReactComponent as Docker } from 'images/docker.svg'
 import { ReactComponent as Git } from 'images/git.svg'
 import { ReactComponent as GitHub } from 'images/github.svg'
 import { ReactComponent as Java } from 'images/java.svg'
@@ -214,6 +215,10 @@ function renderTools() {
                         <Card.Text>
                             <CircleCi {...svgIconProps} alt="CircleCi-Logo" />
                             &nbsp;&nbsp;CircleCi
+                        </Card.Text>
+                        <Card.Text>
+                            <Docker {...svgIconProps} alt="Docker-Logo" />
+                            &nbsp;&nbsp;Docker
                         </Card.Text>
                     </Card.Body>
                 </Card>
