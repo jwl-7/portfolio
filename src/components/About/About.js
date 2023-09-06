@@ -68,11 +68,11 @@ function renderCard() {
                         </Card.Text>
                         <Card.Text>
                             <span className='input-text'>&gt; Current Job</span> <br />
-                            <span className='output-text'>Software Engineer at Ambition</span>
+                            <span className='output-text'>Open to Work</span>
                         </Card.Text>
                         <Card.Text>
                             <span className='input-text'>&gt; Personal Interests</span> <br />
-                            <span className='output-text'>Skiing, Gaming, Music Festivals, Skateboarding</span>
+                            <span className='output-text'>Gaming, Music Festivals, Skiing, Skateboarding</span>
                         </Card.Text>
                         <Card.Text>
                             <span className='input-text'>&gt; </span>
