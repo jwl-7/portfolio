@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
-import emailjs from 'emailjs-com'
+import emailjs from '@emailjs/browser';
 import Form from 'react-bootstrap/Form'
 import Row from 'react-bootstrap/Row'
 import { Fade } from 'react-awesome-reveal'
@@ -13,9 +13,9 @@ import { FaGithub } from 'react-icons/fa'
 import { FaLinkedin } from 'react-icons/fa'
 
 
-const templateId = process.env.REACT_APP_EMAILJS_TEMPLATEID
-const serviceId = process.env.REACT_APP_EMAILJS_SERVICEID
-const userId = process.env.REACT_APP_EMAILJS_USERID
+const templateId = import.meta.env.REACT_APP_EMAILJS_TEMPLATEID
+const serviceId = import.meta.env.REACT_APP_EMAILJS_SERVICEID
+const userId = import.meta.env.REACT_APP_EMAILJS_USERID
 const initialFormData = {
     name: '',
     email: '',
@@ -69,8 +69,8 @@ function Contact() {
     }
 
     return (
-        <Container fluid id='contact'>
-            <Row className='justify-content-center'>
+        <Container fluid id="contact">
+            <Row className="justify-content-center">
                 {renderTitle()}
                 {renderCard(validated, handleChange, handleSubmit)}
             </Row>
@@ -80,7 +80,7 @@ function Contact() {
 
 function renderTitle() {
     return (
-        <Col xs={12} className='text-center'>
+        <Col xs={12} className="text-center">
             <h1>Contact</h1>
             <hr />
         </Col>
@@ -90,8 +90,8 @@ function renderTitle() {
 function renderCard(validated, handleChange, handleSubmit) {
     return (
         <Col lg={10} xl={8} xxl={6}>
-            <Fade direction='up' triggerOnce>
-                <Card className='m-3'>
+            <Fade direction="up" triggerOnce>
+                <Card className="m-3">
                     <Card.Body>
                         <Row>
                             {renderCardForms(validated, handleChange, handleSubmit)}
@@ -106,38 +106,38 @@ function renderCard(validated, handleChange, handleSubmit) {
 
 function renderCardForms(validated, handleChange, handleSubmit) {
     return (
-        <Col lg={6} className='p-3'>
+        <Col lg={6} className="p-3">
             <h3>Send a Message</h3>
             <Form noValidate validated={validated} onSubmit={handleSubmit}>
-                <Form.Group className='mb-3' controlId='formName'>
+                <Form.Group className="mb-3" controlId="formName">
                     <Form.Label>Name</Form.Label>
                     <Form.Control
-                        name='name'
-                        type='name'
+                        name="name"
+                        type="name"
                         required
                         onChange={handleChange}
                     />
                 </Form.Group>
-                <Form.Group className='mb-3' controlId='formEmail'>
+                <Form.Group className="mb-3" controlId="formEmail">
                     <Form.Label>Email</Form.Label>
                     <Form.Control
-                        name='email'
-                        type='email'
+                        name="email"
+                        type="email"
                         required
                         onChange={handleChange}
                     />
                 </Form.Group>
-                <Form.Group className='mb-3' controlId='formMessage'>
+                <Form.Group className="mb-3" controlId="formMessage">
                     <Form.Label>Message</Form.Label>
                     <Form.Control
-                        name='message'
-                        as='textarea'
+                        name="message"
+                        as="textarea"
                         required
                         onChange={handleChange}
                         rows={3}
                     />
                 </Form.Group>
-                <Button variant='primary' type='submit'>
+                <Button variant="primary" type="submit">
                     Submit
                 </Button>
             </Form>
@@ -147,22 +147,22 @@ function renderCardForms(validated, handleChange, handleSubmit) {
 
 function renderCardFooter() {
     return (
-        <Col lg={6} className='p-3'>
-            <h3 className='mb-3'>Find Me On</h3>
-            <p className='mb-4'>Feel free to connect with me or send me a message.</p>
+        <Col lg={6} className="p-3">
+            <h3 className="mb-3">Find Me On</h3>
+            <p className="mb-4">Feel free to connect with me or send me a message.</p>
             <Button
-                variant='primary'
-                href='https://github.com/jwl-7'
-                target='_blank'
-                className='me-2 mb-2'
+                variant="primary"
+                href="https://github.com/jwl-7"
+                target="_blank"
+                className="me-2 mb-2"
             >
                 <h5><FaGithub /> GitHub</h5>
             </Button>
             <Button
-                variant='primary'
-                href='https://linkedin.com/in/jonathanwlusk/'
-                target='_blank'
-                className='mb-2'
+                variant="primary"
+                href="https://linkedin.com/in/jonathanwlusk/"
+                target="_blank"
+                className="mb-2"
             >
                 <h5><FaLinkedin /> LinkedIn</h5>
             </Button>

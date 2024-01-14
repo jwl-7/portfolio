@@ -4,14 +4,14 @@ import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 
-import CodeGrind from 'images/codegrind-ss.webp'
-import Codex from 'images/codex-ss.webp'
-import KZBot from 'images/kzbot-ss.webp'
-import NadeSpace from 'images/nadespace-ss.webp'
-import Portfolio from 'images/portfolio-ss.webp'
-import StickBop from 'images/stickbop-ss.webp'
+import CodeGrind from '@images/codegrind-ss.webp'
+import Codex from '@images/codex-ss.webp'
+import KZBot from '@images/kzbot-ss.webp'
+import NadeSpace from '@images/nadespace-ss.webp'
+import Portfolio from '@images/portfolio-ss.webp'
+import StickBop from '@images/stickbop-ss.webp'
 
-import ProjectCard from 'components/Projects/ProjectCard'
+import ProjectCard from './ProjectCard'
 
 
 function Projects() {

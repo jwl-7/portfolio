@@ -10,8 +10,8 @@ import LineDraw from './LineDraw'
 
 function Home() {
     return (
-        <Container fluid id='home'>
-            <Row className='justify-content-center'>
+        <Container fluid id="home">
+            <Row className="justify-content-center">
                 {renderTypewriterText()}
                 {renderLineDraw()}
             </Row>
@@ -21,8 +21,8 @@ function Home() {
 
 function renderTypewriterText() {
     return (
-        <Col xs={12} className='text-center'>
-            <h1 className='display-1'>
+        <Col xs={12} className="text-center">
+            <h1 className="display-1">
                 <Typewriter
                     options={{
                         loop: true,

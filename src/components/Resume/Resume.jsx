@@ -8,28 +8,24 @@ import Row from 'react-bootstrap/Row'
 import { Flip } from 'react-awesome-reveal'
 
 import { FaRegFileAlt } from 'react-icons/fa'
-import { ReactComponent as BitBucket } from 'images/bitbucket.svg'
-import { ReactComponent as Bootstrap } from 'images/bootstrap.svg'
-import { ReactComponent as CircleCi } from 'images/circleci.svg'
-import { ReactComponent as Cypress } from 'images/cypress.svg'
-import { ReactComponent as Django } from 'images/django.svg'
-import { ReactComponent as Docker } from 'images/docker.svg'
-import { ReactComponent as Git } from 'images/git.svg'
-import { ReactComponent as GitHub } from 'images/github.svg'
-import { ReactComponent as Java } from 'images/java.svg'
-import { ReactComponent as JavaScript } from 'images/javascript.svg'
-import { ReactComponent as Linux } from 'images/linux.svg'
-import { ReactComponent as MaterialUI } from 'images/materialui.svg'
-import { ReactComponent as MySQL } from 'images/mysql.svg'
-import { ReactComponent as PHP } from 'images/php.svg'
-import { ReactComponent as Python } from 'images/python.svg'
-import { ReactComponent as ReactJS } from 'images/react.svg'
-import { ReactComponent as Sass } from 'images/sass.svg'
-import { ReactComponent as SourcePawn } from 'images/sourcemod.svg'
-import { ReactComponent as SQLite } from 'images/sqlite.svg'
-import { ReactComponent as UTC } from 'images/utc-logo.svg'
-import { ReactComponent as VisualStudio } from 'images/visualstudio.svg'
-import { ReactComponent as VSCode } from 'images/vscode.svg'
+import Bootstrap from '@images/bootstrap.svg?react'
+import CircleCi from '@images/circleci.svg?react'
+import Cypress from '@images/cypress.svg?react'
+import Django from '@images/django.svg?react'
+import Docker from '@images/docker.svg?react'
+import Git from '@images/git.svg?react'
+import GitHub from '@images/github.svg?react'
+import JavaScript from '@images/javascript.svg?react'
+import Linux from '@images/linux.svg?react'
+import MaterialUI from '@images/materialui.svg?react'
+import MySQL from '@images/mysql.svg?react'
+import Python from '@images/python.svg?react'
+import ReactJS from '@images/react.svg?react'
+import Sass from '@images/sass.svg?react'
+import SourcePawn from '@images/sourcemod.svg?react'
+import SQLite from '@images/sqlite.svg?react'
+import UTC from '@images/utc-logo.svg?react'
+import VSCode from '@images/vscode.svg?react'
 
 
 const svgIconProps = {
@@ -110,14 +106,6 @@ function renderProgrammingLanguages() {
                     &nbsp;&nbsp;JavaScript
                 </Card.Text>
                 <Card.Text>
-                    <PHP {...svgIconProps} alt="PHP-Logo" />
-                    &nbsp;&nbsp;PHP
-                </Card.Text>
-                <Card.Text>
-                    <Java {...svgIconProps} alt="Java-Logo" />
-                    &nbsp;&nbsp;Java
-                </Card.Text>
-                <Card.Text>
                     <SourcePawn {...svgIconProps} alt="SourcePawn-Logo" />
                     &nbsp;&nbsp;SourcePawn
                 </Card.Text>
@@ -193,10 +181,6 @@ function renderTools() {
                             &nbsp;&nbsp;VSCode
                         </Card.Text>
                         <Card.Text>
-                            <VisualStudio {...svgIconProps} alt="VisualStudio-Logo" />
-                            &nbsp;&nbsp;Visual Studio
-                        </Card.Text>
-                        <Card.Text>
                             <Linux {...svgIconProps} alt="Linux-Logo" />
                             &nbsp;&nbsp;Linux
                         </Card.Text>
@@ -207,10 +191,6 @@ function renderTools() {
                         <Card.Text>
                             <GitHub {...svgIconProps} alt="GitHub-Logo" />
                             &nbsp;&nbsp;GitHub
-                        </Card.Text>
-                        <Card.Text>
-                            <BitBucket {...svgIconProps} alt="BitBucket-Logo" />
-                            &nbsp;&nbsp;BitBucket
                         </Card.Text>
                         <Card.Text>
                             <CircleCi {...svgIconProps} alt="CircleCi-Logo" />

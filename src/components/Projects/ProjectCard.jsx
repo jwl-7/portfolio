@@ -45,7 +45,7 @@ function ProjectCard(props) {
     return (
         <Col md={6} lg={4}>
             <Zoom triggerOnce>
-                <Card className='m-3'>
+                <Card className="m-3">
                     <Card.Img {...imgProps} />
                     <Card.Body>
                         <Card.Title>{props.title}</Card.Title>
