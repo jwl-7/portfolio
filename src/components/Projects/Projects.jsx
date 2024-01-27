@@ -7,6 +7,7 @@ import Row from 'react-bootstrap/Row'
 import CodeGrind from '@images/codegrind-ss.webp'
 import Codex from '@images/codex-ss.webp'
 import KZBot from '@images/kzbot-ss.webp'
+import LeetCodeThemes from '@images/leetcode-themes-ss.webp'
 import NadeSpace from '@images/nadespace-ss.webp'
 import Portfolio from '@images/portfolio-ss.webp'
 import StickBop from '@images/stickbop-ss.webp'
@@ -120,6 +121,19 @@ function renderProjectCards() {
                 buttons={{
                     source: {
                         href: 'https://github.com/jwl-7/kzbot',
+                    }
+                }}
+            />
+            <ProjectCard
+                title="LeetCode Themes"
+                text="A firefox browser extension a firefox browser extension for customizing the LeetCode editor."
+                img={{
+                    src: LeetCodeThemes,
+                    alt: 'LeetCode Themes-screenshot'
+                }}
+                buttons={{
+                    source: {
+                        href: 'https://github.com/jwl-7/leetcode-themes',
                     }
                 }}
             />
