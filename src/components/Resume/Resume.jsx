@@ -212,7 +212,7 @@ function renderViewResumeButton() {
         <Row className="justify-content-center">
             <Col className="text-center">
                 <Button
-                    variant="primary"
+                    variant="light"
                     href="../files/resume.pdf"
                     target="_blank"
                     className="mt-4"

@@ -151,7 +151,7 @@ function renderCardFooter() {
             <h3 className="mb-3">Find Me On</h3>
             <p className="mb-4">Feel free to connect with me or send me a message.</p>
             <Button
-                variant="primary"
+                variant="secondary"
                 href="https://github.com/jwl-7"
                 target="_blank"
                 className="me-2 mb-2"
@@ -159,13 +159,14 @@ function renderCardFooter() {
                 <h5><FaGithub /> GitHub</h5>
             </Button>
             <Button
-                variant="primary"
+                variant="secondary"
                 href="https://linkedin.com/in/jonathanwlusk/"
                 target="_blank"
                 className="mb-2"
             >
                 <h5><FaLinkedin /> LinkedIn</h5>
             </Button>
+
         </Col>
     )
 }
