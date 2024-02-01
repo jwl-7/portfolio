@@ -134,6 +134,9 @@ function renderProjectCards() {
                 buttons={{
                     source: {
                         href: 'https://github.com/jwl-7/leetcode-themes',
+                    },
+                    download: {
+                        href: 'https://addons.mozilla.org/en-US/firefox/addon/leetcode-themes/'
                     }
                 }}
             />
