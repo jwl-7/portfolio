@@ -1,5 +1,5 @@
 #home
-    background: linear-gradient(-45deg, #3949ab , #090a0f, #23a6d5, #23d5ab)
+    background: var(--home-background)
     background-size: 400% 400%
     animation: gradient 25s ease infinite
     height: 100vh
@@ -7,12 +7,12 @@
     overflow: hidden
 
 .typewriter-text
-    font-family: 'Courier New'
+    font-family: var(--terminal-font-family)
     color: #fff
 
 .typewriter-cursor
     display: inline-block
-    color: #78dce8
+    color: var(--home-terminal-cursor-color)
     width: 0.5em
     transform: scale(0.8, 1)
     animation: softblink 1s infinite

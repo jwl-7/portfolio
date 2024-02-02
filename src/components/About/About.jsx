@@ -54,8 +54,8 @@ function renderCard() {
                             </g>
                         </svg>
                     </Card.Header>
-                    <Card.Body className="about-card-body">
-                        <Card.Title className="about-card-title">
+                    <Card.Body id="about-card-body">
+                        <Card.Title id="about-card-title">
                             <h3>Hi there! :) <span className="wave">👋</span></h3>
                         </Card.Title>
                         <Card.Text className="mt-3">

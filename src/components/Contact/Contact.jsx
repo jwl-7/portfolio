@@ -1,12 +1,15 @@
+import './contact.sass'
+
 import { useState } from 'react'
 
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
-import emailjs from '@emailjs/browser';
+import emailjs from '@emailjs/browser'
 import Form from 'react-bootstrap/Form'
 import Row from 'react-bootstrap/Row'
+import useTheme from '@components/ThemeSwitch/useTheme'
 import { Fade } from 'react-awesome-reveal'
 
 import { FaGithub } from 'react-icons/fa'
@@ -105,6 +108,11 @@ function renderCard(validated, handleChange, handleSubmit) {
 }
 
 function renderCardForms(validated, handleChange, handleSubmit) {
+    const theme = useTheme()
+    const submitButtonVariant = theme === 'light'
+        ? 'primary'
+        : 'secondary'
+
     return (
         <Col lg={6} className="p-3">
             <h3>Send a Message</h3>
@@ -137,7 +145,7 @@ function renderCardForms(validated, handleChange, handleSubmit) {
                         rows={3}
                     />
                 </Form.Group>
-                <Button variant="primary" type="submit">
+                <Button variant={submitButtonVariant} type="submit">
                     Submit
                 </Button>
             </Form>

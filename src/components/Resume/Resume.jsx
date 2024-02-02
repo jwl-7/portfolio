@@ -5,16 +5,20 @@ import Card from 'react-bootstrap/Card'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
+import useTheme from '@components/ThemeSwitch/useTheme'
 import { Flip } from 'react-awesome-reveal'
 
 import { FaRegFileAlt } from 'react-icons/fa'
 import Bootstrap from '@images/bootstrap.svg?react'
 import CircleCi from '@images/circleci.svg?react'
+import CircleCiLight from '@images/circleci-light.svg?react'
 import Cypress from '@images/cypress.svg?react'
+import CypressLight from '@images/cypress-light.svg?react'
 import Django from '@images/django.svg?react'
 import Docker from '@images/docker.svg?react'
 import Git from '@images/git.svg?react'
 import GitHub from '@images/github.svg?react'
+import GitHubLight from '@images/github-light.svg?react'
 import JavaScript from '@images/javascript.svg?react'
 import Linux from '@images/linux.svg?react'
 import MaterialUI from '@images/materialui.svg?react'
@@ -115,6 +119,14 @@ function renderProgrammingLanguages() {
 }
 
 function renderFrontend() {
+    const theme = useTheme()
+
+    const renderCypress = () => {
+        return theme === 'light'
+            ? <Cypress {...svgIconProps} alt="Cypress-Logo" />
+            : <CypressLight {...svgIconProps} alt="Cypress-Logo" />
+    }
+
     return (
         <Card className="m-3">
             <Card.Body>
@@ -125,7 +137,7 @@ function renderFrontend() {
                     &nbsp;&nbsp;React
                 </Card.Text>
                 <Card.Text>
-                    <Cypress {...svgIconProps} alt="Cypress-Logo" />
+                    {renderCypress()}
                     &nbsp;&nbsp;Cypress
                 </Card.Text>
                 <Card.Text>
@@ -169,6 +181,20 @@ function renderBackend() {
 }
 
 function renderTools() {
+    const theme = useTheme()
+
+    const renderGithub = () => {
+        return theme === 'light'
+            ? <GitHub {...svgIconProps} alt="GitHub-Logo" />
+            : <GitHubLight {...svgIconProps} alt="GitHub-Logo" />
+    }
+
+    const renderCircleCi = () => {
+        return theme === 'light'
+            ? <CircleCi {...svgIconProps} alt="CircleCi-Logo" />
+            : <CircleCiLight {...svgIconProps} alt="CircleCi-Logo" />
+    }
+
     return (
         <Col md={4}>
             <Flip direction="horizontal" triggerOnce>
@@ -189,11 +215,11 @@ function renderTools() {
                             &nbsp;&nbsp;Git
                         </Card.Text>
                         <Card.Text>
-                            <GitHub {...svgIconProps} alt="GitHub-Logo" />
+                            {renderGithub()}
                             &nbsp;&nbsp;GitHub
                         </Card.Text>
                         <Card.Text>
-                            <CircleCi {...svgIconProps} alt="CircleCi-Logo" />
+                            {renderCircleCi()}
                             &nbsp;&nbsp;CircleCi
                         </Card.Text>
                         <Card.Text>

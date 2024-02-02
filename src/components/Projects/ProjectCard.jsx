@@ -1,8 +1,9 @@
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import Col from 'react-bootstrap/Col'
+import useTheme from '@components/ThemeSwitch/useTheme'
 import { Zoom } from 'react-awesome-reveal'
 
 import { FaGithub } from 'react-icons/fa'
@@ -59,10 +60,15 @@ function ProjectCard(props) {
 }
 
 function renderCardButtons(buttons) {
+    const theme = useTheme()
+    const variant = theme === 'light'
+        ? 'primary'
+        : 'secondary'
+
     return Object.keys(buttons).map((button) => {
         let buttonProps = {
             key: button,
-            variant: 'primary',
+            variant: variant,
             target: '_blank',
             ...buttons[button]
         }

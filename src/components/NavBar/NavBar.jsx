@@ -1,40 +1,49 @@
 import './navbar.sass'
 
 import { useState, useEffect } from 'react'
+import { useMediaQuery } from 'react-responsive'
 
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
+import ThemeSwitch from '@components/ThemeSwitch/ThemeSwitch'
+import useTheme from '@components/ThemeSwitch/useTheme'
 
 
 function NavBar() {
     const [shadow, setShadow] = useState('')
+    const isExpanded = useMediaQuery({
+        query: '(min-width: 768px)'
+    })
+    const theme = useTheme()
 
-    const listenScroll = (e) => {
-        if (window.scrollY > 70) {
-            return setShadow('navbar-shadow')
-        }
-        return setShadow('')
+    const listenScroll = () => {
+        return window.scrollY > 70
+            ? setShadow('navbar-shadow')
+            : setShadow('')
     }
+
 
     useEffect(() => {
         window.addEventListener('scroll', listenScroll)
 
-        return () =>
+        return () => {
             window.removeEventListener('scroll', listenScroll)
-    }, [shadow])
+        }
+    }, [])
 
     return (
         <Navbar
-            fixed="top"
-            collapseOnSelect
-            expand="md"
-            bg="light"
-            variant="light"
             className={shadow}
+            collapseOnSelect
+            fixed="top"
+            expand="md"
+            bg={theme}
+            variant={theme}
         >
             <Container>
                 <Navbar.Brand>JWL</Navbar.Brand>
+                {!isExpanded && <ThemeSwitch />}
                 <Navbar.Toggle aria-controls="responsive-navbar-nav">
                     <span className="toggler-icon top-bar" />
                     <span className="toggler-icon middle-bar" />
@@ -51,6 +60,7 @@ function NavBar() {
                     </Nav>
                 </Navbar.Collapse>
             </Container>
+            {isExpanded && <ThemeSwitch />}
         </Navbar>
     )
 }
