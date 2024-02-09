@@ -13,12 +13,14 @@ export default function App() {
     return (
         <div className="App">
             <NavBar />
-            <Home />
-            <About />
-            <Projects />
-            <Resume />
-            <Contact />
-            <Footer />
+            <main>
+                <Home />
+                <About />
+                <Projects />
+                <Resume />
+                <Contact />
+                <Footer />
+            </main>
         </div>
     )
 }
