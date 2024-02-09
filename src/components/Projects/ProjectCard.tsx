@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types'
-
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import Col from 'react-bootstrap/Col'
@@ -11,11 +9,11 @@ import { FaDownload } from 'react-icons/fa'
 import { MdDesktopMac } from 'react-icons/md'
 
 
-ProjectCard.propTypes = {
-    title: PropTypes.string.isRequired,
-    text: PropTypes.string.isRequired,
-    img: PropTypes.object.isRequired,
-    buttons: PropTypes.object.isRequired
+interface ProjectCardProps {
+    title: string
+    text: string
+    img: object
+    buttons: object
 }
 
 const BUTTON_ICONS = {
@@ -34,13 +32,13 @@ const BUTTON_ICONS = {
 }
 
 
-function ProjectCard(props) {
+function ProjectCard({ title, text, img, buttons }: ProjectCardProps) {
     let imgProps = {
         variant: 'top',
         width: '600px',
         height: '400px',
         className: 'img-fluid',
-        ...props.img
+        ...img
     }
 
     return (
@@ -49,9 +47,9 @@ function ProjectCard(props) {
                 <Card className="m-3">
                     <Card.Img {...imgProps} />
                     <Card.Body>
-                        <Card.Title>{props.title}</Card.Title>
-                        <Card.Text>{props.text}</Card.Text>
-                        {renderCardButtons(props.buttons)}
+                        <Card.Title>{title}</Card.Title>
+                        <Card.Text>{text}</Card.Text>
+                        {renderCardButtons(buttons)}
                     </Card.Body>
                 </Card>
             </Zoom>
