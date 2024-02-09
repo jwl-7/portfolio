@@ -1,4 +1,4 @@
-import './contact.sass'
+import './Contact.sass'
 
 import { useState } from 'react'
 

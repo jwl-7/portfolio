@@ -1,4 +1,4 @@
-import './projects.sass'
+import './Projects.sass'
 
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'

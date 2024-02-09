@@ -1,4 +1,4 @@
-import './home.sass'
+import './Home.sass'
 
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'

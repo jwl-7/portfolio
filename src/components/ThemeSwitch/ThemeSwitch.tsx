@@ -1,4 +1,4 @@
-import './themeswitch.sass'
+import './ThemeSwitch.sass'
 
 import { useState, useEffect } from 'react'
 

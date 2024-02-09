@@ -1,4 +1,4 @@
-import './footer.sass'
+import './Footer.sass'
 
 import Container from 'react-bootstrap/Container'
 

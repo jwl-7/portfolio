@@ -1,4 +1,4 @@
-import './navbar.sass'
+import './NavBar.sass'
 
 import { useState, useEffect } from 'react'
 import { useMediaQuery } from 'react-responsive'
