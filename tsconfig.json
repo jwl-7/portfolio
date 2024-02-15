@@ -10,15 +10,19 @@
         ],
         "module": "ESNext",
         "skipLibCheck": true,
-        "types": ["node"],
+        "types": ["node", "vite/client"],
 
         // Paths
         "baseUrl": "./",
         "paths": {
             "~bootstrap": ["node_modules/bootstrap"],
             "@/*": ["src/*"],
+            "@components/*": ["src/components/*"],
+            "@fonts/*": ["src/fonts/*"],
+            "@hooks/*": ["src/hooks/*"],
+            "@icons/*": ["src/icons/*"],
             "@images/*": ["src/images/*"],
-            "@components/*": ["src/components/*"]
+            "@styles/*": ["src/styles/*"]
         },
 
         // Bundler
@@ -35,6 +39,9 @@
         "noUnusedParameters": true,
         "noFallthroughCasesInSwitch": true
     },
-    "include": ["src"],
+    "include": [
+        "src",
+        "@styles/styles.d.ts"
+    ],
     "references": [{ "path": "./tsconfig.node.json" }]
 }

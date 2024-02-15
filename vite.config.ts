@@ -1,20 +1,19 @@
 import { defineConfig } from 'vite'
 import path from 'path'
-import svgr from 'vite-plugin-svgr'
 import react from '@vitejs/plugin-react-swc'
 
 
 export default defineConfig({
-    plugins: [
-        react(),
-        svgr()
-    ],
+    plugins: [react()],
     resolve: {
         alias: {
-            '~bootstrap': path.resolve(__dirname, 'node_modules/bootstrap'),
             '@': path.resolve(__dirname, './src'),
+            '@components': path.resolve(__dirname, './src/components'),
+            '@fonts': path.resolve(__dirname, './src/fonts'),
+            '@hooks': path.resolve(__dirname, './src/hooks'),
             '@images': path.resolve(__dirname, './src/images'),
-            '@components': path.resolve(__dirname, './src/components')
-        },
-    },
+            '@icons': path.resolve(__dirname, './src/icons'),
+            '@styles': path.resolve(__dirname, './src/styles')
+        }
+    }
 })

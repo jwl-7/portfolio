@@ -1,0 +1,75 @@
+.terminal
+    border: 1px solid var(--card-border-color)
+    border-radius: var(--card-border-radius)
+    box-shadow: var(--card-box-shadow)
+
+.topBar
+    background-color: var(--terminal-top-bar-color)
+    border-top-left-radius: var(--card-border-radius)
+    border-top-right-radius: var(--card-border-radius)
+    padding: 0.5rem 1rem
+    transition-property: var(--style-transition-property)
+    transition-duration: var(--style-transition-duration)
+
+.header
+    color: var(--terminal-header-color)
+    font-family: var(--terminal-font-family)
+
+.body
+    background-color: var(--terminal-body-color)
+    border-bottom-left-radius: var(--card-border-radius)
+    border-bottom-right-radius: var(--card-border-radius)
+    padding: 1rem
+
+.section
+    padding-bottom: 1rem
+
+.cursor
+    animation: softblink 1s infinite
+    color: var(--terminal-cursor-color)
+    display: inline-block
+    font-family: var(--terminal-font-family)
+    transform: scale(1.5, 1)
+
+.inputText
+    font-family: var(--terminal-font-family)
+    font-size: var(--terminal-font-size)
+    color: var(--terminal-input-color)
+
+.outputText
+    font-family: var(--terminal-font-family)
+    font-size: var(--terminal-font-size)
+    color: var(--terminal-output-color)
+
+.wave
+    animation-name: wave-animation
+    animation-duration: 2.5s
+    animation-iteration-count: infinite
+    display: inline-block
+    transform-origin: 70% 70%
+
+@keyframes softblink
+    0%
+        opacity: 1
+    50%
+        opacity: 0
+    100%
+        opacity: 1
+
+@keyframes wave-animation
+    0%
+        transform: rotate(0deg)
+    10%
+        transform: rotate(14deg)
+    20%
+        transform: rotate(-8deg)
+    30%
+        transform: rotate(14deg)
+    40%
+        transform: rotate(-4deg)
+    50%
+        transform: rotate(10deg)
+    60%
+        transform: rotate(0deg)
+    100%
+        transform: rotate(0deg)

@@ -1,0 +1,30 @@
+input[type='text'],
+input[type='email'],
+textarea
+    appearance: none
+    background-color: var(--input-background-color)
+    border: 1px solid var(--input-border-color)
+    border-radius: var(--input-border-radius)
+    font-family: inherit
+    font-size: inherit
+    line-height: inherit
+    padding: 4px 6px
+    margin-top: 2px
+    margin-bottom: 6px
+    transition-property: var(--style-transition-property)
+    transition-duration: var(--style-transition-duration)
+
+    &:focus,
+    &:focus-visible
+        border: 1px solid var(--input-focus-border-color)
+        outline: none
+
+textarea
+    resize: none
+    width: 100%
+
+.submitted
+    input[type='text']:invalid,
+    input[type='email']:invalid,
+    textarea:invalid
+        border: 1px solid var(--input-border-error-color)

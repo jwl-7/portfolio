@@ -1,0 +1,17 @@
+.container
+    padding-left: var(--gutter-spacing)
+    padding-right: var(--gutter-spacing)
+
+.contentContainer
+    display: grid
+    grid-gap: 32px
+
+    @media (min-width: 768px)
+        grid-template-columns: 0.75fr 1fr
+
+    @media (max-width: 768px)
+        grid-template-columns: 1fr
+
+.title
+    padding-bottom: 32px
+    text-align: center

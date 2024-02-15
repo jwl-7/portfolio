@@ -1,0 +1,80 @@
+.background
+    .back
+        filter: blur(2px)
+
+.bottom
+    background: var(--background-gradient)
+    position: absolute
+    bottom: 589px
+    right: 70%
+    z-index: 1
+
+.top
+    position: absolute
+    top: -8px
+    left: 50%
+    z-index: 1
+
+.right
+    position: absolute
+    right: 159px
+    top: 220px
+    z-index: 1
+
+.left
+    display: flex
+    position: absolute
+    left: -5px
+    top: 10%
+    z-index: 1
+
+.back
+    display: flex
+    position: absolute
+    left: -5px
+    top: -12%
+    z-index: 2
+
+.pathckeckd
+    position: absolute
+    z-index: 1
+
+.energy
+    position: absolute
+    z-index: 1
+    animation: dash 25s linear infinite
+    stroke-dasharray: 50
+    filter: blur(1.5px)
+
+.back .energy
+    position: absolute
+    z-index: 1
+    animation: dash 41s linear infinite
+    stroke-dasharray: 60
+    filter: blur(6.5px)
+
+.top .energy
+    position: absolute
+    z-index: 1
+    animation: dash 141s linear infinite
+    stroke-dasharray: 60
+    filter: blur(6.5px)
+
+.bottom .energy
+    position: absolute
+    z-index: 1
+    animation: dash 81s linear infinite
+    stroke-dasharray: 60
+    filter: blur(2.5px)
+
+.right .energy,
+.left .energy
+    position: absolute
+    z-index: 1
+    animation: dash 61s linear infinite
+    stroke-dasharray: 60
+    filter: blur(2px)
+
+@keyframes dash
+    to
+        stroke-dashoffset: 1810

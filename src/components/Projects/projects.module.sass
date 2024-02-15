@@ -1,0 +1,52 @@
+.container
+    background: var(--projects-background-color)
+    padding-left: var(--gutter-spacing)
+    padding-right: var(--gutter-spacing)
+    transition-property: var(--style-transition-property)
+    transition-duration: var(--style-transition-duration)
+    width: 100%
+
+.contentContainer
+    display: grid
+    grid-gap: 32px
+
+    @media (min-width: 992px)
+        grid-template-columns: repeat(3, minmax(0, 1fr))
+
+    @media (min-width: 768px) and (max-width: 992px)
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+
+    @media (max-width: 768px)
+        grid-template-columns: 1fr
+
+.title
+    padding-bottom: 32px
+    text-align: center
+
+.card
+    background-color: var(--card-background-color)
+    border: 1px solid var(--card-border-color)
+    border-radius: var(--card-border-radius)
+    box-shadow: var(--card-box-shadow)
+    transition-property: var(--style-transition-property)
+    transition-duration: var(--style-transition-duration)
+
+.cardContent
+    padding: var(--card-padding)
+
+.cardImage
+    border-top-left-radius: var(--card-border-radius)
+    border-top-right-radius: var(--card-border-radius)
+    width: 100%
+
+.cardTitle
+    color: var(--card-title-color)
+
+.cardBody
+    color: var(--card-text-color)
+    font-size: var(--card-font-size)
+
+.cardButtons
+    display: flex
+    flex-wrap: wrap
+    gap: 12px

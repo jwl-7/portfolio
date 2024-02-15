@@ -1,0 +1,52 @@
+.container
+    padding-left: var(--gutter-spacing)
+    padding-right: var(--gutter-spacing)
+    transition-property: var(--style-transition-property)
+    transition-duration: var(--style-transition-duration)
+    width: 100%
+
+.contentContainer
+    margin-left: auto
+    margin-right: auto
+
+    @media (min-width: 992px)
+        width: 60%
+
+    @media (min-width: 768px) and (max-width: 992px)
+        width: 75%
+
+    @media (max-width: 768px)
+        width: 100%
+
+.card
+    background-color: var(--card-background-color)
+    border: 1px solid var(--card-border-color)
+    border-radius: var(--card-border-radius)
+    box-shadow: var(--card-box-shadow)
+    display: grid
+    grid-gap: 32px
+    padding: var(--card-padding)
+
+    @media (min-width: 768px)
+        grid-template-columns: repeat(2, 1fr)
+        grid-template-rows: 1
+
+    @media (max-width: 768px)
+        grid-template-columns: 1fr
+        grid-template-rows: repeat(2, 1fr)
+
+.buttonContainer
+    display: flex
+    flex-wrap: wrap
+    gap: 12px
+
+.formElement
+    display: flex
+    flex-direction: column
+
+.title
+    padding-bottom: 32px
+    text-align: center
+
+.contactHeader
+    color: var(--card-title-color)

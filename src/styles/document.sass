@@ -1,0 +1,24 @@
+*,
+*::before,
+*::after
+    box-sizing: border-box
+
+html
+    font-family: var(--font-family-sans-serif)
+    scroll-behavior: smooth
+
+body
+    background-color: var(--background-color)
+    color: var(--text-color)
+    font-size: var(--font-size)
+    font-weight: var(--font-weight)
+    line-height: var(--line-height)
+    text-rendering: optimizeLegibility
+    overflow-wrap: break-word
+    margin: 0
+    transition-duration: var(--style-transition-duration)
+    transition-property: var(--style-transition-property)
+
+#home, #about, #projects, #resume, #contact
+    padding-top: var(--section-padding-top)
+    padding-bottom: var(--section-padding-bottom)
