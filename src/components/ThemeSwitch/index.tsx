@@ -12,17 +12,17 @@ export default function ThemeSwitch() {
         htmlElement.dispatchEvent(themeChangeEvent)
     }
 
+    const handleThemeChange = () => {
+        setDarkMode(!darkMode)
+        htmlElement.setAttribute('data-theme', !darkMode ? 'light' : 'dark')
+        dispatchThemeEvent()
+    }
+
     useEffect(() => {
         const theme = htmlElement.getAttribute('data-theme')
         setDarkMode(theme === 'light')
         dispatchThemeEvent()
     }, [])
-
-    const onThemeChange = () => {
-        setDarkMode(!darkMode)
-        htmlElement.setAttribute('data-theme', !darkMode ? 'light' : 'dark')
-        dispatchThemeEvent()
-    }
 
     return (
         <div className={styles.container}>
@@ -31,7 +31,7 @@ export default function ThemeSwitch() {
                 id="theme-switch"
                 type="checkbox"
                 checked={darkMode}
-                onChange={onThemeChange}
+                onChange={handleThemeChange}
             />
             <label className={styles.label} htmlFor="theme-switch">
                 <span className={styles.indicator} />

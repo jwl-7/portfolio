@@ -23,9 +23,9 @@ export default function NavBar() {
     `.trim()
 
     const listenScroll = () => setIsScrolled(window.scrollY > 70)
-    const onNavLinkClick = () => setIsCollapsed(true)
-    const onHamburgerClick = () => setIsCollapsed(!isCollapsed)
-    const onClickOutside = (event: MouseEvent) => {
+    const handleLinkClick = () => setIsCollapsed(true)
+    const handleHamburgerClick = () => setIsCollapsed(!isCollapsed)
+    const handleOutsideClick = (event: MouseEvent) => {
         if (navbarRef.current && !((navbarRef.current as HTMLElement).contains(event.target as Node))) {
             setIsCollapsed(true)
         }
@@ -33,11 +33,11 @@ export default function NavBar() {
 
     useEffect(() => {
         if (!isScreenMd) setIsCollapsed(true)
-        document.addEventListener('click', onClickOutside)
+        document.addEventListener('click', handleOutsideClick)
         window.addEventListener('scroll', listenScroll)
 
         return () => {
-            document.removeEventListener('click', onClickOutside)
+            document.removeEventListener('click', handleOutsideClick)
             window.removeEventListener('scroll', listenScroll)
         }
     }, [isScreenMd])
@@ -49,7 +49,7 @@ export default function NavBar() {
         `.trim()
 
         return isScreenMd && (
-            <div className={styles.hamburger} onClick={onHamburgerClick}>
+            <div className={styles.hamburger} onClick={handleHamburgerClick}>
                 <span className={`${spanClasses} ${styles.hamburgerTop}`} />
                 <span className={`${spanClasses} ${styles.hamburgerMiddle}`} />
                 <span className={`${spanClasses} ${styles.hamburgerBottom}`} />
@@ -60,11 +60,11 @@ export default function NavBar() {
     const renderNavLinks = () => {
         return (
             <>
-                <a href="#home" className={styles.link} onClick={onNavLinkClick}>Home</a>
-                <a href="#about" className={styles.link} onClick={onNavLinkClick}>About</a>
-                <a href="#projects" className={styles.link} onClick={onNavLinkClick}>Projects</a>
-                <a href="#resume" className={styles.link} onClick={onNavLinkClick}>Resume</a>
-                <a href="#contact" className={styles.link} onClick={onNavLinkClick}>Contact</a>
+                <a href="#home" className={styles.link} onClick={handleLinkClick}>Home</a>
+                <a href="#about" className={styles.link} onClick={handleLinkClick}>About</a>
+                <a href="#projects" className={styles.link} onClick={handleLinkClick}>Projects</a>
+                <a href="#resume" className={styles.link} onClick={handleLinkClick}>Resume</a>
+                <a href="#contact" className={styles.link} onClick={handleLinkClick}>Contact</a>
             </>
         )
     }
