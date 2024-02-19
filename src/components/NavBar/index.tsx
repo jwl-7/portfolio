@@ -2,44 +2,32 @@ import styles from './navbar.module.sass'
 
 import { useState, useEffect, useRef } from 'react'
 import { useMediaQuery } from 'react-responsive'
+import { useScrollDistance } from '@/hooks/useScrollDistance'
+import { useClickOutside } from '@/hooks/useClickOutside'
 
 import ThemeSwitch from '@components/ThemeSwitch'
 
 
 export default function NavBar() {
-    const [isScrolled, setIsScrolled] = useState(false)
+    const ref = useRef(null)
+    const isScrollDistanceReached = useScrollDistance(74)
+    const isScreenMd = useMediaQuery({ query: '(max-width: 768px)' })
     const [isCollapsed, setIsCollapsed] = useState(true)
-    const isScreenMd = useMediaQuery({
-        query: '(max-width: 768px)'
-    })
-    const navbarRef = useRef(null)
-    const navbarClasses = `
+    const classes = `
         ${styles.navbar}
-        ${isScrolled ? styles.shadow : ''}
+        ${isScrollDistanceReached ? styles.shadow : ''}
     `.trim()
-    const navbarMobileClasses = `
+    const mobileClasses = `
         ${styles.mobile}
         ${isCollapsed ? styles.hide : ''}
     `.trim()
 
-    const listenScroll = () => setIsScrolled(window.scrollY > 70)
     const handleLinkClick = () => setIsCollapsed(true)
     const handleHamburgerClick = () => setIsCollapsed(!isCollapsed)
-    const handleOutsideClick = (event: MouseEvent) => {
-        if (navbarRef.current && !((navbarRef.current as HTMLElement).contains(event.target as Node))) {
-            setIsCollapsed(true)
-        }
-    }
+    useClickOutside(ref, () => setIsCollapsed(true))
 
     useEffect(() => {
         if (!isScreenMd) setIsCollapsed(true)
-        document.addEventListener('click', handleOutsideClick)
-        window.addEventListener('scroll', listenScroll)
-
-        return () => {
-            document.removeEventListener('click', handleOutsideClick)
-            window.removeEventListener('scroll', listenScroll)
-        }
     }, [isScreenMd])
 
     const renderHamburgerButton = () => {
@@ -70,7 +58,7 @@ export default function NavBar() {
     }
 
     return (
-        <nav ref={navbarRef} className={navbarClasses}>
+        <nav ref={ref} className={classes}>
             <div className={styles.desktop}>
                 <div className={styles.brand}>JWL</div>
                 <div className={styles.desktopLinks}>
@@ -79,7 +67,7 @@ export default function NavBar() {
                 <ThemeSwitch />
                 {renderHamburgerButton()}
             </div>
-            <div className={navbarMobileClasses}>
+            <div className={mobileClasses}>
                 {renderNavLinks()}
             </div>
         </nav>
