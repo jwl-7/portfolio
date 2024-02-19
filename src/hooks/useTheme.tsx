@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 
 
-export default function useTheme() {
+export function useTheme() {
     const htmlElement = document.documentElement
     const [theme, setTheme] = useState('light')
 
@@ -16,7 +16,7 @@ export default function useTheme() {
         return () => {
             htmlElement.removeEventListener('themeChange', handleThemeChange)
         }
-    }, [])
+    }, [htmlElement])
 
     return theme
 }

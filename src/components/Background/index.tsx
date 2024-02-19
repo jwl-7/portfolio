@@ -1,6 +1,6 @@
 import styles from './background.module.sass'
 
-import useTheme from '@hooks/useTheme'
+import { useTheme } from '@hooks/useTheme'
 
 
 export default function Background() {
