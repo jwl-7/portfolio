@@ -13,7 +13,7 @@ export function useTheme() {
     useEffect(() => {
         htmlElement.addEventListener('themeChange', handleThemeChange)
 
-        return htmlElement.removeEventListener('themeChange', handleThemeChange)
+        return () => htmlElement.removeEventListener('themeChange', handleThemeChange)
     }, [htmlElement])
 
     return theme
