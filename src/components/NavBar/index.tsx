@@ -2,33 +2,53 @@ import styles from './navbar.module.sass'
 
 import { useState, useEffect, useRef } from 'react'
 import { useMediaQuery } from 'react-responsive'
-import { useScrollDistance } from '@/hooks/useScrollDistance'
 import { useClickOutside } from '@/hooks/useClickOutside'
+import { useScrollDistance } from '@/hooks/useScrollDistance'
 
 import ThemeSwitch from '@components/ThemeSwitch'
 
-
 export default function NavBar() {
-    const ref = useRef(null)
+    const ref = useRef<HTMLElement | null>(null)
+    const mobileRef = useRef<HTMLDivElement | null>(null)
     const isScrollDistanceReached = useScrollDistance(74)
     const isScreenMd = useMediaQuery({ query: '(max-width: 768px)' })
     const [isCollapsed, setIsCollapsed] = useState(true)
+    const [isTransitioning, setIsTransitioning] = useState(false)
     const classes = `
         ${styles.navbar}
         ${isScrollDistanceReached ? styles.shadow : ''}
     `.trim()
-    const mobileClasses = `
+    let mobileClasses = `
         ${styles.mobile}
-        ${isCollapsed ? styles.hide : ''}
+        ${isCollapsed ? styles.collapse : styles.expand}
+        ${(isCollapsed && !isTransitioning) ? styles.hide : ''}
     `.trim()
 
-    const handleLinkClick = () => setIsCollapsed(true)
-    const handleHamburgerClick = () => setIsCollapsed(!isCollapsed)
-    useClickOutside(ref, () => setIsCollapsed(true))
+    const collapseMobileNavBar = () => {
+        if (!isCollapsed) {
+            setIsCollapsed(true)
+            setIsTransitioning(true)
+        }
+    }
 
+    const handleTransitionEnd = () => setIsTransitioning(false)
+    const handleLinkClick = () => collapseMobileNavBar()
+    const handleHamburgerClick = () => {
+        setIsCollapsed(!isCollapsed)
+        setIsTransitioning(true)
+    }
+
+    useClickOutside(ref, collapseMobileNavBar)
     useEffect(() => {
-        if (!isScreenMd) setIsCollapsed(true)
-    }, [isScreenMd])
+        const mobileElement = mobileRef.current
+
+        if (!isScreenMd) collapseMobileNavBar()
+        if (mobileElement) {
+            mobileElement.addEventListener('transitionend', handleTransitionEnd)
+
+            return () => mobileElement.removeEventListener('transitionend', handleTransitionEnd)
+        }
+    }, [isScreenMd, isCollapsed])
 
     const renderHamburgerButton = () => {
         const spanClasses = `
@@ -64,10 +84,12 @@ export default function NavBar() {
                 <div className={styles.desktopLinks}>
                     {renderNavLinks()}
                 </div>
-                <ThemeSwitch />
+                <div className={styles.themeSwitch}>
+                    <ThemeSwitch />
+                </div>
                 {renderHamburgerButton()}
             </div>
-            <div className={mobileClasses}>
+            <div ref={mobileRef} className={mobileClasses}>
                 {renderNavLinks()}
             </div>
         </nav>
