@@ -13,9 +13,9 @@ export function useScrollTo({
     duration = 1250,
     offset = 0,
 }: ScrollToProps) {
-    const frameID = useRef(0)
-    const startTime = useRef(0)
-    const shouldStop = useRef(false)
+    const frameID = useRef<number>(0)
+    const startTime = useRef<number>(0)
+    const shouldStop = useRef<boolean>(false)
     const targetRef = useRef<HTMLElement | null>(null)
 
     const easeInOutQuad = (t: number) => (t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t)
@@ -55,7 +55,7 @@ export function useScrollTo({
     }, [duration, offset, cancel])
 
     useEffect(() => {
-        targetRef.current = document.querySelector<HTMLElement>(selector)
+        targetRef.current = document.querySelector(selector)
         window.addEventListener('wheel', handleStop, { passive: true })
         window.addEventListener('touchmove', handleStop, { passive: true })
 
