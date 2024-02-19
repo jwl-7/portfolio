@@ -5,7 +5,9 @@ import { useMediaQuery } from 'react-responsive'
 import { useClickOutside } from '@/hooks/useClickOutside'
 import { useScrollDistance } from '@/hooks/useScrollDistance'
 
+import clsx from '@/utils/clsx'
 import ThemeSwitch from '@components/ThemeSwitch'
+
 
 export default function NavBar() {
     const ref = useRef<HTMLElement | null>(null)
@@ -14,15 +16,15 @@ export default function NavBar() {
     const isScreenMd = useMediaQuery({ query: '(max-width: 768px)' })
     const [isCollapsed, setIsCollapsed] = useState(true)
     const [isTransitioning, setIsTransitioning] = useState(false)
-    const classes = `
-        ${styles.navbar}
-        ${isScrollDistanceReached ? styles.shadow : ''}
-    `.trim()
-    let mobileClasses = `
-        ${styles.mobile}
-        ${isCollapsed ? styles.collapse : styles.expand}
-        ${(isCollapsed && !isTransitioning) ? styles.hide : ''}
-    `.trim()
+    const classes = clsx(
+        styles.navbar,
+        isScrollDistanceReached && styles.shadow
+    )
+    const mobileClasses = clsx(
+        styles.mobile,
+        isCollapsed ? styles.collapse : styles.expand,
+        (isCollapsed && !isTransitioning) && styles.hide
+    )
 
     const collapseMobileNavBar = () => {
         if (!isCollapsed) {
@@ -51,16 +53,16 @@ export default function NavBar() {
     }, [isScreenMd, isCollapsed])
 
     const renderHamburgerButton = () => {
-        const spanClasses = `
-            ${styles.hamburgerIcon}
-            ${isCollapsed ? styles.collapsed : ''}
-        `.trim()
+        const spanClasses = clsx(
+            styles.hamburgerIcon,
+            isCollapsed && styles.collapsed
+        )
 
         return isScreenMd && (
             <div className={styles.hamburger} onClick={handleHamburgerClick}>
-                <span className={`${spanClasses} ${styles.hamburgerTop}`} />
-                <span className={`${spanClasses} ${styles.hamburgerMiddle}`} />
-                <span className={`${spanClasses} ${styles.hamburgerBottom}`} />
+                <span className={clsx(spanClasses, styles.hamburgerTop)} />
+                <span className={clsx(spanClasses, styles.hamburgerMiddle)} />
+                <span className={clsx(spanClasses, styles.hamburgerBottom)} />
             </div>
         )
     }

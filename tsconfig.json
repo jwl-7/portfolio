@@ -22,7 +22,8 @@
             "@hooks/*": ["src/hooks/*"],
             "@icons/*": ["src/icons/*"],
             "@images/*": ["src/images/*"],
-            "@styles/*": ["src/styles/*"]
+            "@styles/*": ["src/styles/*"],
+            "@utils/*": ["src/utils/*"]
         },
 
         // Bundler
