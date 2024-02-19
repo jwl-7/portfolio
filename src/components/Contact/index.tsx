@@ -20,7 +20,6 @@ export default function Contact() {
     const formClassName = formSubmitted ? 'submitted' : ''
 
     const sendEmail = () => {
-        console.log('API_KEY',API_KEY)
         if (!form.current) return
         emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, API_KEY)
             .then(() => {
