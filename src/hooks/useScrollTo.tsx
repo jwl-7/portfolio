@@ -14,57 +14,53 @@ export function useScrollTo({
     offset = 0,
 }: ScrollToProps) {
     const frameID = useRef<number>(0)
-    const startTime = useRef<number>(0)
-    const shouldStop = useRef<boolean>(false)
     const targetRef = useRef<HTMLElement | null>(null)
 
     const easeInOutQuad = (t: number) => (t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t)
-    const handleStop = () => shouldStop.current = true
-    const cancel = () => cancelAnimationFrame(frameID.current)
+    const cancel = () => frameID.current && cancelAnimationFrame(frameID.current)
 
     const scrollTo = useCallback(() => {
-        if (frameID.current || !targetRef.current) return
+        if (!targetRef.current) return
+        cancel()
 
-        shouldStop.current = false
         const targetElement = targetRef.current
-        const targetTop = targetElement.getBoundingClientRect().top + window.scrollY
-        const startScroll = window.scrollY
-        const distance = targetTop - startScroll - offset
+        const targetPosition = targetElement.offsetTop
+        const currentPosition = window.scrollY
+        const distance = targetPosition - currentPosition - offset
+        const startTime = performance.now()
+
+        if (!distance) return
 
         const animateScroll = () => {
-            const now = performance.now()
-            if (!startTime.current) startTime.current = now
-            const elapsed = now - startTime.current
+            const currentTime = performance.now()
+            const elapsed = currentTime - startTime
             const time = elapsed / duration
             const easeTime = easeInOutQuad(time)
+            const scrollDestination = currentPosition + distance * easeTime
 
             window.scrollTo({
-                top: startScroll + distance * easeTime,
+                top: scrollDestination,
                 behavior: 'smooth',
             })
 
-            if (!shouldStop.current && time < 1) {
-                frameID.current = requestAnimationFrame(animateScroll)
-            } else {
-                startTime.current = 0
-                frameID.current = 0
-            }
+            if (time < 1) requestAnimationFrame(animateScroll)
+            else frameID.current = 0
         }
 
         animateScroll()
-    }, [duration, offset, cancel])
+    }, [selector, duration, offset])
 
     useEffect(() => {
         targetRef.current = document.querySelector(selector)
-        window.addEventListener('wheel', handleStop, { passive: true })
-        window.addEventListener('touchmove', handleStop, { passive: true })
+        window.addEventListener('wheel', cancel, { passive: true })
+        window.addEventListener('touchmove', cancel, { passive: true })
 
         return () => {
-            if (frameID.current) cancel()
-            window.removeEventListener('wheel', handleStop)
-            window.removeEventListener('touchmove', handleStop)
+            cancel()
+            window.removeEventListener('wheel', cancel)
+            window.removeEventListener('touchmove', cancel)
         }
-    }, [cancel, handleStop, selector])
+    }, [cancel])
 
     return scrollTo
 }
