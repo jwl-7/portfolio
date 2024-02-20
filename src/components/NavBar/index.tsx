@@ -1,9 +1,10 @@
 import styles from './navbar.module.sass'
 
-import { useState, useEffect, useRef } from 'react'
+import { MouseEvent, useState, useEffect, useRef } from 'react'
 import { useMediaQuery } from 'react-responsive'
 import { useClickOutside } from '@/hooks/useClickOutside'
 import { useScrollDistance } from '@/hooks/useScrollDistance'
+import { useScrollTo } from '@/hooks/useScrollTo'
 
 import clsx from '@/utils/clsx'
 import ThemeSwitch from '@components/ThemeSwitch'
@@ -25,6 +26,13 @@ export default function NavBar() {
         isCollapsed ? styles.collapse : styles.expand,
         (isCollapsed && !isTransitioning) && styles.hide
     )
+    const scrollDestinations: { [key: string]: () => void } = {
+        '#home': useScrollTo({ selector: '#home' }),
+        '#about': useScrollTo({ selector: '#about' }),
+        '#projects': useScrollTo({ selector: '#projects' }),
+        '#resume': useScrollTo({ selector: '#resume' }),
+        '#contact': useScrollTo({ selector: '#contact' })
+    }
 
     const collapseMobileNavBar = () => {
         if (!isCollapsed) {
@@ -34,7 +42,17 @@ export default function NavBar() {
     }
 
     const handleTransitionEnd = () => setIsTransitioning(false)
-    const handleLinkClick = () => collapseMobileNavBar()
+    const handleLinkClick = (event: MouseEvent<HTMLAnchorElement>) => {
+        event.preventDefault()
+
+        const href = event.currentTarget.getAttribute('href')
+        if (href && scrollDestinations.hasOwnProperty(href)) {
+            scrollDestinations[href]()
+        }
+
+        collapseMobileNavBar()
+    }
+
     const handleHamburgerClick = () => {
         setIsCollapsed(!isCollapsed)
         setIsTransitioning(true)
