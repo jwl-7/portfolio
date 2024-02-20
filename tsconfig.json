@@ -15,7 +15,6 @@
         // Paths
         "baseUrl": "./",
         "paths": {
-            "~bootstrap": ["node_modules/bootstrap"],
             "@/*": ["src/*"],
             "@components/*": ["src/components/*"],
             "@fonts/*": ["src/fonts/*"],
