@@ -7,12 +7,12 @@ import ScrollDownButton from '@components/ScrollDownButton'
 
 export default function Home() {
     return (
-        <div id="home" className={styles.home}>
+        <section id="home" className={styles.home}>
             <div className={styles.contentContainer}>
                 <Background />
                 <Glitch />
                 <ScrollDownButton />
             </div>
-        </div>
+        </section>
     )
 }

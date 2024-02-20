@@ -17,7 +17,7 @@ import StickBop from '@images/stickbop-ss.webp'
 
 export default function Projects() {
     return (
-        <div id="projects" className={styles.container}>
+        <section id="projects" className={styles.container}>
             <div className={styles.title}>
                 <h1>Projects</h1>
                 <hr />
@@ -125,6 +125,6 @@ export default function Projects() {
                     </div>
                 </div>
             </Zoom>
-        </div>
+        </section>
     )
 }

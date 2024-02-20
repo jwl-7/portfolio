@@ -11,7 +11,7 @@ interface ScrollToProps {
 export function useScrollTo({
     selector,
     duration = 1250,
-    offset = 0,
+    offset = 76,
 }: ScrollToProps) {
     const frameID = useRef<number>(0)
     const targetRef = useRef<HTMLElement | null>(null)

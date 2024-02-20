@@ -8,7 +8,7 @@ import SvgUndrawHacker from '@icons/UndrawHacker'
 
 export default function About() {
     return (
-        <div id="about" className={styles.container}>
+        <section id="about">
             <div className={styles.title}>
                 <h1>About</h1>
                 <hr />
@@ -21,6 +21,6 @@ export default function About() {
                     <Terminal />
                 </Slide>
             </div>
-        </div>
+        </section>
     )
 }

@@ -47,7 +47,7 @@ export default function Contact() {
     }
 
     return (
-        <div id="contact" className={styles.container}>
+        <section id="contact">
             <div className={styles.title}>
                 <h1>Contact</h1>
                 <hr />
@@ -105,6 +105,6 @@ export default function Contact() {
                     </div>
                 </Fade>
             </div>
-        </div>
+        </section>
     )
 }

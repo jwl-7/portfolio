@@ -25,7 +25,7 @@ import VSCode from '@icons/Vscode'
 
 export default function Resume() {
     return (
-        <div id="resume" className={styles.container}>
+        <section id="resume" className={styles.container}>
             <div className={styles.title}>
                 <h1>Resume</h1>
                 <hr />
@@ -115,6 +115,6 @@ export default function Resume() {
                     <File /> View Resume PDF
                 </a>
             </div>
-        </div>
+        </section>
     )
 }
