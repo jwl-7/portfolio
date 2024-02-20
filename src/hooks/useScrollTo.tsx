@@ -13,13 +13,16 @@ export function useScrollTo({
     duration = 1250,
     offset = 76,
 }: ScrollToProps) {
-    const frameID = useRef<number>(0)
     const targetRef = useRef<HTMLElement | null>(null)
+    const frameID = useRef<number>(0)
+    const userInterrupt = useRef<boolean>(false)
 
     const easeInOutQuad = (t: number) => (t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t)
     const cancel = () => frameID.current && cancelAnimationFrame(frameID.current)
+    const handleInterrupt = () => userInterrupt.current = true
 
     const scrollTo = useCallback(() => {
+        userInterrupt.current = false
         if (!targetRef.current) return
         cancel()
 
@@ -43,7 +46,7 @@ export function useScrollTo({
                 behavior: 'smooth',
             })
 
-            if (time < 1) requestAnimationFrame(animateScroll)
+            if (time < 1 && !userInterrupt.current) requestAnimationFrame(animateScroll)
             else frameID.current = 0
         }
 
@@ -52,15 +55,15 @@ export function useScrollTo({
 
     useEffect(() => {
         targetRef.current = document.querySelector(selector)
-        window.addEventListener('wheel', cancel, { passive: true })
-        window.addEventListener('touchmove', cancel, { passive: true })
+        window.addEventListener('wheel', handleInterrupt, { passive: true })
+        window.addEventListener('touchmove', handleInterrupt, { passive: true })
 
         return () => {
             cancel()
-            window.removeEventListener('wheel', cancel)
-            window.removeEventListener('touchmove', cancel)
+            window.removeEventListener('wheel', handleInterrupt)
+            window.removeEventListener('touchmove', handleInterrupt)
         }
-    }, [cancel])
+    }, [])
 
     return scrollTo
 }
