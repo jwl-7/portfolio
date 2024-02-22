@@ -21,10 +21,6 @@ export default function NavBar() {
         styles.navbar,
         isScrollDistanceReached && styles.shadow
     )
-    const mobileClasses = clsx(
-        styles.mobile,
-        isCollapsed ? styles.collapse : styles.expand
-    )
     const mobileNavBarHeight = isCollapsed ? 0 : 'auto'
     const scrollDestinations: { [key: string]: () => void } = {
         '#home': useScrollTo({ selector: '#home' }),
@@ -96,7 +92,7 @@ export default function NavBar() {
                 height={mobileNavBarHeight}
                 duration={300}
             >
-                <div className={mobileClasses}>
+                <div className={styles.mobile}>
                     {renderNavLinks()}
                 </div>
             </AnimateHeight>
