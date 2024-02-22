@@ -6,26 +6,26 @@ import { useClickOutside } from '@/hooks/useClickOutside'
 import { useScrollDistance } from '@/hooks/useScrollDistance'
 import { useScrollTo } from '@/hooks/useScrollTo'
 
+import AnimateHeight from 'react-animate-height'
 import clsx from '@/utils/clsx'
 import ThemeSwitch from '@components/ThemeSwitch'
 
 
 export default function NavBar() {
     const ref = useRef<HTMLElement | null>(null)
-    const mobileRef = useRef<HTMLDivElement | null>(null)
     const isScrollDistanceReached = useScrollDistance(74)
     const isScreenMd = useMediaQuery({ query: '(max-width: 768px)' })
     const [isCollapsed, setIsCollapsed] = useState(true)
-    const [isTransitioning, setIsTransitioning] = useState(false)
+
     const classes = clsx(
         styles.navbar,
         isScrollDistanceReached && styles.shadow
     )
     const mobileClasses = clsx(
         styles.mobile,
-        isCollapsed ? styles.collapse : styles.expand,
-        (isCollapsed && !isTransitioning) && styles.hide
+        isCollapsed ? styles.collapse : styles.expand
     )
+    const mobileNavBarHeight = isCollapsed ? 0 : 'auto'
     const scrollDestinations: { [key: string]: () => void } = {
         '#home': useScrollTo({ selector: '#home' }),
         '#about': useScrollTo({ selector: '#about' }),
@@ -34,14 +34,8 @@ export default function NavBar() {
         '#contact': useScrollTo({ selector: '#contact' })
     }
 
-    const collapseMobileNavBar = () => {
-        if (!isCollapsed) {
-            setIsCollapsed(true)
-            setIsTransitioning(true)
-        }
-    }
-
-    const handleTransitionEnd = () => setIsTransitioning(false)
+    const collapseMobileNavBar = () => !isCollapsed && setIsCollapsed(true)
+    const handleHamburgerClick = () => setIsCollapsed(!isCollapsed)
     const handleLinkClick = (event: MouseEvent<HTMLAnchorElement>) => {
         event.preventDefault()
 
@@ -53,21 +47,9 @@ export default function NavBar() {
         collapseMobileNavBar()
     }
 
-    const handleHamburgerClick = () => {
-        setIsCollapsed(!isCollapsed)
-        setIsTransitioning(true)
-    }
-
     useClickOutside(ref, collapseMobileNavBar)
     useEffect(() => {
-        const mobileElement = mobileRef.current
-
         if (!isScreenMd) collapseMobileNavBar()
-        if (mobileElement) {
-            mobileElement.addEventListener('transitionend', handleTransitionEnd)
-
-            return () => mobileElement.removeEventListener('transitionend', handleTransitionEnd)
-        }
     }, [isScreenMd, isCollapsed])
 
     const renderHamburgerButton = () => {
@@ -109,9 +91,15 @@ export default function NavBar() {
                 </div>
                 {renderHamburgerButton()}
             </div>
-            <div ref={mobileRef} className={mobileClasses}>
-                {renderNavLinks()}
-            </div>
+            <AnimateHeight
+                animateOpacity
+                height={mobileNavBarHeight}
+                duration={300}
+            >
+                <div className={mobileClasses}>
+                    {renderNavLinks()}
+                </div>
+            </AnimateHeight>
         </nav>
     )
 }
