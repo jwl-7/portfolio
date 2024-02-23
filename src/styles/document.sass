@@ -2,6 +2,7 @@
 *::before,
 *::after
     box-sizing: border-box
+    background-repeat: no-repeat
 
 html
     font-family: var(--font-family-sans-serif)
@@ -18,9 +19,11 @@ body
     margin: 0
     transition-duration: var(--style-transition-duration)
     transition-property: var(--style-transition-property)
+    width: 100%
 
 main
     margin-top: var(--navbar-height)
+    padding-bottom: var(--section-padding-bottom)
 
 section
     padding-left: var(--gutter-spacing)
@@ -29,4 +32,3 @@ section
     padding-bottom: var(--section-padding-bottom)
     transition-property: var(--style-transition-property)
     transition-duration: var(--style-transition-duration)
-    width: 100%
