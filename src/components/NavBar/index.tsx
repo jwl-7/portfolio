@@ -23,7 +23,7 @@ export default function NavBar() {
     )
     const mobileNavBarHeight = isCollapsed ? 0 : 'auto'
     const scrollDestinations: { [key: string]: () => void } = {
-        '#home': useScrollTo({ selector: '#home' }),
+        '#home': useScrollTo({ selector: '#home', offset: 76 }),
         '#about': useScrollTo({ selector: '#about' }),
         '#projects': useScrollTo({ selector: '#projects' }),
         '#resume': useScrollTo({ selector: '#resume' }),
