@@ -56,7 +56,7 @@ export default function Contact() {
                 <Fade direction="up" triggerOnce>
                     <div className={styles.card}>
                         <div className="form-container">
-                            <h3 className={styles.contactHeader}>Send a Message</h3>
+                            <span className={styles.contactHeader}>Send a Message</span>
                             <form ref={form} className={formClassName} noValidate onSubmit={handleSubmit}>
                                 <div className={styles.formElement}>
                                     <label htmlFor="form-name">Name</label>
@@ -91,7 +91,7 @@ export default function Contact() {
                             </form>
                         </div>
                         <div className="info-container">
-                            <h3 className={styles.contactHeader}>Find Me On</h3>
+                            <span className={styles.contactHeader}>Find Me On</span>
                             <p>Feel free to connect with me or send me a message.</p>
                             <div className={styles.buttonContainer}>
                                 <a href="https://github.com/jwl-7" role="button" target="_blank">

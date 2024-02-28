@@ -25,7 +25,7 @@ export default function Projects() {
             <Zoom triggerOnce>
                 <div className={styles.contentContainer}>
                     <div className={styles.card}>
-                        <img className={styles.cardImage} src={NadeSpace} alt="nade.space-screenshot" />
+                        <img className={styles.cardImage} src={NadeSpace} alt="nade.space-screenshot" height="auto" width="100%" />
                         <div className={styles.cardContent}>
                             <h2 className={styles.cardTitle}>nade.space</h2>
                             <p className={styles.cardBody}>An interactive web-app for learning nades in CS:GO.</p>
@@ -41,7 +41,7 @@ export default function Projects() {
                     </div>
 
                     <div className={styles.card}>
-                        <img className={styles.cardImage} src={StickBop} alt="Stick Bop!-screenshot" />
+                        <img className={styles.cardImage} src={StickBop} alt="Stick Bop!-screenshot" height="auto" width="100%" />
                         <div className={styles.cardContent}>
                             <h2 className={styles.cardTitle}>Stick Bop!</h2>
                             <p className={styles.cardBody}>A python game inspired by the 90s Bop It! toy.</p>
@@ -57,7 +57,7 @@ export default function Projects() {
                     </div>
 
                     <div className={styles.card}>
-                        <img className={styles.cardImage} src={Codex} alt="Codex-screenshot" />
+                        <img className={styles.cardImage} src={Codex} alt="Codex-screenshot" height="auto" width="100%" />
                         <div className={styles.cardContent}>
                             <h2 className={styles.cardTitle}>Codex</h2>
                             <p className={styles.cardBody}>A python discord bot with Markov chain responses, slots, and more.</p>
@@ -70,7 +70,7 @@ export default function Projects() {
                     </div>
 
                     <div className={styles.card}>
-                        <img className={styles.cardImage} src={Portfolio} alt="Portfolio-screenshot" />
+                        <img className={styles.cardImage} src={Portfolio} alt="Portfolio-screenshot" height="auto" width="100%" />
                         <div className={styles.cardContent}>
                             <h2 className={styles.cardTitle}>Cyberfolio</h2>
                             <p className={styles.cardBody}>A modern portfolio website made with ReactJS.</p>
@@ -83,7 +83,7 @@ export default function Projects() {
                     </div>
 
                     <div className={styles.card}>
-                        <img className={styles.cardImage} src={CodeGrind} alt="C0de Gr1nd-screenshot" />
+                        <img className={styles.cardImage} src={CodeGrind} alt="C0de Gr1nd-screenshot" height="auto" width="100%" />
                         <div className={styles.cardContent}>
                             <h2 className={styles.cardTitle}>c0de_gr1nd</h2>
                             <p className={styles.cardBody}>An interactive web-app for learning nades in CS:GO.</p>
@@ -96,7 +96,7 @@ export default function Projects() {
                     </div>
 
                     <div className={styles.card}>
-                        <img className={styles.cardImage} src={KZBot} alt="KZBOT-screenshot" />
+                        <img className={styles.cardImage} src={KZBot} alt="KZBOT-screenshot" height="auto" width="100%" />
                         <div className={styles.cardContent}>
                             <h2 className={styles.cardTitle}>KZBOT</h2>
                             <p className={styles.cardBody}>A python discord bot for CS:GO KZ community servers.</p>
@@ -109,7 +109,7 @@ export default function Projects() {
                     </div>
 
                     <div className={styles.card}>
-                        <img className={styles.cardImage} src={LeetCodeThemes} alt="LeetCode Themes-screenshot" />
+                        <img className={styles.cardImage} src={LeetCodeThemes} alt="LeetCode Themes-screenshot" height="auto" width="100%" />
                         <div className={styles.cardContent}>
                             <h2 className={styles.cardTitle}>LeetCode Themes</h2>
                             <p className={styles.cardBody}>A firefox browser extension a firefox browser extension for customizing the LeetCode editor.</p>

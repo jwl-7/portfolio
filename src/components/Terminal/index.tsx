@@ -15,7 +15,7 @@ export default function Terminal() {
             </div>
             <div className={styles.body}>
                 <div className={styles.section}>
-                    <h3 className={styles.header}>Hi there! :) <span className={styles.wave}>👋</span></h3>
+                    <span className={styles.header}>Hi there! :) <span className={styles.wave}>👋</span></span>
                 </div>
 
                 <div className={styles.section}>
