@@ -1,12 +1,7 @@
 import { useEffect, useState } from 'react'
 
 
-interface useScrollDistanceProps {
-    distance: number
-}
-
-
-export function useScrollDistance({ distance }: useScrollDistanceProps) {
+export function useScrollDistance( distance: number) {
     const [isScrollDistanceReached, setIsScrollDistanceReached] = useState(window.scrollY > distance)
     const handleScroll = () => setIsScrollDistanceReached(window.scrollY > distance)
 
