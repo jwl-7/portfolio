@@ -8,7 +8,6 @@ import GithubLight from '@icons/GithubLight'
 import LinkedIn from '@icons/LinkedIn'
 
 
-
 const API_KEY = import.meta.env.VITE_EMAILJS_API_KEY
 const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
 const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID

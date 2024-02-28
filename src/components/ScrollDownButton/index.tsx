@@ -3,8 +3,11 @@ import styles from './scrolldownbutton.module.sass'
 import { useScrollTo } from '@hooks/useScrollTo'
 
 
+const NAVBAR_HEIGHT = 74
+
+
 export default function ScrollDownButton() {
-    const handleClick = useScrollTo({ selector: '#about' })
+    const handleClick = useScrollTo({ selector: '#about', offset: NAVBAR_HEIGHT })
 
     return (
         <button className={styles.rainbow} onClick={handleClick} aria-label="scroll down">

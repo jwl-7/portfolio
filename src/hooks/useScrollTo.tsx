@@ -11,14 +11,16 @@ interface ScrollToProps {
 export function useScrollTo({
     selector,
     duration = 1250,
-    offset = 74,
+    offset = 0,
 }: ScrollToProps) {
     const targetRef = useRef<HTMLElement | null>(null)
     const frameID = useRef<number>(0)
     const userInterrupt = useRef<boolean>(false)
 
     const easeInOutQuad = (t: number) => (t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t)
-    const cancel = () => frameID.current && cancelAnimationFrame(frameID.current)
+    const cancel = () => {
+        if(frameID.current) cancelAnimationFrame(frameID.current)
+    }
     const handleInterrupt = () => userInterrupt.current = true
 
     const scrollTo = useCallback(() => {

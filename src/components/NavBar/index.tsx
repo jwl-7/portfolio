@@ -1,6 +1,6 @@
 import styles from './navbar.module.sass'
 
-import { MouseEvent, useState, useEffect, useRef } from 'react'
+import { MouseEvent, useState, useRef } from 'react'
 import { useMediaQuery } from 'react-responsive'
 import { useClickOutside } from '@/hooks/useClickOutside'
 import { useScrollDistance } from '@/hooks/useScrollDistance'
@@ -11,10 +11,12 @@ import clsx from '@/utils/clsx'
 import ThemeSwitch from '@components/ThemeSwitch'
 
 
+const NAVBAR_HEIGHT = 74
+
+
 export default function NavBar() {
     const ref = useRef<HTMLElement | null>(null)
-    const isScrollDistanceReached = useScrollDistance(74)
-    const isScreenMd = useMediaQuery({ query: '(max-width: 768px)' })
+    const isScrollDistanceReached = useScrollDistance(NAVBAR_HEIGHT)
     const [isCollapsed, setIsCollapsed] = useState(true)
 
     const classes = clsx(
@@ -22,15 +24,24 @@ export default function NavBar() {
         isScrollDistanceReached && styles.shadow
     )
     const mobileNavBarHeight = isCollapsed ? 0 : 'auto'
-    const scrollDestinations: { [key: string]: () => void } = {
-        '#home': useScrollTo({ selector: '#home', offset: 76 }),
-        '#about': useScrollTo({ selector: '#about' }),
-        '#projects': useScrollTo({ selector: '#projects' }),
-        '#resume': useScrollTo({ selector: '#resume' }),
-        '#contact': useScrollTo({ selector: '#contact' })
+    const scrollDestinations: { [key: string]: Function } = {
+        '#home': useScrollTo({ selector: '#home', offset: NAVBAR_HEIGHT + 2 }),
+        '#about': useScrollTo({ selector: '#about', offset: NAVBAR_HEIGHT }),
+        '#projects': useScrollTo({ selector: '#projects', offset: NAVBAR_HEIGHT }),
+        '#resume': useScrollTo({ selector: '#resume', offset: NAVBAR_HEIGHT }),
+        '#contact': useScrollTo({ selector: '#contact' ,offset: NAVBAR_HEIGHT })
     }
 
-    const collapseMobileNavBar = () => !isCollapsed && setIsCollapsed(true)
+    const collapseMobileNavBar = () => {
+        if(!isCollapsed) setIsCollapsed(true)
+    }
+
+    const handleMediaQueryChange = (matches: boolean) => {
+        if (!matches && !isCollapsed) setIsCollapsed(true)
+    }
+
+    const isScreenMd = useMediaQuery({ maxWidth: 768 }, undefined, handleMediaQueryChange)
+
     const handleHamburgerClick = () => setIsCollapsed(!isCollapsed)
     const handleLinkClick = (event: MouseEvent<HTMLAnchorElement>) => {
         event.preventDefault()
@@ -44,9 +55,6 @@ export default function NavBar() {
     }
 
     useClickOutside(ref, collapseMobileNavBar)
-    useEffect(() => {
-        if (!isScreenMd) collapseMobileNavBar()
-    }, [isScreenMd, isCollapsed])
 
     const renderHamburgerButton = () => {
         const spanClasses = clsx(
