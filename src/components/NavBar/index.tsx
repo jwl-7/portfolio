@@ -11,7 +11,7 @@ import clsx from '@/utils/clsx'
 import ThemeSwitch from '@components/ThemeSwitch'
 
 
-const NAVBAR_HEIGHT = 74
+const NAVBAR_HEIGHT = 76
 
 
 export default function NavBar() {
@@ -25,11 +25,11 @@ export default function NavBar() {
     )
     const mobileNavBarHeight = isCollapsed ? 0 : 'auto'
     const scrollDestinations: { [key: string]: Function } = {
-        '#home': useScrollTo({ selector: '#home', offset: NAVBAR_HEIGHT + 2 }),
-        '#about': useScrollTo({ selector: '#about', offset: NAVBAR_HEIGHT }),
-        '#projects': useScrollTo({ selector: '#projects', offset: NAVBAR_HEIGHT }),
-        '#resume': useScrollTo({ selector: '#resume', offset: NAVBAR_HEIGHT }),
-        '#contact': useScrollTo({ selector: '#contact' ,offset: NAVBAR_HEIGHT })
+        '#home': useScrollTo({ selector: '#home', offset: NAVBAR_HEIGHT }),
+        '#about': useScrollTo({ selector: '#about', offset: NAVBAR_HEIGHT - 2 }),
+        '#projects': useScrollTo({ selector: '#projects', offset: NAVBAR_HEIGHT - 2 }),
+        '#resume': useScrollTo({ selector: '#resume', offset: NAVBAR_HEIGHT - 2 }),
+        '#contact': useScrollTo({ selector: '#contact' ,offset: NAVBAR_HEIGHT - 2 })
     }
 
     const collapseMobileNavBar = () => {
