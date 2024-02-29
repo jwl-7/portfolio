@@ -24,7 +24,7 @@ export default function NavBar() {
         isScrollDistanceReached && styles.shadow
     )
     const mobileNavBarHeight = isCollapsed ? 0 : 'auto'
-    const scrollDestinations: { [key: string]: Function } = {
+    const scrollDestinations: { [key: string]: VoidFunction } = {
         '#home': useScrollTo({ selector: '#home', offset: NAVBAR_HEIGHT }),
         '#about': useScrollTo({ selector: '#about', offset: NAVBAR_HEIGHT - 2 }),
         '#projects': useScrollTo({ selector: '#projects', offset: NAVBAR_HEIGHT - 2 }),

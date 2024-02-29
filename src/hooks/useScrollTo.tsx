@@ -8,26 +8,32 @@ interface ScrollToProps {
 }
 
 
+function easeInOutQuad(t: number): number {
+    return t < 0.5
+        ? 2 * t * t
+        : 1 - Math.pow(-2 * t + 2, 2) / 2
+}
+
 export function useScrollTo({
     selector,
-    duration = 1250,
+    duration = 1500,
     offset = 0,
 }: ScrollToProps) {
     const targetRef = useRef<HTMLElement | null>(null)
     const frameID = useRef<number>(0)
     const userInterrupt = useRef<boolean>(false)
 
-    const easeInOutQuad = (t: number) => (t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t)
     const cancel = () => {
         if(frameID.current) cancelAnimationFrame(frameID.current)
     }
+
     const handleInterrupt = () => userInterrupt.current = true
 
     const scrollTo = useCallback(() => {
-        userInterrupt.current = false
         if (!targetRef.current) return
         cancel()
 
+        userInterrupt.current = false
         const targetElement = targetRef.current
         const targetPosition = targetElement.offsetTop
         const currentPosition = window.scrollY
@@ -36,11 +42,10 @@ export function useScrollTo({
 
         if (!distance) return
 
-        const animateScroll = () => {
-            const currentTime = performance.now()
-            const elapsed = currentTime - startTime
-            const time = elapsed / duration
-            const easeTime = easeInOutQuad(time)
+        const animateScroll = (currentTime: number) => {
+            const elapsedTime = currentTime - startTime
+            const time = elapsedTime / duration
+            const easeTime = easeInOutQuad(time > 1 ? 1 : time)
             const scrollDestination = currentPosition + distance * easeTime
 
             window.scrollTo({
@@ -48,11 +53,14 @@ export function useScrollTo({
                 behavior: 'smooth',
             })
 
-            if (time < 1 && !userInterrupt.current) requestAnimationFrame(animateScroll)
-            else frameID.current = 0
+            if (elapsedTime < duration && !userInterrupt.current) {
+                requestAnimationFrame(animateScroll)
+            } else {
+                frameID.current = 0
+            }
         }
 
-        animateScroll()
+        requestAnimationFrame(animateScroll)
     }, [selector, duration, offset])
 
     useEffect(() => {
@@ -65,7 +73,7 @@ export function useScrollTo({
             window.removeEventListener('wheel', handleInterrupt)
             window.removeEventListener('touchmove', handleInterrupt)
         }
-    }, [])
+    }, [selector])
 
     return scrollTo
 }
