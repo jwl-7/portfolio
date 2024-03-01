@@ -48,10 +48,7 @@ export function useScrollTo({
             const easeTime = easeInOutQuad(time > 1 ? 1 : time)
             const scrollDestination = currentPosition + distance * easeTime
 
-            window.scrollTo({
-                top: scrollDestination,
-                behavior: 'smooth',
-            })
+            window.scrollTo({ top: scrollDestination })
 
             if (elapsedTime < duration && !userInterrupt.current) {
                 requestAnimationFrame(animateScroll)
