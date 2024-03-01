@@ -20,30 +20,25 @@
 
     <style>
         :root {
-            --background-color: #2c292d;
-            --pacman-color: #fed75a;
+            --initial-background-color: #2c292d;
+            --pacman-color: #ffd866;
             --pacman-size: var(--ball-size) * 2.5;
             --ball-size: 15px;
         }
 
-        body,
-        html {
-            height: 100%;
-        }
-
         body {
-            background-color: var(--background-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background-color: var(--initial-background-color);
         }
 
         .pacman-loader {
-            position: relative;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
 
-        .pacman-loader>div:nth-child(1),
-        .pacman-loader>div:nth-child(2) {
+        .pacman-loader > div:nth-child(1),
+        .pacman-loader > div:nth-child(2) {
             border: calc(var(--ball-size) * 2.5) solid var(--pacman-color);
             border-right-color: transparent;
             border-radius: 50%;
@@ -54,14 +49,14 @@
             animation: rotate-pacman-half-up .5s infinite;
         }
 
-        .pacman-loader>div:nth-child(2) {
+        .pacman-loader > div:nth-child(2) {
             margin-top: calc(-1 * var(--pacman-size) * 2);
             animation-name: rotate-pacman-half-down;
         }
 
-        .pacman-loader>div:nth-child(3),
-        .pacman-loader>div:nth-child(4),
-        .pacman-loader>div:nth-child(5) {
+        .pacman-loader > div:nth-child(3),
+        .pacman-loader > div:nth-child(4),
+        .pacman-loader > div:nth-child(5) {
             background-color: var(--pacman-color);
             border-radius: 50%;
             width: var(--ball-size);
@@ -72,11 +67,11 @@
             animation: pacman-balls 1s infinite linear;
         }
 
-        .pacman-loader>div:nth-child(3) {
+        .pacman-loader > div:nth-child(3) {
             animation-delay: -.66s;
         }
 
-        .pacman-loader>div:nth-child(4) {
+        .pacman-loader > div:nth-child(4) {
             animation-delay: -.33s;
         }
 
