@@ -49,6 +49,7 @@ export default function NavBar() {
         const href = event.currentTarget.getAttribute('href')
         if (href && scrollDestinations.hasOwnProperty(href)) {
             scrollDestinations[href]()
+            window.history.replaceState({}, '', href)
         }
 
         collapseMobileNavBar()
