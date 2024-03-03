@@ -6,7 +6,7 @@ export default function SvgDjango() {
     const color = theme === 'dark' ? '#44B78B' : '#003A2B'
 
     return (
-        <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox="0 0 128 128">
             <path
                 fill={color}
                 d="M126.5 83.8c0 3.8-3.1 6.9-6.9 6.9H8.4c-3.8 0-6.9-3.1-6.9-6.9V44.2c0-3.8 3.1-6.9 6.9-6.9h111.2c3.8 0 6.9 3.1 6.9 6.9z"

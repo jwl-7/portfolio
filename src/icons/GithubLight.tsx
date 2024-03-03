@@ -1,6 +1,6 @@
 export default function SvgGithub() {
     return (
-        <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox="0 0 128 128">
             <g fill="#FFFFFF">
                 <path
                     fillRule="evenodd"

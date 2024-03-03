@@ -1,6 +1,6 @@
 export default function SvgBootstrap() {
     return (
-        <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox="0 0 128 128">
             <g fillRule="evenodd">
                 <path
                     fill="#f6f1fb"

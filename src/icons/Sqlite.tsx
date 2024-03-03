@@ -6,7 +6,7 @@ export default function SvgSqlite() {
     const color = theme === 'dark' ? '#007093' : '#003b57'
 
     return (
-        <svg preserveAspectRatio="xMidYMid" viewBox="0 0 6.554 6.555" xmlns="http://www.w3.org/2000/svg">
+        <svg preserveAspectRatio="xMidYMid" viewBox="0 0 6.554 6.555">
             <defs>
                 <linearGradient
                     id="sqlite_svg__a"

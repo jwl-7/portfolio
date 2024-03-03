@@ -1,6 +1,6 @@
 export default function SvgCss3() {
     return (
-        <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox="0 0 128 128">
             <path
                 fill="#1572B6"
                 d="M18.814 114.123 8.76 1.352h110.48l-10.064 112.754-45.243 12.543z"

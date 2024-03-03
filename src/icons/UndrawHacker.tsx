@@ -1,6 +1,6 @@
 export default function SvgUndrawHacker() {
     return (
-        <svg data-name="Layer 1" viewBox="0 0 1042.03903 709.08851" xmlns="http://www.w3.org/2000/svg">
+        <svg data-name="Layer 1" viewBox="0 0 1042.03903 709.08851">
             <path fill="#3f3d56" d="M0 0h875v470.679H0z" />
             <path
                 fill="#6c63ff"
