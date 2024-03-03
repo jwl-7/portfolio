@@ -54,12 +54,18 @@
     stroke-dasharray: 50
     filter: blur(1.5px)
 
+    @media (max-width: 768px)
+        animation: none
+
 .back .energy
     position: absolute
     z-index: 1
     animation: dash 41s linear infinite
     stroke-dasharray: 60
     filter: blur(6.5px)
+
+    @media (max-width: 768px)
+        animation: none
 
 .top .energy
     position: absolute
@@ -68,12 +74,18 @@
     stroke-dasharray: 60
     filter: blur(6.5px)
 
+    @media (max-width: 768px)
+        animation: none
+
 .bottom .energy
     position: absolute
     z-index: 1
     animation: dash 81s linear infinite
     stroke-dasharray: 60
     filter: blur(2.5px)
+
+    @media (max-width: 768px)
+        animation: none
 
 .right .energy,
 .left .energy
@@ -82,6 +94,9 @@
     animation: dash 61s linear infinite
     stroke-dasharray: 60
     filter: blur(2px)
+
+    @media (max-width: 768px)
+        animation: none
 
 @keyframes dash
     to
