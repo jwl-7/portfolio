@@ -7,6 +7,7 @@ import { useScrollDistance } from '@/hooks/useScrollDistance'
 import { useScrollTo } from '@/hooks/useScrollTo'
 
 import AnimateHeight from 'react-animate-height'
+import Brand from '@components/Brand'
 import clsx from '@/utils/clsx'
 import ThemeSwitch from '@components/ThemeSwitch'
 
@@ -87,7 +88,7 @@ export default function NavBar() {
     return (
         <nav ref={ref} className={classes}>
             <div className={styles.desktop}>
-                <div className={styles.brand}>JWL</div>
+                <Brand />
                 <div className={styles.desktopLinks}>
                     {renderNavLinks()}
                 </div>
