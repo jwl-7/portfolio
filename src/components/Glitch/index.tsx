@@ -8,9 +8,9 @@ export default function Glitch() {
 
     const renderDesktop = () => {
         return (
-            <div className={styles.glitch} data-text="Jonathan Lusk">
+            <h1 className={styles.glitch} data-text="Jonathan Lusk">
                 Jonathan Lusk
-            </div>
+            </h1>
         )
     }
 

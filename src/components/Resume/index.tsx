@@ -27,7 +27,7 @@ export default function Resume() {
     return (
         <section id="resume" className={styles.container}>
             <div className={styles.title}>
-                <h1>Resume</h1>
+                <h2>Resume</h2>
                 <hr />
             </div>
             <div className={styles.contentContainer}>
@@ -35,7 +35,7 @@ export default function Resume() {
                     <div className={styles.cardGroup}>
                         <div className={styles.card}>
                             <div className={styles.cardContent}>
-                                <h2 className={styles.cardTitle}>Education</h2>
+                                <h3 className={styles.cardTitle}>Education</h3>
                                 <hr />
                                 <div className={styles.cardBody}>
                                     <UTC />
@@ -47,7 +47,7 @@ export default function Resume() {
 
                         <div className={styles.card}>
                             <div className={styles.cardContent}>
-                                <h2 className={styles.cardTitle}>Programming Languages</h2>
+                                <h3 className={styles.cardTitle}>Programming Languages</h3>
                                 <hr />
                                 <div className={styles.cardBody}>
                                     <ul className={styles.list}>
@@ -63,7 +63,7 @@ export default function Resume() {
                     <div className={styles.cardGroup}>
                         <div className={styles.card}>
                             <div className={styles.cardContent}>
-                                <h2 className={styles.cardTitle}>Frontend</h2>
+                                <h3 className={styles.cardTitle}>Frontend</h3>
                                 <hr />
                                 <div className={styles.cardBody}>
                                     <ul className={styles.list}>
@@ -79,7 +79,7 @@ export default function Resume() {
 
                         <div className={styles.card}>
                             <div className={styles.cardContent}>
-                                <h2 className={styles.cardTitle}>Backend</h2>
+                                <h3 className={styles.cardTitle}>Backend</h3>
                                 <hr />
                                 <div className={styles.cardBody}>
                                     <ul className={styles.list}>
@@ -94,7 +94,7 @@ export default function Resume() {
 
                     <div className={styles.card}>
                         <div className={styles.cardContent}>
-                            <h2 className={styles.cardTitle}>Tools</h2>
+                            <h3 className={styles.cardTitle}>Tools</h3>
                             <hr />
                             <div className={styles.cardBody}>
                                 <ul className={styles.list}>

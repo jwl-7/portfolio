@@ -48,14 +48,14 @@ export default function Contact() {
     return (
         <section id="contact">
             <div className={styles.title}>
-                <h1>Contact</h1>
+                <h2>Contact</h2>
                 <hr />
             </div>
             <div className={styles.contentContainer}>
                 <Fade direction="up" triggerOnce>
                     <div className={styles.card}>
                         <div className="form-container">
-                            <span className={styles.contactHeader}>Send a Message</span>
+                            <h3 className={styles.contactHeader}>Send a Message</h3>
                             <form ref={form} className={formClassName} noValidate onSubmit={handleSubmit}>
                                 <div className={styles.formElement}>
                                     <label htmlFor="form-name">Name</label>
@@ -90,7 +90,7 @@ export default function Contact() {
                             </form>
                         </div>
                         <div className="info-container">
-                            <span className={styles.contactHeader}>Find Me On</span>
+                            <h3 className={styles.contactHeader}>Find Me On</h3>
                             <p>Feel free to connect with me or send me a message.</p>
                             <div className={styles.buttonContainer}>
                                 <a href="https://github.com/jwl-7" role="button" target="_blank">

@@ -19,7 +19,7 @@ export default function Projects() {
     return (
         <section id="projects" className={styles.container}>
             <div className={styles.title}>
-                <h1>Projects</h1>
+                <h2>Projects</h2>
                 <hr />
             </div>
             <Zoom triggerOnce>
@@ -27,7 +27,7 @@ export default function Projects() {
                     <div className={styles.card}>
                         <img className={styles.cardImage} src={NadeSpace} alt="nade.space-screenshot" height="400" width="600" />
                         <div className={styles.cardContent}>
-                            <h2 className={styles.cardTitle}>nade.space</h2>
+                            <h3 className={styles.cardTitle}>nade.space</h3>
                             <p className={styles.cardBody}>An interactive web-app for learning nades in CS:GO.</p>
                             <div className={styles.cardButtons}>
                                 <a href="https://github.com/jwl-7/nade.space" role="button" target="_blank">
@@ -43,7 +43,7 @@ export default function Projects() {
                     <div className={styles.card}>
                         <img className={styles.cardImage} src={StickBop} alt="Stick Bop!-screenshot" height="400" width="600" />
                         <div className={styles.cardContent}>
-                            <h2 className={styles.cardTitle}>Stick Bop!</h2>
+                            <h3 className={styles.cardTitle}>Stick Bop!</h3>
                             <p className={styles.cardBody}>A python game inspired by the 90s Bop It! toy.</p>
                             <div className={styles.cardButtons}>
                                 <a href="https://github.com/jwl-7/Stick-Bop" role="button" target="_blank">
@@ -59,7 +59,7 @@ export default function Projects() {
                     <div className={styles.card}>
                         <img className={styles.cardImage} src={Codex} alt="Codex-screenshot" height="400" width="600" />
                         <div className={styles.cardContent}>
-                            <h2 className={styles.cardTitle}>Codex</h2>
+                            <h3 className={styles.cardTitle}>Codex</h3>
                             <p className={styles.cardBody}>A python discord bot with Markov chain responses, slots, and more.</p>
                             <div className={styles.cardButtons}>
                                 <a href="https://github.com/jwl-7/Codex" role="button" target="_blank">
@@ -72,7 +72,7 @@ export default function Projects() {
                     <div className={styles.card}>
                         <img className={styles.cardImage} src={Portfolio} alt="Portfolio-screenshot" height="400" width="600" />
                         <div className={styles.cardContent}>
-                            <h2 className={styles.cardTitle}>Cyberfolio</h2>
+                            <h3 className={styles.cardTitle}>Cyberfolio</h3>
                             <p className={styles.cardBody}>A modern portfolio website made with ReactJS.</p>
                             <div className={styles.cardButtons}>
                                 <a href="https://github.com/jwl-7/portfolio" role="button" target="_blank">
@@ -85,7 +85,7 @@ export default function Projects() {
                     <div className={styles.card}>
                         <img className={styles.cardImage} src={CodeGrind} alt="C0de Gr1nd-screenshot" height="400" width="600" />
                         <div className={styles.cardContent}>
-                            <h2 className={styles.cardTitle}>c0de_gr1nd</h2>
+                            <h3 className={styles.cardTitle}>c0de_gr1nd</h3>
                             <p className={styles.cardBody}>An interactive web-app for learning nades in CS:GO.</p>
                             <div className={styles.cardButtons}>
                                 <a href="https://github.com/jwl-7/c0de_gr1nd" role="button" target="_blank">
@@ -98,7 +98,7 @@ export default function Projects() {
                     <div className={styles.card}>
                         <img className={styles.cardImage} src={KZBot} alt="KZBOT-screenshot" height="400" width="600" />
                         <div className={styles.cardContent}>
-                            <h2 className={styles.cardTitle}>KZBOT</h2>
+                            <h3 className={styles.cardTitle}>KZBOT</h3>
                             <p className={styles.cardBody}>A python discord bot for CS:GO KZ community servers.</p>
                             <div className={styles.cardButtons}>
                                 <a href="https://github.com/jwl-7/kzbot" role="button" target="_blank">
@@ -111,7 +111,7 @@ export default function Projects() {
                     <div className={styles.card}>
                         <img className={styles.cardImage} src={LeetCodeThemes} alt="LeetCode Themes-screenshot" height="400" width="600" />
                         <div className={styles.cardContent}>
-                            <h2 className={styles.cardTitle}>LeetCode Themes</h2>
+                            <h3 className={styles.cardTitle}>LeetCode Themes</h3>
                             <p className={styles.cardBody}>A firefox browser extension a firefox browser extension for customizing the LeetCode editor.</p>
                             <div className={styles.cardButtons}>
                                 <a href="https://github.com/jwl-7/leetcode-themes" role="button" target="_blank">

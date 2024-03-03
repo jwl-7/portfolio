@@ -10,7 +10,7 @@ export default function About() {
     return (
         <section id="about">
             <div className={styles.title}>
-                <h1>About</h1>
+                <h2>About</h2>
                 <hr />
             </div>
             <div className={styles.contentContainer}>
