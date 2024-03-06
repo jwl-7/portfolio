@@ -9,6 +9,7 @@ import MacDesktop from '@icons/MacDesktop'
 import CodeGrind from '@images/codegrind-ss.webp'
 import Codex from '@images/codex-ss.webp'
 import KZBot from '@images/kzbot-ss.webp'
+import LeetCodeCheatsheet from '@images/leetcode-cheatsheet-ss.webp'
 import LeetCodeThemes from '@images/leetcode-themes-ss.webp'
 import NadeSpace from '@images/nadespace-ss.webp'
 import Portfolio from '@images/portfolio-ss.webp'
@@ -119,6 +120,22 @@ export default function Projects() {
                                 </a>
                                 <a href="https://addons.mozilla.org/en-US/firefox/addon/leetcode-themes/" role="button" target="_blank">
                                     <Download /> Download
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className={styles.card}>
+                        <img className={styles.cardImage} src={LeetCodeCheatsheet} alt="LeetCode Cheatsheet-screenshot" height="400" width="600" />
+                        <div className={styles.cardContent}>
+                            <h3 className={styles.cardTitle}>LeetCode Cheatsheet</h3>
+                            <p className={styles.cardBody}>Cheatsheet for LeetCode problems and algorithms with a modern glassmorphism design.</p>
+                            <div className={styles.cardButtons}>
+                                <a href="https://github.com/jwl-7/leetcode-cheatsheet" role="button" target="_blank">
+                                    <GithubLight /> Source
+                                </a>
+                                <a href="https://jwl-7.github.io/leetcode-cheatsheet/" role="button" target="_blank">
+                                    <MacDesktop /> Live
                                 </a>
                             </div>
                         </div>
