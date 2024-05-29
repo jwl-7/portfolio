@@ -8,6 +8,7 @@ import MacDesktop from '@icons/MacDesktop'
 
 import CodeGrind from '@images/codegrind-ss.webp'
 import Codex from '@images/codex-ss.webp'
+import AppleMusicDiscordStatus from '@images/applemusic-discord-status-ss.webp'
 import KZBot from '@images/kzbot-ss.webp'
 import LeetCodeCheatsheet from '@images/leetcode-cheatsheet-ss.webp'
 import LeetCodeThemes from '@images/leetcode-themes-ss.webp'
@@ -136,6 +137,22 @@ export default function Projects() {
                                 </a>
                                 <a href="https://jwl-7.github.io/leetcode-cheatsheet/" role="button" target="_blank">
                                     <MacDesktop /> Live
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className={styles.card}>
+                        <img className={styles.cardImage} src={AppleMusicDiscordStatus} alt="AppleMusic Discord Status-screenshot" height="400" width="600" />
+                        <div className={styles.cardContent}>
+                            <h3 className={styles.cardTitle}>AppleMusic - Discord Status</h3>
+                            <p className={styles.cardBody}>Windows app for updating Discord status with Apple Music info via Rich Text Presence.</p>
+                            <div className={styles.cardButtons}>
+                                <a href="https://github.com/jwl-7/applemusic-discord-status" role="button" target="_blank">
+                                    <GithubLight /> Source
+                                </a>
+                                <a href="https://github.com/jwl-7/applemusic-discord-status/releases/" role="button" target="_blank">
+                                    <Download /> Download
                                 </a>
                             </div>
                         </div>
