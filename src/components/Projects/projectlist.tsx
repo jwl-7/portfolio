@@ -1,6 +1,7 @@
 import imgAppleMusicDiscordStatus from '@images/applemusic-discord-status-ss.webp'
 import imgCodeGrind from '@images/codegrind-ss.webp'
 import imgCodex from '@images/codex-ss.webp'
+import imgCodexCFW from '@images/codex-cfw-ss.webp'
 import imgKZBot from '@images/kzbot-ss.webp'
 import imgLeetCodeCheatsheet from '@images/leetcode-cheatsheet-ss.webp'
 import imgLeetCodeThemes from '@images/leetcode-themes-ss.webp'
@@ -10,6 +11,12 @@ import imgStickBop from '@images/stickbop-ss.webp'
 
 
 export default [
+    {
+        title: 'Codex CFW',
+        description: 'A serverless Discord bot that utilizes the Discord Interaction API and integrates with CloudFlare Service Workers.',
+        imgSrc: imgCodexCFW,
+        sourceUrl: 'https://github.com/jwl-7/codex-cfw',
+    },
     {
         title: 'Apple Music - Discord Status',
         description: 'Windows app for updating Discord status with Apple Music info via Rich Text Presence.',
