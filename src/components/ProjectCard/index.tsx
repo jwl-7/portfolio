@@ -27,8 +27,6 @@ export default function ProjectCard(props: ProjectCardProps) {
         return technology.map(name => {
             const iconName = `Svg${name}`
             const SvgIcon = Icons[iconName]
-            console.log('iconName =', iconName)
-            console.log('SvgIcon =', SvgIcon)
             return <SvgIcon key={iconName} />
         })
     }
