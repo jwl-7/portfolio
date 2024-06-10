@@ -1,0 +1,31 @@
+.device
+    position: relative
+    padding: 20px 20px 0 20px
+    height: auto
+    width: 100%
+
+.frame
+    position: relative
+    background: #0d0d0d
+    border-radius: 20px
+    box-shadow: inset 0 0 0 2px #c6c7c8
+    padding: 9px 9px 23px 9px
+    height: auto
+    width: 100%
+
+    &::after
+        position: absolute
+        content: ''
+        background: var(--screen-metal-gradient)
+        border-radius: 0 0 19px 19px
+        bottom: 2px
+        left: var(--screen-metal-left)
+        height: 24px
+        width: var(--screen-metal-width)
+
+.screen
+    aspect-ratio: 8 / 5
+    border: 2px solid #121212
+    border-radius: 10px 10px 0 0
+    height: auto
+    width: 100%

@@ -1,6 +1,7 @@
 import styles from './projectcard.module.sass'
 
 import Icons from '@/icons'
+import Screen from '@components/Screen'
 
 
 interface ProjectCardProps {
@@ -44,7 +45,7 @@ export default function ProjectCard(props: ProjectCardProps) {
 
     return (
         <div className={styles.card}>
-            <img className={styles.cardImage} src={imgSrc} alt={getImgAltFromFilename()} height="400" width="600" />
+            <Screen imgSrc={imgSrc} alt={getImgAltFromFilename()} />
             <div className={styles.cardContent}>
                 <div className={styles.cardIcons}>{renderTechnologyIcons()}</div>
                 <h3 className={styles.cardTitle}>{title}</h3>
