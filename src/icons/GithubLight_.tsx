@@ -1,4 +1,4 @@
-export default function SvgGithub() {
+export function SvgGithub() {
     return (
         <svg viewBox="0 0 128 128">
             <g fill="#FFFFFF">
