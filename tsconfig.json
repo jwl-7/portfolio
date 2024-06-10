@@ -28,6 +28,8 @@
         // Bundler
         "moduleResolution": "bundler",
         "allowImportingTsExtensions": true,
+        "allowSyntheticDefaultImports": true,
+        "composite": true,
         "resolveJsonModule": true,
         "isolatedModules": true,
         "noEmit": true,
@@ -41,7 +43,7 @@
     },
     "include": [
         "src",
-        "@styles/styles.d.ts"
-    ],
-    "references": [{ "path": "./tsconfig.node.json" }]
+        "@styles/styles.d.ts",
+        "vite.config.ts"
+    ]
 }
