@@ -4,8 +4,8 @@ import { FormEvent, useRef, useState } from 'react'
 import { Fade } from 'react-awesome-reveal'
 
 import emailjs from '@emailjs/browser'
-import GithubLight from '@icons/GithubLight'
-import LinkedIn from '@icons/LinkedIn'
+import SvgGithubLight from '@icons/GithubLight'
+import SvgLinkedIn from '@icons/LinkedIn'
 
 
 const API_KEY = import.meta.env.VITE_EMAILJS_API_KEY
@@ -94,10 +94,10 @@ export default function Contact() {
                             <p>Feel free to connect with me or send me a message.</p>
                             <div className={styles.buttonContainer}>
                                 <a href="https://github.com/jwl-7" role="button" target="_blank">
-                                    <GithubLight /> GitHub
+                                    <SvgGithubLight /> GitHub
                                 </a>
                                 <a href="https://linkedin.com/in/jonathanwlusk/" role="button" target="_blank">
-                                    <LinkedIn /> LinkedIn
+                                    <SvgLinkedIn /> LinkedIn
                                 </a>
                             </div>
                         </div>

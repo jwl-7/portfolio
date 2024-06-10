@@ -7,11 +7,6 @@ import ProjectList from '@components/Projects/projectlist'
 
 
 export default function Projects() {
-    const getImgAltFromFilename = (imgSrc: string): string => {
-        const imageName = imgSrc.substring(imgSrc.lastIndexOf('/') + 1, imgSrc.lastIndexOf('.webp'))
-        return imageName.replace('-ss', ' screenshot')
-    }
-
     return (
         <section id="projects" className={styles.container}>
             <div className={styles.title}>
@@ -23,8 +18,9 @@ export default function Projects() {
                     {ProjectList.map(project => {
                         return (
                             <ProjectCard
+                                key={project.title}
                                 imgSrc={project.imgSrc}
-                                imgAlt={getImgAltFromFilename(project.imgSrc)}
+                                technology={project.technology}
                                 title={project.title}
                                 description={project.description}
                                 sourceUrl={project?.sourceUrl}

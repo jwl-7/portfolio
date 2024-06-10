@@ -2,25 +2,7 @@ import styles from './resume.module.sass'
 
 import { Flip } from 'react-awesome-reveal'
 
-import Bootstrap from '@icons/Bootstrap'
-import CircleCi from '@icons/CircleCi'
-import Cypress from '@icons/Cypress'
-import Django from '@icons/Django'
-import Docker from '@icons/Docker'
-import Git from '@icons/Git'
-import Github from '@icons/Github'
-import File from '@icons/File'
-import JavaScript from '@icons/Javascript'
-import Linux from '@icons/Linux'
-import Mui from '@icons/Mui'
-import MySql from '@/icons/Mysql'
-import Python from '@icons/Python'
-import React from '@icons/React'
-import Sass from '@icons/Sass'
-import SourcePawn from '@icons/Sourcemod'
-import SQLite from '@icons/Sqlite'
-import UTC from '@icons/UtcLogo'
-import VSCode from '@icons/Vscode'
+import Icons from '@/icons'
 
 
 export default function Resume() {
@@ -38,7 +20,7 @@ export default function Resume() {
                                 <h3 className={styles.cardTitle}>Education</h3>
                                 <hr />
                                 <div className={styles.cardBody}>
-                                    <UTC />
+                                    <Icons.SvgUtcLogo />
                                     &nbsp;&nbsp;University of Tennessee at Chattanooga<br />
                                     B.S. Computer Science: Information Security and Assurance
                                 </div>
@@ -51,9 +33,10 @@ export default function Resume() {
                                 <hr />
                                 <div className={styles.cardBody}>
                                     <ul className={styles.list}>
-                                        <li><Python />&nbsp;&nbsp;Python</li>
-                                        <li><JavaScript />&nbsp;&nbsp;JavaScript</li>
-                                        <li><SourcePawn />&nbsp;&nbsp;SourcePawn</li>
+                                        <li><Icons.SvgPython />&nbsp;&nbsp;Python</li>
+                                        <li><Icons.SvgJavaScript />&nbsp;&nbsp;JavaScript</li>
+                                        <li><Icons.SvgTypeScript />&nbsp;&nbsp;TypeScript</li>
+                                        <li><Icons.SvgSourceMod />&nbsp;&nbsp;SourcePawn</li>
                                     </ul>
                                 </div>
                             </div>
@@ -67,11 +50,11 @@ export default function Resume() {
                                 <hr />
                                 <div className={styles.cardBody}>
                                     <ul className={styles.list}>
-                                        <li><React />&nbsp;&nbsp;React</li>
-                                        <li><Cypress />&nbsp;&nbsp;Cypress</li>
-                                        <li><Sass />&nbsp;&nbsp;Sass</li>
-                                        <li><Bootstrap />&nbsp;&nbsp;Bootstrap</li>
-                                        <li><Mui />&nbsp;&nbsp;MaterialUI</li>
+                                        <li><Icons.SvgReact />&nbsp;&nbsp;React</li>
+                                        <li><Icons.SvgCypress />&nbsp;&nbsp;Cypress</li>
+                                        <li><Icons.SvgSass />&nbsp;&nbsp;Sass</li>
+                                        <li><Icons.SvgBootstrap />&nbsp;&nbsp;Bootstrap</li>
+                                        <li><Icons.SvgMUI />&nbsp;&nbsp;MaterialUI</li>
                                     </ul>
                                 </div>
                             </div>
@@ -83,9 +66,9 @@ export default function Resume() {
                                 <hr />
                                 <div className={styles.cardBody}>
                                     <ul className={styles.list}>
-                                        <li><Django />&nbsp;&nbsp;Django</li>
-                                        <li><MySql />&nbsp;&nbsp;MySQL</li>
-                                        <li><SQLite />&nbsp;&nbsp;SQLite</li>
+                                        <li><Icons.SvgDjango />&nbsp;&nbsp;Django</li>
+                                        <li><Icons.SvgMySQL />&nbsp;&nbsp;MySQL</li>
+                                        <li><Icons.SvgSQLite />&nbsp;&nbsp;SQLite</li>
                                     </ul>
                                 </div>
                             </div>
@@ -98,12 +81,12 @@ export default function Resume() {
                             <hr />
                             <div className={styles.cardBody}>
                                 <ul className={styles.list}>
-                                    <li><VSCode />&nbsp;&nbsp;VSCode</li>
-                                    <li><Linux />&nbsp;&nbsp;Linux</li>
-                                    <li><Git />&nbsp;&nbsp;Git</li>
-                                    <li><Github />&nbsp;&nbsp;GitHub</li>
-                                    <li><CircleCi />&nbsp;&nbsp;CircleCi</li>
-                                    <li><Docker />&nbsp;&nbsp;Docker</li>
+                                    <li><Icons.SvgVSCode />&nbsp;&nbsp;VSCode</li>
+                                    <li><Icons.SvgLinux />&nbsp;&nbsp;Linux</li>
+                                    <li><Icons.SvgGit />&nbsp;&nbsp;Git</li>
+                                    <li><Icons.SvgGithub />&nbsp;&nbsp;GitHub</li>
+                                    <li><Icons.SvgCircleCi />&nbsp;&nbsp;CircleCi</li>
+                                    <li><Icons.SvgDocker />&nbsp;&nbsp;Docker</li>
                                 </ul>
                             </div>
                         </div>
@@ -112,7 +95,7 @@ export default function Resume() {
             </div>
             <div className={styles.buttonContainer}>
                 <a href="./files/resume.pdf" className={styles.button} role="button" target="_blank">
-                    <File /> View Resume PDF
+                    <Icons.SvgFile /> View Resume PDF
                 </a>
             </div>
         </section>
