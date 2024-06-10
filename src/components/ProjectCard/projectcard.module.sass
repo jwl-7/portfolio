@@ -3,10 +3,15 @@
     border: 1px solid var(--card-border-color)
     border-radius: var(--card-border-radius)
     box-shadow: var(--card-box-shadow)
+    display: flex
+    flex-direction: column
     transition-property: var(--style-transition-property)
     transition-duration: var(--style-transition-duration)
 
 .cardContent
+    display: flex
+    flex-direction: column
+    flex-grow: 1
     padding: var(--card-padding)
 
 .cardIcons
@@ -30,3 +35,4 @@
     display: flex
     flex-wrap: wrap
     gap: 12px
+    margin-top: auto
