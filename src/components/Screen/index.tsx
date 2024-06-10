@@ -7,11 +7,11 @@ interface ScreenProps {
 }
 
 
-export default function Screen(props: ScreenProps) {
+export function Screen({ imgSrc, alt }: ScreenProps) {
     return (
         <div className={styles.device}>
             <div className={styles.frame}>
-                <img className={styles.screen} src={props.imgSrc} alt={props.alt} />
+                <img className={styles.screen} src={imgSrc} alt={alt} />
             </div>
         </div>
     )

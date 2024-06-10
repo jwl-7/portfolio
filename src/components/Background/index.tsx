@@ -3,7 +3,7 @@ import styles from './background.module.sass'
 import { useTheme } from '@hooks/useTheme'
 
 
-export default function Background() {
+export function Background() {
     const theme = useTheme()
     const colors = theme === 'dark' ? {
         line: '#1B413C',

@@ -1,4 +1,4 @@
-export function SvgGithub() {
+export function SvgGitHubLight() {
     return (
         <svg viewBox="0 0 128 128">
             <g fill="#FFFFFF">

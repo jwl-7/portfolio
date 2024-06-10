@@ -1,5 +1,5 @@
 
-export default function SvgDiscordPy() {
+export function SvgDiscordPy() {
     return (
         <svg id="layer_1" x="0px" y="0px" viewBox="0 0 864 864">
             <rect fill="#252525" id="background" x="-1" width="865" height="864" />

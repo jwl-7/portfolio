@@ -1,4 +1,4 @@
-export default function SvgSourcemod() {
+export function SvgSourceMod() {
     return (
         <svg viewBox="0 0 180.622 180.622">
             <path fill="#d0d2d6" d="M0 180.622h180.622V0H0z" />

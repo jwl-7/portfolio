@@ -1,38 +1,37 @@
-import { ReactElement, ReactNode } from 'react'
-
-import SvgBootstrap from './Bootstrap'
-import SvgCircleCi from './CircleCi'
-import SvgCsharp from './Csharp'
-import SvgCss3 from './Css3'
-import SvgCypress from './Cypress'
-import SvgDiscordApp from './DiscordApp'
-import SvgDiscordPy from './DiscordPy'
-import SvgDjango from './Django'
-import SvgDocker from './Docker'
-import SvgDownload from './Download'
-import SvgFile from './File'
-import SvgFirefox from './Firefox'
-import SvgGit from './Git'
-import SvgGithub from './Github'
-import SvgGithubLight from './GithubLight'
-import SvgHtml5 from './Html5'
-import SvgJavaScript from './JavaScript'
-import SvgLinkedIn from './LinkedIn'
-import SvgLinux from './Linux'
-import SvgMacDesktop from './MacDesktop'
-import SvgMUI from './MUI'
-import SvgMySQL from './MySQL'
-import SvgPyGame from './PyGame'
-import SvgPython from './Python'
-import SvgReact from './React'
-import SvgSass from './Sass'
-import SvgSourceMod from './SourceMod'
-import SvgSQLite from './SQLite'
-import SvgTypeScript from './TypeScript'
-import SvgUndrawHacker from './UndrawHacker'
-import SvgUtcLogo from './UtcLogo'
-import SvgVSCode from './VSCode'
-import SvgWindows from './Windows'
+import { ReactElement } from 'react'
+import { SvgBootstrap } from './Bootstrap'
+import { SvgCircleCi } from './CircleCi'
+import { SvgCsharp } from './Csharp'
+import { SvgCss3 } from './Css3'
+import { SvgCypress } from './Cypress'
+import { SvgDiscordApp } from './DiscordApp'
+import { SvgDiscordPy } from './DiscordPy'
+import { SvgDjango } from './Django'
+import { SvgDocker } from './Docker'
+import { SvgDownload } from './Download'
+import { SvgFile } from './File'
+import { SvgFirefox } from './Firefox'
+import { SvgGit } from './Git'
+import { SvgGitHub } from './GitHub'
+import { SvgGitHubLight } from './GitHubLight'
+import { SvgHtml5 } from './Html5'
+import { SvgJavaScript } from './JavaScript'
+import { SvgLinkedIn } from './LinkedIn'
+import { SvgLinux } from './Linux'
+import { SvgMacDesktop } from './MacDesktop'
+import { SvgMUI } from './MUI'
+import { SvgMySQL } from './MySQL'
+import { SvgPyGame } from './PyGame'
+import { SvgPython } from './Python'
+import { SvgReact } from './React'
+import { SvgSass } from './Sass'
+import { SvgSourceMod } from './SourceMod'
+import { SvgSQLite } from './SQLite'
+import { SvgTypeScript } from './TypeScript'
+import { SvgUndrawHacker } from './UndrawHacker'
+import { SvgUtcLogo } from './UtcLogo'
+import { SvgVSCode } from './VSCode'
+import { SvgWindows } from './Windows'
 
 
 interface IconComponent {
@@ -40,7 +39,7 @@ interface IconComponent {
 }
 
 
-const Icons: IconComponent = {
+export const Icons: IconComponent = {
     SvgBootstrap,
     SvgCircleCi,
     SvgCsharp,
@@ -54,8 +53,8 @@ const Icons: IconComponent = {
     SvgFirefox,
     SvgFile,
     SvgGit,
-    SvgGithub,
-    SvgGithubLight,
+    SvgGitHub,
+    SvgGitHubLight,
     SvgHtml5,
     SvgJavaScript,
     SvgLinkedIn,
@@ -75,6 +74,3 @@ const Icons: IconComponent = {
     SvgVSCode,
     SvgWindows
 }
-
-
-export default Icons

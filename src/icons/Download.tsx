@@ -1,4 +1,4 @@
-export default function SvgDownload() {
+export function SvgDownload() {
     return (
         <svg
             fill="currentColor"

@@ -1,7 +1,7 @@
 import styles from './terminal.module.sass'
 
 
-export default function Terminal() {
+export function Terminal() {
     return (
         <div className={styles.terminal}>
             <div className={styles.topBar}>

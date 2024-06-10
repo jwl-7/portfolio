@@ -6,7 +6,7 @@ import { useScrollTo } from '@hooks/useScrollTo'
 const NAVBAR_HEIGHT = 76
 
 
-export default function ScrollDownButton() {
+export function ScrollDownButton() {
     const handleClick = useScrollTo({ selector: '#about', offset: NAVBAR_HEIGHT - 2 })
 
     return (

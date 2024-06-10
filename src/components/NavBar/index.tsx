@@ -1,21 +1,21 @@
 import styles from './navbar.module.sass'
 
+import AnimateHeight from 'react-animate-height'
+
 import { MouseEvent, useState, useRef } from 'react'
 import { useMediaQuery } from 'react-responsive'
 import { useClickOutside } from '@/hooks/useClickOutside'
 import { useScrollDistance } from '@/hooks/useScrollDistance'
 import { useScrollTo } from '@/hooks/useScrollTo'
-
-import AnimateHeight from 'react-animate-height'
-import Brand from '@components/Brand'
-import clsx from '@/utils/clsx'
-import ThemeSwitch from '@components/ThemeSwitch'
+import { Brand } from '@components/Brand'
+import { clsx } from '@/utils/clsx'
+import { ThemeSwitch } from '@components/ThemeSwitch'
 
 
 const NAVBAR_HEIGHT = 76
 
 
-export default function NavBar() {
+export function NavBar() {
     const ref = useRef<HTMLElement | null>(null)
     const isScrollDistanceReached = useScrollDistance(NAVBAR_HEIGHT)
     const [isCollapsed, setIsCollapsed] = useState(true)

@@ -1,7 +1,7 @@
 import { images } from '@/images'
 
 
-export default [{
+export const ProjectList = [{
         title: 'Codex CFW',
         technology: ['TypeScript', 'DiscordApp'],
         description: 'A serverless Discord bot that utilizes the Discord Interaction API and integrates with CloudFlare Service Workers.',

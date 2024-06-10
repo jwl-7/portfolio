@@ -1,4 +1,4 @@
-export default function SvgCsharp() {
+export function SvgCsharp() {
     return (
         <svg width="256px" height="288px" viewBox="0 0 256 288" preserveAspectRatio="xMidYMid">
             <g>

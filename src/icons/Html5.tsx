@@ -1,4 +1,4 @@
-export default function SvgHtml5() {
+export function SvgHtml5() {
     return (
         <svg viewBox="0 0 128 128">
             <path

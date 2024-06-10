@@ -1,7 +1,7 @@
 import styles from './projectcard.module.sass'
 
-import Icons from '@/icons'
-import Screen from '@components/Screen'
+import { Icons } from '@/icons'
+import { Screen } from '@components/Screen'
 
 
 interface ProjectCardProps {
@@ -15,9 +15,15 @@ interface ProjectCardProps {
 }
 
 
-export default function ProjectCard(props: ProjectCardProps) {
-    const { imgSrc, title, technology, description, sourceUrl, downloadUrl, liveUrl } = props
-
+export function ProjectCard({
+    imgSrc,
+    title,
+    technology,
+    description,
+    sourceUrl,
+    downloadUrl,
+    liveUrl
+}: ProjectCardProps) {
     const getImgAltFromFilename = (): string => {
         const imageName = imgSrc.substring(imgSrc.lastIndexOf('/') + 1, imgSrc.lastIndexOf('.webp'))
         return imageName.replace('-ss', ' screenshot')
@@ -34,7 +40,7 @@ export default function ProjectCard(props: ProjectCardProps) {
     const renderButtons = () => {
         return (
             <>
-                {sourceUrl && <a href={sourceUrl} role="button" target="_blank"><Icons.SvgGithubLight /> Source</a>}
+                {sourceUrl && <a href={sourceUrl} role="button" target="_blank"><Icons.SvgGitHubLight /> Source</a>}
                 {downloadUrl && <a href={downloadUrl} role="button" target="_blank"><Icons.SvgDownload /> Download</a>}
                 {liveUrl && <a href={liveUrl} role="button" target="_blank"><Icons.SvgMacDesktop /> Live</a>}
             </>

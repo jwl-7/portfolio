@@ -1,11 +1,10 @@
 import styles from './resume.module.sass'
 
 import { Flip } from 'react-awesome-reveal'
+import { Icons } from '@/icons'
 
-import Icons from '@/icons'
 
-
-export default function Resume() {
+export function Resume() {
     return (
         <section id="resume" className={styles.container}>
             <div className={styles.title}>
@@ -84,7 +83,7 @@ export default function Resume() {
                                     <li><Icons.SvgVSCode />&nbsp;&nbsp;VSCode</li>
                                     <li><Icons.SvgLinux />&nbsp;&nbsp;Linux</li>
                                     <li><Icons.SvgGit />&nbsp;&nbsp;Git</li>
-                                    <li><Icons.SvgGithub />&nbsp;&nbsp;GitHub</li>
+                                    <li><Icons.SvgGitHub />&nbsp;&nbsp;GitHub</li>
                                     <li><Icons.SvgCircleCi />&nbsp;&nbsp;CircleCi</li>
                                     <li><Icons.SvgDocker />&nbsp;&nbsp;Docker</li>
                                 </ul>

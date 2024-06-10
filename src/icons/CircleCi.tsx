@@ -1,7 +1,7 @@
 import { useTheme } from '@hooks/useTheme'
 
 
-export default function SvgCircleCi() {
+export function SvgCircleCi() {
     const theme = useTheme()
     const color = theme === 'dark' ? '#FFFFFF' : '#161616'
 

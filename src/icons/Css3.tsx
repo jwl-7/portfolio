@@ -1,4 +1,4 @@
-export default function SvgCss3() {
+export function SvgCss3() {
     return (
         <svg viewBox="0 0 128 128">
             <path

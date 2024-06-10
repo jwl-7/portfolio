@@ -1,12 +1,11 @@
 import styles from './projects.module.sass'
 
 import { Zoom } from 'react-awesome-reveal'
+import { ProjectCard } from '@components/ProjectCard'
+import { ProjectList } from './projectlist'
 
-import ProjectCard from '@components/ProjectCard'
-import ProjectList from '@components/Projects/projectlist'
 
-
-export default function Projects() {
+export function Projects() {
     return (
         <section id="projects" className={styles.container}>
             <div className={styles.title}>

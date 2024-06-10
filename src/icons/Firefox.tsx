@@ -1,4 +1,4 @@
-export default function SvgFirefox() {
+export function SvgFirefox() {
     return (
         <svg width="77.42" height="79.97" viewBox="0 0 77.42 79.97">
             <defs>

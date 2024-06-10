@@ -1,7 +1,7 @@
 import { useTheme } from '@hooks/useTheme'
 
 
-export function SvgGithub() {
+export function SvgGitHub() {
     const theme = useTheme()
     const color = theme === 'dark' ? '#FFFFFF' : '#181616'
 

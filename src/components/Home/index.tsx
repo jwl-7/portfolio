@@ -1,11 +1,11 @@
 import styles from './home.module.sass'
 
-import Glitch from '@components/Glitch'
-import Background from '@components/Background'
-import ScrollDownButton from '@components/ScrollDownButton'
+import { Glitch } from '@components/Glitch'
+import { Background } from '@components/Background'
+import { ScrollDownButton } from '@components/ScrollDownButton'
 
 
-export default function Home() {
+export function Home() {
     return (
         <section id="home" className={styles.home}>
             <Background />

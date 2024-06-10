@@ -1,4 +1,4 @@
-export default function SvgTypeScript() {
+export function SvgTypeScript() {
     return (
         <svg fill="none" height="512" viewBox="0 0 512 512" width="512">
             <rect fill="#3178c6" height="512" rx="50" width="512" />

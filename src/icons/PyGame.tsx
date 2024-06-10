@@ -1,8 +1,8 @@
-export default function SvgPyGame() {
+export function SvgPyGame() {
     return (
         <svg viewBox="0 0 200 200">
             <defs>
-                <filter id="a" color-interpolation-filters="sRGB">
+                <filter id="a" colorInterpolationFilters="sRGB">
                     <feMorphology in="SourceAlpha" radius="4.3" result="result91" />
                     <feComposite in="SourceGraphic" in2="result91" operator="out" />
                     <feGaussianBlur result="result0" stdDeviation="1.2" />

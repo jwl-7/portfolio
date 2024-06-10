@@ -3,7 +3,7 @@ import styles from './glitch.module.sass'
 import { useMediaQuery } from 'react-responsive'
 
 
-export default function Glitch() {
+export function Glitch() {
     const isScreenMd = useMediaQuery({ maxWidth: 768 })
 
     const renderDesktop = () => {

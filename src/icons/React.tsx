@@ -1,4 +1,4 @@
-export default function SvgReact() {
+export function SvgReact() {
     return (
         <svg viewBox="0 0 128 128">
             <g fill="#61DAFB">

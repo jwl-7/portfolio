@@ -2,10 +2,10 @@ import styles from './contact.module.sass'
 
 import { FormEvent, useRef, useState } from 'react'
 import { Fade } from 'react-awesome-reveal'
+import { SvgGitHubLight } from '@icons/GitHubLight'
+import { SvgLinkedIn } from '@icons/LinkedIn'
 
 import emailjs from '@emailjs/browser'
-import SvgGithubLight from '@icons/GithubLight'
-import SvgLinkedIn from '@icons/LinkedIn'
 
 
 const API_KEY = import.meta.env.VITE_EMAILJS_API_KEY
@@ -13,7 +13,7 @@ const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
 const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
 
 
-export default function Contact() {
+export function Contact() {
     const form = useRef<HTMLFormElement>(null)
     const [formSubmitted, setFormSubmitted] = useState(false)
     const formClassName = formSubmitted ? 'submitted' : ''
@@ -94,7 +94,7 @@ export default function Contact() {
                             <p>Feel free to connect with me or send me a message.</p>
                             <div className={styles.buttonContainer}>
                                 <a href="https://github.com/jwl-7" role="button" target="_blank">
-                                    <SvgGithubLight /> GitHub
+                                    <SvgGitHubLight /> GitHub
                                 </a>
                                 <a href="https://linkedin.com/in/jonathanwlusk/" role="button" target="_blank">
                                     <SvgLinkedIn /> LinkedIn

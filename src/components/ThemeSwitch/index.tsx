@@ -3,7 +3,7 @@ import styles from './themeswitch.module.sass'
 import { useState, useEffect } from 'react'
 
 
-export default function ThemeSwitch() {
+export function ThemeSwitch() {
     const htmlElement = document.documentElement
     const [darkMode, setDarkMode] = useState(false)
 
