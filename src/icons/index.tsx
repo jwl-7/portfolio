@@ -18,9 +18,11 @@ import { SvgHtml5 } from './Html5'
 import { SvgJavaScript } from './JavaScript'
 import { SvgLinkedIn } from './LinkedIn'
 import { SvgLinux } from './Linux'
+import { SvgLua } from './Lua'
 import { SvgMacDesktop } from './MacDesktop'
 import { SvgMUI } from './MUI'
 import { SvgMySQL } from './MySQL'
+import { SvgPostgreSQL } from './PostgreSQL'
 import { SvgPyGame } from './PyGame'
 import { SvgPython } from './Python'
 import { SvgReact } from './React'
@@ -59,9 +61,11 @@ export const Icons: IconComponent = {
     SvgJavaScript,
     SvgLinkedIn,
     SvgLinux,
+    SvgLua,
     SvgMacDesktop,
     SvgMUI,
     SvgMySQL,
+    SvgPostgreSQL,
     SvgPyGame,
     SvgPython,
     SvgReact,

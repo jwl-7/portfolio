@@ -35,6 +35,8 @@ export function Resume() {
                                         <li><Icons.SvgPython />&nbsp;&nbsp;Python</li>
                                         <li><Icons.SvgJavaScript />&nbsp;&nbsp;JavaScript</li>
                                         <li><Icons.SvgTypeScript />&nbsp;&nbsp;TypeScript</li>
+                                        <li><Icons.SvgCsharp />&nbsp;&nbsp;C#</li>
+                                        <li><Icons.SvgLua />&nbsp;&nbsp;Lua</li>
                                         <li><Icons.SvgSourceMod />&nbsp;&nbsp;SourcePawn</li>
                                     </ul>
                                 </div>
@@ -66,7 +68,7 @@ export function Resume() {
                                 <div className={styles.cardBody}>
                                     <ul className={styles.list}>
                                         <li><Icons.SvgDjango />&nbsp;&nbsp;Django</li>
-                                        <li><Icons.SvgMySQL />&nbsp;&nbsp;MySQL</li>
+                                        <li><Icons.SvgPostgreSQL />&nbsp;&nbsp;PostgreSQL</li>
                                         <li><Icons.SvgSQLite />&nbsp;&nbsp;SQLite</li>
                                     </ul>
                                 </div>
@@ -80,7 +82,7 @@ export function Resume() {
                             <hr />
                             <div className={styles.cardBody}>
                                 <ul className={styles.list}>
-                                    <li><Icons.SvgVSCode />&nbsp;&nbsp;VSCode</li>
+                                    <li><Icons.SvgVSCode />&nbsp;&nbsp;VS Code</li>
                                     <li><Icons.SvgLinux />&nbsp;&nbsp;Linux</li>
                                     <li><Icons.SvgGit />&nbsp;&nbsp;Git</li>
                                     <li><Icons.SvgGitHub />&nbsp;&nbsp;GitHub</li>
