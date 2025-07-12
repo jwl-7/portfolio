@@ -2,11 +2,11 @@ import { images } from '@/images'
 
 
 export const ProjectList = [{
-        title: 'Codex CFW',
-        technology: ['TypeScript', 'DiscordApp'],
-        description: 'A serverless Discord bot that utilizes the Discord Interaction API and integrates with CloudFlare Service Workers.',
-        imgSrc: images.imgCodexCFW,
-        sourceUrl: 'https://github.com/jwl-7/codex-cfw',
+        title: '2REAL',
+        technology: ['Lua', 'Windows'],
+        description: 'Singleplayer Traffic Mod for Assetto Corsa. Contributed score HUD, score trackers, ranking system.',
+        imgSrc: images.img2Real,
+        liveUrl: 'https://2real.ac/',
     }, {
         title: 'Apple Music - Discord Status',
         technology: ['Csharp', 'DiscordApp', 'Windows'],
@@ -14,6 +14,12 @@ export const ProjectList = [{
         imgSrc: images.imgAppleMusicDiscordStatus,
         sourceUrl: 'https://github.com/jwl-7/applemusic-discord-status',
         downloadUrl: 'https://github.com/jwl-7/applemusic-discord-status/releases/'
+    }, {
+        title: 'Codex CFW',
+        technology: ['TypeScript', 'DiscordApp'],
+        description: 'A serverless Discord bot that utilizes the Discord Interaction API and integrates with CloudFlare Service Workers.',
+        imgSrc: images.imgCodexCFW,
+        sourceUrl: 'https://github.com/jwl-7/codex-cfw',
     }, {
         title: 'LeetCode Cheatsheet',
         technology: ['TypeScript', 'React'],
