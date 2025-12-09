@@ -15,6 +15,13 @@ export const ProjectList = [{
         sourceUrl: 'https://github.com/jwl-7/applemusic-discord-status',
         downloadUrl: 'https://github.com/jwl-7/applemusic-discord-status/releases/'
     }, {
+        title: 'Wubble Words',
+        technology: ['TypeScript'],
+        description: 'Interactive experiment combining generative audio synthesis with dynamic typographic visualization.',
+        imgSrc: images.imgWubbleWords,
+        sourceUrl: 'https://github.com/jwl-7/wubble-words',
+        liveUrl: 'https://jwl-7.github.io/wubble-words/',
+    }, {
         title: 'Codex CFW',
         technology: ['TypeScript', 'DiscordApp'],
         description: 'A serverless Discord bot that utilizes the Discord Interaction API and integrates with CloudFlare Service Workers.',
