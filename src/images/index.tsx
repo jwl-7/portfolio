@@ -5,6 +5,7 @@ import imgCodex from './codex-ss.webp'
 import imgCodexCFW from './codex-cfw-ss.webp'
 import imgCyberfolio from './cyberfolio-ss.webp'
 import imgKZBot from './kzbot-ss.webp'
+import imgEmmyLuaSearch from './emmylua-search-ss.webp'
 import imgLeetCodeCheatsheet from './leetcode-cheatsheet-ss.webp'
 import imgLeetCodeThemes from './leetcode-themes-ss.webp'
 import imgNadeSpace from './nadespace-ss.webp'
@@ -19,6 +20,7 @@ export const images = {
     imgCodex,
     imgCodexCFW,
     imgCyberfolio,
+    imgEmmyLuaSearch,
     imgKZBot,
     imgLeetCodeCheatsheet,
     imgLeetCodeThemes,

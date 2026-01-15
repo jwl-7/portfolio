@@ -8,6 +8,13 @@ export const ProjectList = [{
         imgSrc: images.img2Real,
         liveUrl: 'https://2real.ac/',
     }, {
+        title: 'EmmyLua Semantic Search',
+        technology: ['TypeScript'],
+        description: 'AI semantic search for EmmyLua library files.',
+        imgSrc: images.imgEmmyLuaSearch,
+        sourceUrl: 'https://github.com/jwl-7/emmylua-semantic-search',
+        liveUrl: 'https://jwl-7.github.io/emmylua-semantic-search/',
+    }, {
         title: 'Apple Music - Discord Status',
         technology: ['Csharp', 'DiscordApp', 'Windows'],
         description: 'Windows app for updating Discord status with Apple Music info via Rich Text Presence.',
