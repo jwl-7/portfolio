@@ -9,7 +9,7 @@ export const ProjectList = [{
         liveUrl: 'https://2real.ac/',
     }, {
         title: 'EmmyLua Semantic Search',
-        technology: ['TypeScript'],
+        technology: ['TypeScript', 'Python'],
         description: 'AI semantic search for EmmyLua library files.',
         imgSrc: images.imgEmmyLuaSearch,
         sourceUrl: 'https://github.com/jwl-7/emmylua-semantic-search',
