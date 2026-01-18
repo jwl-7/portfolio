@@ -1,12 +1,18 @@
-import { images } from '@/images'
-
+import { images } from '@/images/images'
 
 export const ProjectList = [{
         title: '2REAL',
         technology: ['Lua', 'Windows'],
-        description: 'Singleplayer Traffic Mod for Assetto Corsa. Contributed score HUD, score trackers, ranking system.',
+        description: 'Singleplayer Traffic Mod for Assetto Corsa. Contributed scoring system, ranking system, scoring HUD, UI framework, and more.',
         imgSrc: images.img2Real,
         liveUrl: 'https://2real.ac/',
+    }, {
+        title: 'Synthos',
+        technology: ['TypeScript', 'Python'],
+        description: 'AI-Assistant for Sound Design.',
+        imgSrc: images.imgSynthos,
+        sourceUrl: 'https://github.com/jwl-7/synthos/',
+        liveUrl: 'https://jwl-7.github.io/synthos/',
     }, {
         title: 'EmmyLua Semantic Search',
         technology: ['TypeScript', 'Python'],

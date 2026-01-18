@@ -1,10 +1,7 @@
-import styles from './scrolldownbutton.module.sass'
-
+import styles from './ScrollDownButton.module.sass'
 import { useScrollTo } from '@hooks/useScrollTo'
 
-
 const NAVBAR_HEIGHT = 76
-
 
 export function ScrollDownButton() {
     const handleClick = useScrollTo({ selector: '#about', offset: NAVBAR_HEIGHT - 2 })

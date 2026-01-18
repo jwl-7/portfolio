@@ -1,8 +1,6 @@
-import styles from './projectcard.module.sass'
-
+import styles from './ProjectCard.module.sass'
 import { Icons } from '@/icons'
-import { Screen } from '@components/Screen'
-
+import { Screen } from '@components/Screen/Screen'
 
 interface ProjectCardProps {
     imgSrc: string
@@ -13,7 +11,6 @@ interface ProjectCardProps {
     downloadUrl?: string
     liveUrl?: string
 }
-
 
 export function ProjectCard({
     imgSrc,

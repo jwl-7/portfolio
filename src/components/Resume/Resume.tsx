@@ -1,8 +1,6 @@
-import styles from './resume.module.sass'
-
+import styles from './Resume.module.sass'
 import { Flip } from 'react-awesome-reveal'
 import { Icons } from '@/icons'
-
 
 export function Resume() {
     return (

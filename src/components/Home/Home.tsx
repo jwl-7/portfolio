@@ -1,9 +1,8 @@
-import styles from './home.module.sass'
+import styles from './Home.module.sass'
 
-import { Glitch } from '@components/Glitch'
-import { Background } from '@components/Background'
-import { ScrollDownButton } from '@components/ScrollDownButton'
-
+import { Glitch } from '@components/Glitch/Glitch'
+import { Background } from '@components/Background/Background'
+import { ScrollDownButton } from '@components/ScrollDownButton/ScrollDownButton'
 
 export function Home() {
     return (

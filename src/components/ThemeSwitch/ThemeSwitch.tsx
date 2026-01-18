@@ -1,7 +1,5 @@
-import styles from './themeswitch.module.sass'
-
+import styles from './ThemeSwitch.module.sass'
 import { useState, useEffect } from 'react'
-
 
 export function ThemeSwitch() {
     const htmlElement = document.documentElement

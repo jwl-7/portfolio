@@ -1,7 +1,5 @@
-import styles from './background.module.sass'
-
+import styles from './Background.module.sass'
 import { useTheme } from '@hooks/useTheme'
-
 
 export function Background() {
     const theme = useTheme()

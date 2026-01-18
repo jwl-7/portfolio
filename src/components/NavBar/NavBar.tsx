@@ -1,4 +1,4 @@
-import styles from './navbar.module.sass'
+import styles from './NavBar.module.sass'
 
 import AnimateHeight from 'react-animate-height'
 
@@ -7,13 +7,11 @@ import { useMediaQuery } from 'react-responsive'
 import { useClickOutside } from '@/hooks/useClickOutside'
 import { useScrollDistance } from '@/hooks/useScrollDistance'
 import { useScrollTo } from '@/hooks/useScrollTo'
-import { Brand } from '@components/Brand'
-import { clsx } from '@/utils/clsx'
-import { ThemeSwitch } from '@components/ThemeSwitch'
-
+import { Brand } from '@components/Brand/Brand'
+import { ThemeSwitch } from '@components/ThemeSwitch/ThemeSwitch'
+import clsx from '@/utils/clsx'
 
 const NAVBAR_HEIGHT = 76
-
 
 export function NavBar() {
     const ref = useRef<HTMLElement | null>(null)

@@ -1,5 +1,4 @@
-import styles from './terminal.module.sass'
-
+import styles from './Terminal.module.sass'
 
 export function Terminal() {
     return (

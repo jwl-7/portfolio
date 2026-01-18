@@ -2,14 +2,13 @@ import '@styles/styles.sass'
 
 import React from 'react'
 
-import { About } from '@components/About'
-import { Contact } from '@components/Contact'
-import { Footer } from '@/components/Footer'
-import { Home } from '@components/Home'
-import { NavBar } from '@components/NavBar'
-import { Projects } from '@components/Projects'
-import { Resume } from '@components/Resume'
-
+import { About } from '@components/About/About'
+import { Contact } from '@components/Contact/Contact'
+import { Footer } from '@/components/Footer/Footer'
+import { Home } from '@components/Home/Home'
+import { NavBar } from '@components/NavBar/NavBar'
+import { Projects } from '@components/Projects/Projects'
+import { Resume } from '@components/Resume/Resume'
 
 export default function App() {
     return (

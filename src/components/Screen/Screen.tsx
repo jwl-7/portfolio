@@ -1,11 +1,9 @@
-import styles from './screen.module.sass'
-
+import styles from './Screen.module.sass'
 
 interface ScreenProps {
     imgSrc: string
     alt: string
 }
-
 
 export function Screen({ imgSrc, alt }: ScreenProps) {
     return (

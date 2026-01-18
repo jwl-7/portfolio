@@ -1,5 +1,4 @@
-import styles from './footer.module.sass'
-
+import styles from './Footer.module.sass'
 
 export function Footer() {
     return (

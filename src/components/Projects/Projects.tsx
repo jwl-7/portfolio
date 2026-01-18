@@ -1,9 +1,7 @@
-import styles from './projects.module.sass'
-
+import styles from './Projects.module.sass'
 import { Zoom } from 'react-awesome-reveal'
-import { ProjectCard } from '@components/ProjectCard'
-import { ProjectList } from './projectlist'
-
+import { ProjectCard } from '@components/ProjectCard/ProjectCard'
+import { ProjectList } from './ProjectList'
 
 export function Projects() {
     return (

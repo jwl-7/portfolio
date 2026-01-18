@@ -1,9 +1,8 @@
-import styles from './about.module.sass'
+import styles from './About.module.sass'
 
 import { Slide } from 'react-awesome-reveal'
-import { Terminal } from '@components/Terminal'
+import { Terminal } from '@components/Terminal/Terminal'
 import { SvgUndrawHacker } from '@icons/UndrawHacker'
-
 
 export function About() {
     return (

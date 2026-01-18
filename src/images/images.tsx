@@ -10,8 +10,8 @@ import imgLeetCodeCheatsheet from './leetcode-cheatsheet-ss.webp'
 import imgLeetCodeThemes from './leetcode-themes-ss.webp'
 import imgNadeSpace from './nadespace-ss.webp'
 import imgStickBop from './stickbop-ss.webp'
+import imgSynthos from './synthos-ss.webp'
 import imgWubbleWords from './wubblewords-ss.webp'
-
 
 export const images = {
     img2Real,
@@ -26,5 +26,6 @@ export const images = {
     imgLeetCodeThemes,
     imgNadeSpace,
     imgStickBop,
+    imgSynthos,
     imgWubbleWords
 }
