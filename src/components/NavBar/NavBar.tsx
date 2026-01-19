@@ -2,34 +2,48 @@ import styles from './NavBar.module.sass'
 
 import AnimateHeight from 'react-animate-height'
 
-import { MouseEvent, useState, useRef } from 'react'
+import { MouseEvent, useEffect, useLayoutEffect, useState, useRef } from 'react'
 import { useMediaQuery } from 'react-responsive'
 import { useClickOutside } from '@/hooks/useClickOutside'
-import { useScrollDistance } from '@/hooks/useScrollDistance'
-import { useScrollTo } from '@/hooks/useScrollTo'
 import { Brand } from '@components/Brand/Brand'
-import { ThemeSwitch } from '@components/ThemeSwitch/ThemeSwitch'
+import { ThemeToggle } from '@components/ThemeToggle/ThemeToggle'
 import clsx from '@/utils/clsx'
-
-const NAVBAR_HEIGHT = 76
+import getNavBarHeight from '@/utils/getNavBarHeight'
+import scrollTo from '@/utils/scrollTo'
 
 export function NavBar() {
     const ref = useRef<HTMLElement | null>(null)
-    const isScrollDistanceReached = useScrollDistance(NAVBAR_HEIGHT)
     const [isCollapsed, setIsCollapsed] = useState(true)
+    const [isScrolled, setIsScrolled] = useState(false)
 
-    const classes = clsx(
-        styles.navbar,
-        isScrollDistanceReached && styles.shadow
-    )
+    useLayoutEffect(() => {
+        if (!ref.current) return
+
+        const observer = new ResizeObserver((entries) => {
+            for (const entry of entries) {
+                const height = entry.borderBoxSize[0].blockSize
+                document.documentElement.style.setProperty('--navbar-height', `${height}px`)
+            }
+        })
+
+        observer.observe(ref.current)
+        return () => observer.disconnect()
+    }, [])
+
+    useEffect(() => {
+        if (!ref.current) return
+
+        const handleScroll = () => {
+            const offset = window.scrollY > 20
+            setIsScrolled(prev => (prev !== offset ? offset : prev))
+        }
+
+        window.addEventListener('scroll', handleScroll, { passive: true })
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, [])
+
+    const classes = clsx(styles.navbar, isScrolled && styles.shadow)
     const mobileNavBarHeight = isCollapsed ? 0 : 'auto'
-    const scrollDestinations: { [key: string]: VoidFunction } = {
-        '#home': useScrollTo({ selector: '#home', offset: NAVBAR_HEIGHT }),
-        '#about': useScrollTo({ selector: '#about', offset: NAVBAR_HEIGHT - 2 }),
-        '#projects': useScrollTo({ selector: '#projects', offset: NAVBAR_HEIGHT - 2 }),
-        '#resume': useScrollTo({ selector: '#resume', offset: NAVBAR_HEIGHT - 2 }),
-        '#contact': useScrollTo({ selector: '#contact' ,offset: NAVBAR_HEIGHT - 2 })
-    }
 
     const collapseMobileNavBar = () => {
         if(!isCollapsed) setIsCollapsed(true)
@@ -44,13 +58,12 @@ export function NavBar() {
     const handleHamburgerClick = () => setIsCollapsed(!isCollapsed)
     const handleLinkClick = (event: MouseEvent<HTMLAnchorElement>) => {
         event.preventDefault()
-
         const href = event.currentTarget.getAttribute('href')
-        if (href && scrollDestinations.hasOwnProperty(href)) {
-            scrollDestinations[href]()
-            window.history.replaceState({}, '', href)
-        }
-
+        if (!href) return
+        const navBarHeight = getNavBarHeight()
+        const scrollOffset = href === '#home' ? navBarHeight : navBarHeight - 2
+        scrollTo(href, scrollOffset)
+        window.history.replaceState({}, '', href)
         collapseMobileNavBar()
     }
 
@@ -90,8 +103,8 @@ export function NavBar() {
                 <div className={styles.desktopLinks}>
                     {renderNavLinks()}
                 </div>
-                <div className={styles.themeSwitch}>
-                    <ThemeSwitch />
+                <div className={styles.themeToggle}>
+                    <ThemeToggle />
                 </div>
                 {renderHamburgerButton()}
             </div>

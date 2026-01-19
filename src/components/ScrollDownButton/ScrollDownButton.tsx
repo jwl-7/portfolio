@@ -1,11 +1,9 @@
 import styles from './ScrollDownButton.module.sass'
-import { useScrollTo } from '@hooks/useScrollTo'
-
-const NAVBAR_HEIGHT = 76
+import getNavBarHeight from '@/utils/getNavBarHeight'
+import scrollTo from '@utils/scrollTo'
 
 export function ScrollDownButton() {
-    const handleClick = useScrollTo({ selector: '#about', offset: NAVBAR_HEIGHT - 2 })
-
+    const handleClick = () => scrollTo('#about', getNavBarHeight() - 2)
     return (
         <button aria-label="scroll down" className={styles.rainbow} onClick={handleClick}>
             <svg viewBox="0 0 68 33" className={styles.chevronDown}>
