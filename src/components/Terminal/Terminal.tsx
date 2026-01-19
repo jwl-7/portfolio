@@ -28,13 +28,13 @@ export default function Terminal() {
                 </div>
 
                 <div className={styles.section}>
-                    <span className={styles.inputText}>&gt; Current Job</span> <br />
+                    <span className={styles.inputText}>&gt; Status</span> <br />
                     <span className={styles.outputText}>Open to Work</span>
                 </div>
 
                 <div className={styles.section}>
                     <span className={styles.inputText}>&gt; Personal Interests</span> <br />
-                    <span className={styles.outputText}>Gaming, Music Festivals, Skiing, Skateboarding</span>
+                    <span className={styles.outputText}>Gaming, SimRacing, Music Festivals, Audio Production, Skiing</span>
                 </div>
 
                 <div>
