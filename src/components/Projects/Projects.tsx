@@ -1,9 +1,9 @@
 import styles from './Projects.module.sass'
 import { Zoom } from 'react-awesome-reveal'
-import { ProjectCard } from '@components/ProjectCard/ProjectCard'
-import { ProjectList } from './ProjectList'
+import ProjectCard from '@components/ProjectCard/ProjectCard'
+import ProjectList from './ProjectList'
 
-export function Projects() {
+export default function Projects() {
     return (
         <section id="projects" className={styles.container}>
             <div className={styles.title}>
@@ -16,10 +16,10 @@ export function Projects() {
                         return (
                             <ProjectCard
                                 key={project.title}
-                                imgSrc={project.imgSrc}
-                                technology={project.technology}
                                 title={project.title}
+                                technology={project.technology}
                                 description={project.description}
+                                imageSource={project.imageSource}
                                 sourceUrl={project?.sourceUrl}
                                 downloadUrl={project?.downloadUrl}
                                 liveUrl={project?.liveUrl}

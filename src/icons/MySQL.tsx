@@ -1,7 +1,6 @@
 import { useTheme } from '@hooks/useTheme'
 
-
-export function SvgMySQL() {
+export default function SvgMySQL() {
     const theme = useTheme()
     const color = theme === 'dark' ? '#00799D' : '#00618A'
 

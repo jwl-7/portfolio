@@ -1,10 +1,10 @@
 import styles from './About.module.sass'
 
 import { Slide } from 'react-awesome-reveal'
-import { Terminal } from '@components/Terminal/Terminal'
-import { SvgUndrawHacker } from '@icons/UndrawHacker'
+import Terminal from '@components/Terminal/Terminal'
+import SvgUndrawHacker from '@icons/UndrawHacker'
 
-export function About() {
+export default function About() {
     return (
         <section id="about">
             <div className={styles.title}>

@@ -1,4 +1,4 @@
-export function SvgMacDesktop() {
+export default function SvgMacDesktop() {
     return (
         <svg
             fill="currentColor"

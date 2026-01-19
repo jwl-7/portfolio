@@ -1,15 +1,15 @@
 import styles from './Screen.module.sass'
 
 interface ScreenProps {
-    imgSrc: string
+    imageSource: string
     alt: string
 }
 
-export function Screen({ imgSrc, alt }: ScreenProps) {
+export default function Screen({ imageSource, alt }: ScreenProps) {
     return (
         <div className={styles.device}>
             <div className={styles.frame}>
-                <img className={styles.screen} src={imgSrc} alt={alt} />
+                <img className={styles.screen} src={imageSource} alt={alt} />
             </div>
         </div>
     )

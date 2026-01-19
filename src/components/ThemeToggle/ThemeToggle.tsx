@@ -1,7 +1,7 @@
 import styles from './ThemeToggle.module.sass'
 import { useState, useEffect } from 'react'
 
-export function ThemeToggle() {
+export default function ThemeToggle() {
     const htmlElement = document.documentElement
     const [darkMode, setDarkMode] = useState(false)
 

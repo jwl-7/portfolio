@@ -1,17 +1,18 @@
 import styles from './NavBar.module.sass'
 
-import AnimateHeight from 'react-animate-height'
-
 import { MouseEvent, useEffect, useLayoutEffect, useState, useRef } from 'react'
 import { useMediaQuery } from 'react-responsive'
 import { useClickOutside } from '@/hooks/useClickOutside'
-import { Brand } from '@components/Brand/Brand'
-import { ThemeToggle } from '@components/ThemeToggle/ThemeToggle'
+
+import AnimateHeight from 'react-animate-height'
+import Brand from '@components/Brand/Brand'
+import ThemeToggle from '@components/ThemeToggle/ThemeToggle'
+
 import clsx from '@/utils/clsx'
 import getNavBarHeight from '@/utils/getNavBarHeight'
 import scrollTo from '@/utils/scrollTo'
 
-export function NavBar() {
+export default function NavBar() {
     const ref = useRef<HTMLElement | null>(null)
     const [isCollapsed, setIsCollapsed] = useState(true)
     const [isScrolled, setIsScrolled] = useState(false)

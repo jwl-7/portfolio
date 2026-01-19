@@ -1,4 +1,4 @@
-export function SvgDocker() {
+export default function SvgDocker() {
     return (
         <svg viewBox="0 0 128 128">
             <path

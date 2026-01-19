@@ -1,7 +1,6 @@
 import { useTheme } from '@hooks/useTheme'
 
-
-export function SvgSQLite() {
+export default function SvgSQLite() {
     const theme = useTheme()
     const color = theme === 'dark' ? '#007093' : '#003b57'
 

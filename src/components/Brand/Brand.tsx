@@ -2,7 +2,7 @@ import styles from './Brand.module.sass'
 import { useState } from 'react'
 import clsx from '@utils/clsx'
 
-export function Brand() {
+export default function Brand() {
     const [clickAnimation, setClickAnimation] = useState<string>(styles.rotate)
     const [isAnimating, setIsAnimating] = useState<boolean>(false)
 

@@ -2,7 +2,7 @@ import styles from './ScrollDownButton.module.sass'
 import getNavBarHeight from '@/utils/getNavBarHeight'
 import scrollTo from '@utils/scrollTo'
 
-export function ScrollDownButton() {
+export default function ScrollDownButton() {
     const handleClick = () => scrollTo('#about', getNavBarHeight() - 2)
     return (
         <button aria-label="scroll down" className={styles.rainbow} onClick={handleClick}>

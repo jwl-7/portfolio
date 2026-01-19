@@ -1,4 +1,4 @@
-export function SvgPyGame() {
+export default function SvgPyGame() {
     return (
         <svg viewBox="0 0 200 200">
             <defs>

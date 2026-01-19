@@ -1,7 +1,6 @@
 import { useTheme } from '@hooks/useTheme'
 
-
-export function SvgCypress() {
+export default function SvgCypress() {
     const theme = useTheme()
     const color = theme === 'dark' ? '#FFFFFF' : '#23272C'
 

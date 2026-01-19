@@ -1,4 +1,4 @@
-export function SvgSass() {
+export default function SvgSass() {
     return (
         <svg viewBox="0 0 128 128">
             <path

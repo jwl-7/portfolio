@@ -1,7 +1,7 @@
 import styles from './Background.module.sass'
 import { useTheme } from '@hooks/useTheme'
 
-export function Background() {
+export default function Background() {
     const theme = useTheme()
     const colors = theme === 'dark' ? {
         line: '#1B413C',

@@ -1,9 +1,9 @@
 import styles from './ProjectCard.module.sass'
-import { Icons } from '@/icons'
-import { Screen } from '@components/Screen/Screen'
+import Icons from '@icons/Icons'
+import Screen from '@components/Screen/Screen'
 
 interface ProjectCardProps {
-    imgSrc: string
+    imageSource: string
     technology: Array<string>
     title: string
     description: string
@@ -12,8 +12,8 @@ interface ProjectCardProps {
     liveUrl?: string
 }
 
-export function ProjectCard({
-    imgSrc,
+export default function ProjectCard({
+    imageSource,
     title,
     technology,
     description,
@@ -22,31 +22,30 @@ export function ProjectCard({
     liveUrl
 }: ProjectCardProps) {
     const getImgAltFromFilename = (): string => {
-        const imageName = imgSrc.substring(imgSrc.lastIndexOf('/') + 1, imgSrc.lastIndexOf('.webp'))
+        const imageName = imageSource.substring(imageSource.lastIndexOf('/') + 1, imageSource.lastIndexOf('.webp'))
         return imageName.replace('-ss', ' screenshot')
     }
 
     const renderTechnologyIcons = () => {
-        return technology.map(name => {
-            const iconName = `Svg${name}`
-            const SvgIcon = Icons[iconName]
-            return <SvgIcon key={iconName} />
+        return technology.map(icon => {
+            const SvgIcon = Icons[icon]
+            return <SvgIcon key={icon} />
         })
     }
 
     const renderButtons = () => {
         return (
             <>
-                {sourceUrl && <a href={sourceUrl} role="button" target="_blank"><Icons.SvgGitHubLight /> Source</a>}
-                {downloadUrl && <a href={downloadUrl} role="button" target="_blank"><Icons.SvgDownload /> Download</a>}
-                {liveUrl && <a href={liveUrl} role="button" target="_blank"><Icons.SvgMacDesktop /> Live</a>}
+                {sourceUrl && <a href={sourceUrl} role="button" target="_blank"><Icons.GitHubLight /> Source</a>}
+                {downloadUrl && <a href={downloadUrl} role="button" target="_blank"><Icons.Download /> Download</a>}
+                {liveUrl && <a href={liveUrl} role="button" target="_blank"><Icons.MacDesktop /> Live</a>}
             </>
         )
     }
 
     return (
         <div className={styles.card}>
-            <Screen imgSrc={imgSrc} alt={getImgAltFromFilename()} />
+            <Screen imageSource={imageSource} alt={getImgAltFromFilename()} />
             <div className={styles.cardContent}>
                 <div className={styles.cardIcons}>{renderTechnologyIcons()}</div>
                 <h3 className={styles.cardTitle}>{title}</h3>

@@ -2,16 +2,16 @@ import styles from './Contact.module.sass'
 
 import { FormEvent, useRef, useState } from 'react'
 import { Fade } from 'react-awesome-reveal'
-import { SvgGitHubLight } from '@icons/GitHubLight'
-import { SvgLinkedIn } from '@icons/LinkedIn'
 
 import emailjs from '@emailjs/browser'
+import SvgGitHubLight from '@icons/GitHubLight'
+import SvgLinkedIn from '@icons/LinkedIn'
 
 const API_KEY = import.meta.env.VITE_EMAILJS_API_KEY
 const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
 const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
 
-export function Contact() {
+export default function Contact() {
     const form = useRef<HTMLFormElement>(null)
     const [formSubmitted, setFormSubmitted] = useState(false)
     const formClassName = formSubmitted ? 'submitted' : ''

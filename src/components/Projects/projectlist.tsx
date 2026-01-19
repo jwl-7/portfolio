@@ -1,95 +1,105 @@
-import { images } from '@/images/images'
+import Images from '@images/Images'
 
-export const ProjectList = [{
+interface Project {
+    title: string
+    technology: string[]
+    description: string
+    imageSource: string
+    sourceUrl?: string
+    downloadUrl?: string
+    liveUrl?: string
+}
+
+export default [{
         title: '2REAL',
         technology: ['Lua', 'Windows'],
         description: 'Singleplayer Traffic Mod for Assetto Corsa. Contributed scoring system, ranking system, scoring HUD, UI framework, and more.',
-        imgSrc: images.img2Real,
+        imageSource: Images._2Real,
         liveUrl: 'https://2real.ac/',
     }, {
         title: 'Synthos',
         technology: ['TypeScript', 'Python'],
         description: 'AI-Assistant for Sound Design.',
-        imgSrc: images.imgSynthos,
+        imageSource: Images.Synthos,
         sourceUrl: 'https://github.com/jwl-7/synthos/',
         liveUrl: 'https://jwl-7.github.io/synthos/',
     }, {
         title: 'EmmyLua Semantic Search',
         technology: ['TypeScript', 'Python'],
         description: 'AI semantic search for EmmyLua library files.',
-        imgSrc: images.imgEmmyLuaSearch,
+        imageSource: Images.EmmyLuaSearch,
         sourceUrl: 'https://github.com/jwl-7/emmylua-semantic-search',
         liveUrl: 'https://jwl-7.github.io/emmylua-semantic-search/',
     }, {
         title: 'Apple Music - Discord Status',
         technology: ['Csharp', 'DiscordApp', 'Windows'],
         description: 'Windows app for updating Discord status with Apple Music info via Rich Text Presence.',
-        imgSrc: images.imgAppleMusicDiscordStatus,
+        imageSource: Images.AppleMusicDiscordStatus,
         sourceUrl: 'https://github.com/jwl-7/applemusic-discord-status',
         downloadUrl: 'https://github.com/jwl-7/applemusic-discord-status/releases/'
     }, {
         title: 'Wubble Words',
         technology: ['TypeScript'],
         description: 'Interactive experiment combining generative audio synthesis with dynamic typographic visualization.',
-        imgSrc: images.imgWubbleWords,
+        imageSource: Images.WubbleWords,
         sourceUrl: 'https://github.com/jwl-7/wubble-words',
         liveUrl: 'https://jwl-7.github.io/wubble-words/',
     }, {
         title: 'Codex CFW',
         technology: ['TypeScript', 'DiscordApp'],
         description: 'A serverless Discord bot that utilizes the Discord Interaction API and integrates with CloudFlare Service Workers.',
-        imgSrc: images.imgCodexCFW,
+        imageSource: Images.CodexCFW,
         sourceUrl: 'https://github.com/jwl-7/codex-cfw',
     }, {
         title: 'LeetCode Cheatsheet',
         technology: ['TypeScript', 'React'],
         description: 'Cheatsheet for LeetCode problems and algorithms with a modern glassmorphism design.',
-        imgSrc: images.imgLeetCodeCheatsheet,
+        imageSource: Images.LeetCodeCheatsheet,
         sourceUrl: 'https://github.com/jwl-7/leetcode-cheatsheet',
         liveUrl: 'https://jwl-7.github.io/leetcode-cheatsheet/',
     }, {
         title: 'LeetCode Themes',
         technology: ['JavaScript', 'Firefox'],
         description: 'A firefox browser extension a firefox browser extension for customizing the LeetCode editor.',
-        imgSrc: images.imgLeetCodeThemes,
+        imageSource: Images.LeetCodeThemes,
         sourceUrl: 'https://github.com/jwl-7/leetcode-themes',
         downloadUrl: 'https://addons.mozilla.org/en-US/firefox/addon/leetcode-themes/'
     }, {
         title: 'Cyberfolio',
         technology: ['TypeScript', 'React'],
         description: 'A modern portfolio website made with ReactJS.',
-        imgSrc: images.imgCyberfolio,
+        imageSource: Images.Cyberfolio,
         sourceUrl: 'https://github.com/jwl-7/portfolio',
     }, {
         title: 'Codex',
         technology: ['Python', 'DiscordPy'],
         description: 'A python discord bot with Markov chain responses, slots, and more.',
-        imgSrc: images.imgCodex,
+        imageSource: Images.Codex,
         sourceUrl: 'https://github.com/jwl-7/Codex',
     }, {
         title: 'KZBOT',
         technology: ['Python', 'DiscordPy'],
         description: 'A python discord bot for CS:GO KZ community servers.',
-        imgSrc: images.imgKZBot,
+        imageSource: Images.KZBot,
         sourceUrl: 'https://github.com/jwl-7/kzbot',
     }, {
         title: 'Stick Bop!',
         technology: ['Python', 'PyGame'],
         description: 'A python game inspired by the 90s Bop It! toy.',
-        imgSrc: images.imgStickBop,
+        imageSource: Images.StickBop,
         sourceUrl: 'https://github.com/jwl-7/Stick-Bop',
         downloadUrl: 'https://github.com/jwl-7/Stick-Bop/releases'
     }, {
         title: 'c0de_gr1nd',
         technology: ['Python'],
         description: 'Python solutions for Elements of Programming Interviews.',
-        imgSrc: images.imgCodeGrind,
+        imageSource: Images.CodeGrind,
         sourceUrl: 'https://github.com/jwl-7/c0de_gr1nd',
     }, {
         title: 'nade.space',
         technology: ['JavaScript'],
         description: 'An interactive web-app for learning nades in CS:GO.',
-        imgSrc: images.imgNadeSpace,
+        imageSource: Images.NadeSpace,
         sourceUrl: 'https://github.com/jwl-7/nade.space',
         liveUrl: 'https://jwl-7.github.io/nade.space/',
-}]
+}] satisfies Project[] as Project[]
