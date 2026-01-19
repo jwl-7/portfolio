@@ -19,6 +19,14 @@
     display: grid
     grid-gap: 32px
     padding: var(--card-padding)
+    transition-property: var(--style-transition-property)
+    transition-duration: var(--style-transition-duration)
+
+    @media (hover: hover) and (pointer: fine)
+        &:hover
+            transform: translateY(-4px)
+            box-shadow: var(--card-box-shadow-hover)
+            border-color: var(--card-border-hover-color)
 
     @media (min-width: 768px)
         grid-template-columns: repeat(2, 1fr)

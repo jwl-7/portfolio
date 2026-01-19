@@ -28,6 +28,12 @@
     transition-property: var(--style-transition-property)
     transition-duration: var(--style-transition-duration)
 
+    @media (hover: hover) and (pointer: fine)
+        &:hover
+            transform: translateY(-4px)
+            box-shadow: var(--card-box-shadow-hover)
+            border-color: var(--card-border-hover-color)
+
 .cardContent
     padding: var(--card-padding)
 

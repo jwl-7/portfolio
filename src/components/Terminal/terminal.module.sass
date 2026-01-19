@@ -2,6 +2,14 @@
     border: 1px solid var(--card-border-color)
     border-radius: var(--card-border-radius)
     box-shadow: var(--card-box-shadow)
+    transition-property: var(--style-transition-property)
+    transition-duration: var(--style-transition-duration)
+
+    @media (hover: hover) and (pointer: fine)
+        &:hover
+            transform: translateY(-4px)
+            box-shadow: var(--card-box-shadow-hover)
+            border-color: var(--card-border-hover-color)
 
 .topBar
     background-color: var(--terminal-top-bar-color)
