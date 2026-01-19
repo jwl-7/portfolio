@@ -1,6 +1,6 @@
 import { useTheme } from '@hooks/useTheme'
 
-export default function SvgDjango() {
+export default function Django() {
     const theme = useTheme()
     const color = theme === 'dark' ? '#44B78B' : '#003A2B'
 

@@ -1,6 +1,6 @@
 import { useTheme } from '@hooks/useTheme'
 
-export default function SvgUtcLogo() {
+export default function UtcLogo() {
     const theme = useTheme()
     const color = theme === 'dark' ? '#0073CC' : '#00386B'
 

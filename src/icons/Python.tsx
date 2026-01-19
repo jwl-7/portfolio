@@ -1,4 +1,4 @@
-export default function SvgPython() {
+export default function Python() {
     return (
         <svg viewBox="0 0 128 128">
             <linearGradient

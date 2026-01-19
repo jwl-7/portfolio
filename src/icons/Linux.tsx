@@ -1,4 +1,4 @@
-export default function SvgLinux() {
+export default function Linux() {
     return (
         <svg viewBox="0 0 216 256">
             <defs id="tux_fx">

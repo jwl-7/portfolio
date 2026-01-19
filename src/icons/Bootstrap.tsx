@@ -1,4 +1,4 @@
-export default function SvgBootstrap() {
+export default function Bootstrap() {
     return (
         <svg viewBox="0 0 128 128">
             <g fillRule="evenodd">

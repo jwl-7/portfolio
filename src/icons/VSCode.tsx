@@ -1,4 +1,4 @@
-export default function SvgVSCode() {
+export default function VSCode() {
     return (
         <svg viewBox="0 0 128 128">
             <path
