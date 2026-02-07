@@ -4,7 +4,7 @@ const easeInOutQuad = (t: number): number => {
         : 1 - Math.pow(-2 * t + 2, 2) / 2
 }
 
-export default function scrollTo(selector: string, offset: number) {
+export default function scrollTo(selector: string, offset: number = 0) {
     const targetElement = document.querySelector(selector) as HTMLElement
     if (!targetElement) return
 
