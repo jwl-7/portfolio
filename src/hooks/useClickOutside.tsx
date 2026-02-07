@@ -1,17 +1,22 @@
 import { RefObject, useEffect } from 'react'
 
 export function useClickOutside(
-    refs: RefObject<HTMLElement> | RefObject<HTMLElement>[],
+    refs: RefObject<HTMLElement | null> | RefObject<HTMLElement | null>[],
     handler: VoidFunction
 ) {
-    const handleClick = (event: MouseEvent) => {
-        const clickedOutside = (ref: RefObject<HTMLElement>) => ref.current && !ref.current.contains(event.target as Node)
-        if ((Array.isArray(refs) ? refs.every(clickedOutside) : clickedOutside(refs))) handler()
-    }
-
     useEffect(() => {
-        document.addEventListener('click', handleClick)
+        const handleClick = (event: MouseEvent) => {
+            const target = event.target as Node
+            const refArray = Array.isArray(refs) ? refs : [refs]
 
-        return () => document.removeEventListener('click', handleClick)
+            const clickedOutside = refArray.every(ref =>
+                ref.current && !ref.current.contains(target)
+            )
+
+            if (clickedOutside) handler()
+        }
+
+        document.addEventListener('mousedown', handleClick)
+        return () => document.removeEventListener('mousedown', handleClick)
     }, [refs, handler])
 }
