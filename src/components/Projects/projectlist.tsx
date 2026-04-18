@@ -11,6 +11,19 @@ interface Project {
 }
 
 export default [{
+        title: 'Traffic Underground',
+        technology: ['Lua', 'Windows'],
+        description: 'Advanced offline traffic simulation suite for Assetto Corsa.',
+        imageSource: Images.TrafficUnderground,
+        downloadUrl: 'https://vosan.co/paid-mods/traffic-underground',
+    }, {
+        title: 'Blender Assetto Corsa Tools',
+        technology: ['Python'],
+        description: 'Blender KN5/KSANIM Exporter.',
+        imageSource: Images.BlenderAssettoCorsaTools,
+        sourceUrl: 'https://github.com/jwl-7/blender-assetto-corsa-tools',
+        downloadUrl: 'https://vosan.co/apps/blender-assetto-corsa-tools',
+    }, {
         title: '2REAL',
         technology: ['Lua', 'Windows'],
         description: 'Singleplayer Traffic Mod for Assetto Corsa. Contributed scoring system, ranking system, scoring HUD, UI framework, and more.',
