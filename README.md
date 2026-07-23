@@ -15,6 +15,3 @@ a modern portfolio website built with React
 - [React](https://react.dev/)
 - [React-AwesomeReveal](https://react-awesome-reveal.morello.dev/)
 - [EmailJS](https://www.emailjs.com/)
-
-## License
-This project is released under the GNU GPL License - see the [LICENSE](LICENSE) file for details
