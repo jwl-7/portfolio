@@ -6,9 +6,9 @@
 
 .frame
     position: relative
-    background: #0d0d0d
+    background: var(--screen-panel-color)
     border-radius: 20px
-    box-shadow: inset 0 0 0 2px #c6c7c8
+    box-shadow: inset 0 0 0 2px var(--screen-trim-color), 0 0 var(--screen-glow-spread, 0px) var(--screen-glow-color)
     padding: 9px 9px 23px 9px
     height: auto
     width: 100%
@@ -21,13 +21,13 @@
         background: var(--screen-metal-gradient)
         border-radius: 0 0 19px 19px
         bottom: 2px
-        left: var(--screen-metal-left)
+        left: 3px
         height: 24px
-        width: var(--screen-metal-width)
+        width: calc(100% - 5px)
 
 .screen
     aspect-ratio: 8 / 5
-    border: 2px solid #121212
+    border: 2px solid var(--screen-bezel-color)
     border-radius: 10px 10px 0 0
     height: auto
     width: 100%
