@@ -11,8 +11,15 @@ interface Project {
 }
 
 export default [{
+        title: 'Glassometer',
+        technology: ['Lua'],
+        description: 'Custom glassmorphism speedometer for Assetto Corsa.',
+        imageSource: Images.Glassometer,
+        sourceUrl: 'https://github.com/jwl-7/glassometer',
+        downloadUrl: 'https://github.com/jwl-7/glassometer/releases',
+    }, {
         title: 'Traffic Underground',
-        technology: ['Lua', 'Windows'],
+        technology: ['Lua'],
         description: 'Advanced offline traffic simulation suite for Assetto Corsa.',
         imageSource: Images.TrafficUnderground,
         downloadUrl: 'https://vosan.co/paid-mods/traffic-underground',
@@ -25,7 +32,7 @@ export default [{
         downloadUrl: 'https://vosan.co/apps/blender-assetto-corsa-tools',
     }, {
         title: '2REAL',
-        technology: ['Lua', 'Windows'],
+        technology: ['Lua'],
         description: 'Singleplayer Traffic Mod for Assetto Corsa. Contributed scoring system, ranking system, scoring HUD, UI framework, and more.',
         imageSource: Images._2Real,
         liveUrl: 'https://2real.ac/',

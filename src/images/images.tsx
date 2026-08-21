@@ -5,6 +5,7 @@ import CodeGrind from './codegrind-ss.webp'
 import Codex from './codex-ss.webp'
 import CodexCFW from './codex-cfw-ss.webp'
 import Cyberfolio from './cyberfolio-ss.webp'
+import Glassometer from './glassometer-ss.webp'
 import KZBot from './kzbot-ss.webp'
 import EmmyLuaSearch from './emmylua-search-ss.webp'
 import LeetCodeCheatsheet from './leetcode-cheatsheet-ss.webp'
@@ -28,6 +29,7 @@ export default {
     CodexCFW,
     Cyberfolio,
     EmmyLuaSearch,
+    Glassometer,
     KZBot,
     LeetCodeCheatsheet,
     LeetCodeThemes,
