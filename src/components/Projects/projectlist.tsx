@@ -11,6 +11,12 @@ interface Project {
 }
 
 export default [{
+        title: 'Luamino',
+        technology: ['TypeScript'],
+        description: 'Lua source code minifier',
+        imageSource: Images.Luamino,
+        sourceUrl: 'https://github.com/jwl-7/luamino/',
+    }, {
         title: 'Glassometer',
         technology: ['Lua'],
         description: 'Custom glassmorphism speedometer for Assetto Corsa.',

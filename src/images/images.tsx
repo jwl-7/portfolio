@@ -10,6 +10,7 @@ import KZBot from './kzbot-ss.webp'
 import EmmyLuaSearch from './emmylua-search-ss.webp'
 import LeetCodeCheatsheet from './leetcode-cheatsheet-ss.webp'
 import LeetCodeThemes from './leetcode-themes-ss.webp'
+import Luamino from './luamino-ss.webp'
 import NadeSpace from './nadespace-ss.webp'
 import StickBop from './stickbop-ss.webp'
 import Synthos from './synthos-ss.webp'
@@ -33,6 +34,7 @@ export default {
     KZBot,
     LeetCodeCheatsheet,
     LeetCodeThemes,
+    Luamino,
     NadeSpace,
     StickBop,
     Synthos,
