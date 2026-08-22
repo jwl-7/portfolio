@@ -11,9 +11,16 @@ interface Project {
 }
 
 export default [{
+        title: 'Fruit Slots',
+        technology: ['TypeScript'],
+        description: '3D slot machine web-app with procedural animations and sfx.',
+        imageSource: Images.FruitSlots,
+        sourceUrl: 'https://github.com/jwl-7/fruit-slots',
+        liveUrl: 'https://jwl-7.github.io/fruit-slots/'
+    }, {
         title: 'Luamino',
         technology: ['TypeScript'],
-        description: 'Lua source code minifier',
+        description: 'Lua source code minifier.',
         imageSource: Images.Luamino,
         sourceUrl: 'https://github.com/jwl-7/luamino/',
     }, {
