@@ -11,6 +11,24 @@ interface Project {
 }
 
 export default [{
+        title: 'Pacman Cleaner',
+        technology: ['TypeScript'],
+        description: 'PAC-MAN terminal cleaner. Wakka that terminal clean!',
+        imageSource: Images.PacmanCleaner,
+        sourceUrl: 'https://github.com/jwl-7/pacman-cleaner'
+    }, {
+        title: 'Traffic Test',
+        technology: ['Blender'],
+        description: 'Low-poly track made for Assetto Corsa.',
+        imageSource: Images.TrafficTest,
+        downloadUrl: 'https://vosan.co/tracks/traffic-test'
+    }, {
+        title: 'CrashFX',
+        technology: ['Lua'],
+        description: 'Realistic soft-body car damage for Assetto Corsa.',
+        imageSource: Images.CrashFX,
+        downloadUrl: 'https://vosan.co/apps/crashfx'
+    }, {
         title: 'Fruit Slots',
         technology: ['TypeScript'],
         description: '3D slot machine web-app with procedural animations and sfx.',

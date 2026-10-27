@@ -4,6 +4,7 @@ import BlenderAssettoCorsaTools from './blender-actools-ss.webp'
 import CodeGrind from './codegrind-ss.webp'
 import Codex from './codex-ss.webp'
 import CodexCFW from './codex-cfw-ss.webp'
+import CrashFX from './crashfx-ss.webp'
 import Cyberfolio from './cyberfolio-ss.webp'
 import FruitSlots from './fruit-slots-ss.webp'
 import Glassometer from './glassometer-ss.webp'
@@ -13,8 +14,10 @@ import LeetCodeCheatsheet from './leetcode-cheatsheet-ss.webp'
 import LeetCodeThemes from './leetcode-themes-ss.webp'
 import Luamino from './luamino-ss.webp'
 import NadeSpace from './nadespace-ss.webp'
+import PacmanCleaner from './pacman-cleaner-ss.webp'
 import StickBop from './stickbop-ss.webp'
 import Synthos from './synthos-ss.webp'
+import TrafficTest from './traffic-test-ss.webp'
 import TrafficUnderground from './traffic-underground-ss.webp'
 import WubbleWords from './wubblewords-ss.webp'
 
@@ -29,6 +32,7 @@ export default {
     CodeGrind,
     Codex,
     CodexCFW,
+    CrashFX,
     Cyberfolio,
     EmmyLuaSearch,
     FruitSlots,
@@ -38,8 +42,10 @@ export default {
     LeetCodeThemes,
     Luamino,
     NadeSpace,
+    PacmanCleaner,
     StickBop,
     Synthos,
+    TrafficTest,
     TrafficUnderground,
     WubbleWords
 } satisfies ImageComponent as ImageComponent
