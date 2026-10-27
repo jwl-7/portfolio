@@ -11,22 +11,27 @@ const API_KEY = import.meta.env.VITE_EMAILJS_API_KEY
 const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
 const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
 
+type SendStatus = 'idle' | 'sending' | 'sent' | 'error'
+
 export default function Contact() {
     const form = useRef<HTMLFormElement>(null)
     const [formSubmitted, setFormSubmitted] = useState(false)
+    const [status, setStatus] = useState<SendStatus>('idle')
     const formClassName = formSubmitted ? 'submitted' : ''
 
-    const sendEmail = () => {
+    // only clear the form once the email actually goes through
+    const sendEmail = async () => {
         if (!form.current) return
-        emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, API_KEY)
-            .then(() => {
-                alert('Email successfully sent. Thank you for reaching out to me!')
-                console.log('Email successfully sent!')
-            })
-            .catch((error) => {
-                alert('Email failed to send!')
-                console.error('Email failed to send!', error)
-            })
+        setStatus('sending')
+        try {
+            await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, API_KEY)
+            setStatus('sent')
+            setFormSubmitted(false)
+            form.current?.reset()
+        } catch (error) {
+            setStatus('error')
+            console.error('Email failed to send!', error)
+        }
     }
 
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -35,10 +40,9 @@ export default function Contact() {
 
         if (event.currentTarget.checkValidity()) {
             sendEmail()
-            form.current?.reset()
-            setFormSubmitted(false)
         }
         else {
+            setStatus('idle')
             event.stopPropagation()
         }
     }
@@ -82,9 +86,15 @@ export default function Contact() {
                                         rows={3}
                                     />
                                 </div>
-                                <button type="submit">
-                                    Submit
+                                <button type="submit" disabled={status === 'sending'}>
+                                    {status === 'sending' ? 'Sending...' : 'Submit'}
                                 </button>
+                                {status === 'sent' && (
+                                    <p className={styles.success} role="status">Message sent — thanks for reaching out!</p>
+                                )}
+                                {status === 'error' && (
+                                    <p className={styles.error} role="alert">Something went wrong. Try again, or reach me on LinkedIn.</p>
+                                )}
                             </form>
                         </div>
                         <div className="info-container">
