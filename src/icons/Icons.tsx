@@ -3,6 +3,8 @@ import { ReactElement } from 'react'
 import Blender from './Blender'
 import Bootstrap from './Bootstrap'
 import CircleCi from './CircleCi'
+import ClaudeCode from './ClaudeCode'
+import CloudflareWorkers from './CloudflareWorkers'
 import Csharp from './Csharp'
 import Css3 from './Css3'
 import Cypress from './Cypress'
@@ -15,6 +17,7 @@ import File from './File'
 import Firefox from './Firefox'
 import Git from './Git'
 import GitHub from './GitHub'
+import GitHubActions from './GitHubActions'
 import GitHubLight from './GitHubLight'
 import Html5 from './Html5'
 import JavaScript from './JavaScript'
@@ -24,9 +27,11 @@ import Lua from './Lua'
 import MacDesktop from './MacDesktop'
 import MUI from './MUI'
 import MySQL from './MySQL'
+import Ollama from './Ollama'
 import PostgreSQL from './PostgreSQL'
 import PyGame from './PyGame'
 import Python from './Python'
+import Rag from './Rag'
 import React from './React'
 import Sass from './Sass'
 import SourceMod from './SourceMod'
@@ -35,6 +40,7 @@ import Swift from './Swift'
 import TypeScript from './TypeScript'
 import UndrawHacker from './UndrawHacker'
 import UtcLogo from './UtcLogo'
+import VectorDatabase from './VectorDatabase'
 import VSCode from './VSCode'
 import Windows from './Windows'
 
@@ -46,6 +52,8 @@ export default {
     Blender,
     Bootstrap,
     CircleCi,
+    ClaudeCode,
+    CloudflareWorkers,
     Csharp,
     Css3,
     Cypress,
@@ -58,6 +66,7 @@ export default {
     File,
     Git,
     GitHub,
+    GitHubActions,
     GitHubLight,
     Html5,
     JavaScript,
@@ -67,9 +76,11 @@ export default {
     MacDesktop,
     MUI,
     MySQL,
+    Ollama,
     PostgreSQL,
     PyGame,
     Python,
+    Rag,
     React,
     Sass,
     SourceMod,
@@ -78,6 +89,7 @@ export default {
     TypeScript,
     UndrawHacker,
     UtcLogo,
+    VectorDatabase,
     VSCode,
     Windows
 } satisfies IconComponent as IconComponent

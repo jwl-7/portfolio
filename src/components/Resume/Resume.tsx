@@ -1,5 +1,5 @@
 import styles from './Resume.module.sass'
-import { Fade, Flip } from 'react-awesome-reveal'
+import { Flip } from 'react-awesome-reveal'
 import Icons from '@/icons/Icons'
 
 interface Skill {
@@ -10,7 +10,6 @@ interface Skill {
 interface SkillCard {
     title: string
     skills: Skill[]
-    usedIn?: string
 }
 
 const SKILL_CARDS: SkillCard[] = [{
@@ -26,21 +25,11 @@ const SKILL_CARDS: SkillCard[] = [{
     }, {
         title: 'AI',
         skills: [
-            { label: 'RAG pipelines with a custom vector DB' },
-            { label: 'Semantic search' },
-            { label: 'Local LLMs via Ollama (Qwen, DeepSeek, Gemma)' },
-            { label: 'Agentic coding with Claude Code & OpenCode' }
-        ],
-        usedIn: 'Synthos, EmmyLua Semantic Search'
-    }, {
-        title: 'Games & Simulation',
-        skills: [
-            { label: 'Assetto Corsa modding', icon: 'Lua' },
-            { label: 'Blender', icon: 'Blender' },
-            { label: 'SwiftUI & SpriteKit', icon: 'Swift' },
-            { label: 'PyGame', icon: 'PyGame' }
-        ],
-        usedIn: 'Traffic Underground, CrashFX, Glassometer, On Guard'
+            { label: 'Claude Code', icon: 'ClaudeCode' },
+            { label: 'Ollama', icon: 'Ollama' },
+            { label: 'RAG pipelines', icon: 'Rag' },
+            { label: 'Vector databases', icon: 'VectorDatabase' }
+        ]
     }, {
         title: 'Web',
         skills: [
@@ -49,15 +38,22 @@ const SKILL_CARDS: SkillCard[] = [{
             { label: 'Django', icon: 'Django' },
             { label: 'PostgreSQL', icon: 'PostgreSQL' },
             { label: 'SQLite', icon: 'SQLite' }
-        ],
-        usedIn: 'Fruit Slots, LeetCode Cheatsheet, this site'
+        ]
+    }, {
+        title: 'DevOps & Cloud',
+        skills: [
+            { label: 'GitHub Actions', icon: 'GitHubActions' },
+            { label: 'CircleCI', icon: 'CircleCi' },
+            { label: 'Cloudflare Workers', icon: 'CloudflareWorkers' },
+            { label: 'Docker', icon: 'Docker' }
+        ]
     }, {
         title: 'Tools',
         skills: [
             { label: 'Git', icon: 'Git' },
             { label: 'GitHub', icon: 'GitHub' },
-            { label: 'Docker', icon: 'Docker' },
-            { label: 'Linux', icon: 'Linux' }
+            { label: 'Linux', icon: 'Linux' },
+            { label: 'Blender', icon: 'Blender' }
         ]
     }
 ]
@@ -80,18 +76,6 @@ export default function Resume() {
                 <hr />
             </div>
 
-            <Fade triggerOnce>
-                <div className={styles.shipped}>
-                    <div className={styles.stat}>10,000+</div>
-                    <div>
-                        <h3 className={styles.cardTitle}>Downloads on Vosan</h3>
-                        <p className={styles.cardBody}>
-                            Independent developer of Assetto Corsa mods, including Traffic Underground and CrashFX.
-                        </p>
-                    </div>
-                </div>
-            </Fade>
-
             <div className={styles.contentContainer}>
                 <Flip direction="horizontal" triggerOnce>
                     {SKILL_CARDS.map(card => (
@@ -100,7 +84,6 @@ export default function Resume() {
                                 <h3 className={styles.cardTitle}>{card.title}</h3>
                                 <hr />
                                 <ul className={styles.list}>{card.skills.map(renderSkill)}</ul>
-                                {card.usedIn && <p className={styles.usedIn}>Used in: {card.usedIn}</p>}
                             </div>
                         </div>
                     ))}
@@ -112,8 +95,9 @@ export default function Resume() {
                             <div className={styles.education}>
                                 <Icons.UtcLogo />
                                 <div>
-                                    University of Tennessee at Chattanooga<br />
-                                    B.S. Computer Science: Information Security and Assurance
+                                    <div className={styles.school}>University of Tennessee at Chattanooga</div>
+                                    <div>B.S. Computer Science</div>
+                                    <div className={styles.concentration}>Information Security & Assurance</div>
                                 </div>
                             </div>
                         </div>
