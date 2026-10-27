@@ -2,7 +2,7 @@ import styles from './About.module.sass'
 
 import { Slide } from 'react-awesome-reveal'
 import Terminal from '@components/Terminal/Terminal'
-import SvgUndrawHacker from '@icons/UndrawHacker'
+import Highway from '@components/Highway/Highway'
 
 export default function About() {
     return (
@@ -13,7 +13,7 @@ export default function About() {
             </div>
             <div className={styles.contentContainer}>
                 <Slide direction="left" triggerOnce>
-                    <SvgUndrawHacker />
+                    <Highway />
                 </Slide>
                 <Slide direction="right" triggerOnce>
                     <Terminal />

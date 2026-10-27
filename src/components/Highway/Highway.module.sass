@@ -1,0 +1,25 @@
+// matches the terminal's height side by side, keeps its own shape when stacked
+.container
+    aspect-ratio: 4 / 5
+    margin: 0 auto
+    max-width: 440px
+    position: relative
+    width: 100%
+
+    @media (min-width: 768px)
+        aspect-ratio: auto
+        height: 100%
+        min-height: 360px
+
+// absolutely positioned so the canvas's pixel size never feeds back into the layout
+.highway
+    border: 1px solid var(--card-border-color)
+    border-radius: var(--card-border-radius)
+    box-shadow: var(--card-box-shadow)
+    cursor: pointer
+    display: block
+    height: 100%
+    inset: 0
+    position: absolute
+    touch-action: pan-y
+    width: 100%
