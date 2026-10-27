@@ -23,7 +23,7 @@ const LINES: { input: string, output: ReactNode }[] = [
     { input: 'Current Location', output: 'Chattanooga, TN' },
     { input: 'Status', output: 'Open to Work' },
     { input: 'Currently Building', output: renderNowList() },
-    { input: 'Personal Interests', output: 'Gaming, SimRacing, Music Festivals, Audio Production, Skiing' }
+    { input: 'Personal Interests', output: 'Building fun stuff, sim racing, music festivals, dubstep, skiing' }
 ]
 
 const TICK_MS = 45
