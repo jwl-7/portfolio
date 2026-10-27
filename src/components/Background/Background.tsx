@@ -1,8 +1,43 @@
 import styles from './Background.module.sass'
+import { useEffect, useRef } from 'react'
+import prefersReducedMotion from '@utils/prefersReducedMotion'
 
 export default function Background() {
+    const backgroundRef = useRef<HTMLDivElement>(null)
+
+    // feeds pointer position into css vars for the parallax + spotlight
+    useEffect(() => {
+        const background = backgroundRef.current
+        const hasFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches
+        if (!background || !hasFinePointer || prefersReducedMotion()) return
+
+        let frame = 0
+        const handlePointerMove = (event: PointerEvent) => {
+            cancelAnimationFrame(frame)
+            frame = requestAnimationFrame(() => {
+                const rect = background.getBoundingClientRect()
+                const x = event.clientX - rect.left
+                const y = event.clientY - rect.top
+                const isInside = x >= 0 && y >= 0 && x <= rect.width && y <= rect.height
+
+                background.style.setProperty('--spot-opacity', isInside ? '1' : '0')
+                if (!isInside) return
+                background.style.setProperty('--spot-x', `${x}px`)
+                background.style.setProperty('--spot-y', `${y}px`)
+                background.style.setProperty('--mx', (x / rect.width * 2 - 1).toFixed(3))
+                background.style.setProperty('--my', (y / rect.height * 2 - 1).toFixed(3))
+            })
+        }
+
+        window.addEventListener('pointermove', handlePointerMove)
+        return () => {
+            cancelAnimationFrame(frame)
+            window.removeEventListener('pointermove', handlePointerMove)
+        }
+    }, [])
+
     return (
-        <div className={styles.background}>
+        <div ref={backgroundRef} className={styles.background}>
             <div className={styles.bottom}>
                 <svg className={styles.path} height="644" width="1117" viewBox="0 0 1117 644" fill="none">
                     <path d="M350 644V484L367.5 466.5V402L389 380.5V327.5L364 302.5V247.5L382.5 229C383 229.333 384.2 229.8 385 229C386 228 385.5 227 385 226.5C384.5 226 383 226 382.5 226.5C382 227 381.5 227.5 382.5 228.5C383.3 229.3 384 227.667 384 227" stroke="var(--bg-line)" />

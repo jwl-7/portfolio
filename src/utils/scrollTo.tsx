@@ -1,3 +1,5 @@
+import prefersReducedMotion from '@utils/prefersReducedMotion'
+
 const easeInOutQuad = (t: number): number => {
     return t < 0.5
         ? 2 * t * t
@@ -9,6 +11,11 @@ export default function scrollTo(selector: string, offset: number = 0) {
     if (!targetElement) return
 
     const targetPosition = targetElement.offsetTop
+    if (prefersReducedMotion()) {
+        window.scrollTo({ top: targetPosition - offset })
+        return
+    }
+
     const currentPosition = window.scrollY
     const distance = targetPosition - currentPosition - offset
     const startTime = performance.now()

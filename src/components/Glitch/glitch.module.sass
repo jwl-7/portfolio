@@ -44,6 +44,12 @@
         transform: skewX(0deg)
         z-index: -1
 
+    @media (prefers-reduced-motion: reduce)
+        &,
+        &::before,
+        &::after
+            animation: none !important
+
 .mobileGlitchContainer
     display: flex
     flex-direction: column

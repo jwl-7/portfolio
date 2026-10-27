@@ -24,6 +24,15 @@ main
     margin-top: var(--navbar-height)
     padding-bottom: var(--section-padding-bottom)
 
+@media (prefers-reduced-motion: reduce)
+    *,
+    *::before,
+    *::after
+        animation-duration: 0.01ms !important
+        animation-iteration-count: 1 !important
+        transition-duration: 0.01ms !important
+        scroll-behavior: auto !important
+
 section
     padding-left: var(--gutter-spacing)
     padding-right: var(--gutter-spacing)
