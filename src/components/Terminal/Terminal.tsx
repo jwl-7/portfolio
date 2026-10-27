@@ -1,12 +1,28 @@
 import styles from './Terminal.module.sass'
-import { useEffect, useRef, useState } from 'react'
+import { ReactNode, useEffect, useRef, useState } from 'react'
 import clsx from '@utils/clsx'
 import prefersReducedMotion from '@utils/prefersReducedMotion'
+import NowList from './nowlist'
 
-const LINES = [
+const renderNowList = () => {
+    return (
+        <ul className={styles.nowList}>
+            {NowList.map(item => (
+                <li key={item.title} title={`${item.status} · ${item.description}`}>
+                    <span className={clsx(styles.dot, styles[item.status])} />
+                    {item.url ? <a href={item.url} target="_blank">{item.title}</a> : item.title}
+                    {item.tag && <span className={styles.tag}>{item.tag}</span>}
+                </li>
+            ))}
+        </ul>
+    )
+}
+
+const LINES: { input: string, output: ReactNode }[] = [
     { input: 'Name', output: 'Jonathan Lusk' },
     { input: 'Current Location', output: 'Chattanooga, TN' },
     { input: 'Status', output: 'Open to Work' },
+    { input: 'Currently Building', output: renderNowList() },
     { input: 'Personal Interests', output: 'Gaming, SimRacing, Music Festivals, Audio Production, Skiing' }
 ]
 
@@ -65,10 +81,10 @@ export default function Terminal() {
                         &gt; {input.slice(0, typed)}
                         {isTyping && cursor}
                         <span className={styles.hidden}>{input.slice(typed)}</span>
-                    </span> <br />
-                    <span className={clsx(styles.outputText, !showOutput && styles.hidden)}>
-                        {output}
                     </span>
+                    <div className={clsx(styles.outputText, !showOutput && styles.hidden)}>
+                        {output}
+                    </div>
                 </div>
             )
         })

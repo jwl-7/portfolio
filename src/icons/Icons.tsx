@@ -1,5 +1,6 @@
 import { ReactElement } from 'react'
 
+import Blender from './Blender'
 import Bootstrap from './Bootstrap'
 import CircleCi from './CircleCi'
 import Csharp from './Csharp'
@@ -41,6 +42,7 @@ interface IconComponent {
 }
 
 export default {
+    Blender,
     Bootstrap,
     CircleCi,
     Csharp,

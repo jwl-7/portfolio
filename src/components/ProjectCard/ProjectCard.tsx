@@ -29,6 +29,10 @@ export default function ProjectCard({
     const renderTechnologyIcons = () => {
         return technology.map(icon => {
             const SvgIcon = Icons[icon]
+            if (!SvgIcon) {
+                console.warn(`ProjectCard: no icon registered for "${icon}"`)
+                return null
+            }
             return <SvgIcon key={icon} />
         })
     }
