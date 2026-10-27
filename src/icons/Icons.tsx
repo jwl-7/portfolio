@@ -31,6 +31,7 @@ import React from './React'
 import Sass from './Sass'
 import SourceMod from './SourceMod'
 import SQLite from './SQLite'
+import Swift from './Swift'
 import TypeScript from './TypeScript'
 import UndrawHacker from './UndrawHacker'
 import UtcLogo from './UtcLogo'
@@ -73,6 +74,7 @@ export default {
     Sass,
     SourceMod,
     SQLite,
+    Swift,
     TypeScript,
     UndrawHacker,
     UtcLogo,

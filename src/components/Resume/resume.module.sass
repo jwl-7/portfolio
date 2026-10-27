@@ -15,12 +15,7 @@
     @media (max-width: 768px)
         grid-template-columns: 1fr
 
-.cardGroup
-    display: flex
-    flex-direction: column
-    gap: 12px
-
-.card
+%card
     background-color: var(--card-background-color)
     border: 1px solid var(--card-border-color)
     border-radius: var(--card-border-radius)
@@ -34,6 +29,39 @@
             box-shadow: var(--card-box-shadow-hover)
             border-color: var(--card-border-hover-color)
 
+.card
+    @extend %card
+    height: 100%
+
+.shipped
+    @extend %card
+    align-items: center
+    display: flex
+    gap: 24px
+    margin-bottom: 32px
+    padding: var(--card-padding)
+
+    .cardTitle
+        margin: 0
+        text-align: left
+
+    .cardBody
+        margin: 0
+
+    @media (max-width: 768px)
+        flex-direction: column
+        text-align: center
+
+        .cardTitle
+            text-align: center
+
+.stat
+    color: var(--card-title-color)
+    font-family: var(--h2-font-family)
+    font-size: 3rem
+    line-height: 1
+    white-space: nowrap
+
 .cardContent
     padding: var(--card-padding)
 
@@ -45,17 +73,53 @@
     color: var(--card-text-color)
     font-size: var(--card-font-size)
 
-    svg
-        height: 2.7em
-        width: 2.7em
-        vertical-align: middle
-
 .list
+    color: var(--card-text-color)
     display: flex
     flex-direction: column
+    font-size: var(--card-font-size)
     gap: 12px
     list-style: none
+    margin: 0
     padding: 0
+
+    li
+        align-items: center
+        display: flex
+        gap: 12px
+
+    svg
+        flex-shrink: 0
+        height: 2.7em
+        width: 2.7em
+
+// stands in for an icon on skills that don't have one
+.bullet
+    color: var(--card-title-color)
+    flex-shrink: 0
+    font-family: var(--terminal-font-family)
+    text-align: center
+    width: 2.7em
+
+.usedIn
+    border-top: 1px dashed var(--card-border-color)
+    color: var(--card-text-color)
+    font-size: 0.9rem
+    margin: 16px 0 0
+    opacity: 0.8
+    padding-top: 12px
+
+.education
+    align-items: center
+    color: var(--card-text-color)
+    display: flex
+    font-size: var(--card-font-size)
+    gap: 12px
+
+    svg
+        flex-shrink: 0
+        height: 2.7em
+        width: 2.7em
 
 .buttonContainer
     display: flex

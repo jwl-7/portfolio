@@ -8,13 +8,21 @@ const SHOULDER = 0.35
 const ROAD_WIDTH = LANES + SHOULDER * 2
 const CAR_WIDTH = 0.52
 const CAR_LENGTH = 1.05
+const PLAYER_WIDTH = 0.6
+const PLAYER_LENGTH = 1.2
 const PLAYER_Y = 0.72
 const CRUISE_SPEED = 9
 const BOOST_SPEED = 14
 const LOOKAHEAD = 1.8
 const MAX_TRAFFIC = 9
 
-const PLAYER_COLOR = '#78dce8'
+// muscle car paint jobs, one picked per page load
+const PLAYER_PAINTS = [
+    { body: '#e8343f', stripe: '#f8f9fa' },
+    { body: '#2fbf71', stripe: '#f8f9fa' },
+    { body: '#2f80ed', stripe: '#f8f9fa' },
+    { body: '#ffc531', stripe: '#1a1a1a' }
+]
 const TRAFFIC_COLORS = ['#ff6188', '#ffd866', '#a9dc76', '#ab9df2', '#fc9867', '#e9ecef', '#82bfff']
 
 interface Car {
@@ -56,24 +64,26 @@ export default function Highway() {
         let isVisible = false
 
         const traffic: Car[] = []
+        const paint = PLAYER_PAINTS[Math.floor(Math.random() * PLAYER_PAINTS.length)]
         const player: Player = { lane: 1, x: laneCenter(1), speed: CRUISE_SPEED, tilt: 0, cooldown: 0 }
         const playerY = () => viewHeight * PLAYER_Y
         const playerLanes = () => new Set([player.lane, laneAt(player.x)])
 
         // nearest car ahead of y in a lane, optionally counting the player as a car
-        const findLeader = (lane: number, y: number, includePlayer: boolean) => {
+        // gaps are bumper to bumper, so they account for both cars' lengths
+        const findLeader = (lane: number, y: number, length: number, includePlayer: boolean) => {
             let gap = Infinity
             let speed = Infinity
             for (const car of traffic) {
                 if (car.lane !== lane || car.y >= y) continue
-                const carGap = y - car.y - CAR_LENGTH
+                const carGap = y - car.y - (length + CAR_LENGTH) / 2
                 if (carGap < gap) {
                     gap = carGap
                     speed = car.speed
                 }
             }
             if (includePlayer && playerLanes().has(lane) && playerY() < y) {
-                const carGap = y - playerY() - CAR_LENGTH
+                const carGap = y - playerY() - (length + PLAYER_LENGTH) / 2
                 if (carGap < gap) {
                     gap = carGap
                     speed = player.speed
@@ -82,11 +92,11 @@ export default function Highway() {
             return { gap, speed }
         }
 
-        const gapBehind = (lane: number, y: number): number => {
+        const gapBehindPlayer = (lane: number): number => {
             let gap = Infinity
             for (const car of traffic) {
-                if (car.lane !== lane || car.y <= y) continue
-                gap = Math.min(gap, car.y - y - CAR_LENGTH)
+                if (car.lane !== lane || car.y <= playerY()) continue
+                gap = Math.min(gap, car.y - playerY() - (PLAYER_LENGTH + CAR_LENGTH) / 2)
             }
             return gap
         }
@@ -110,7 +120,7 @@ export default function Highway() {
 
         const updatePlayer = (dt: number) => {
             const y = playerY()
-            const leader = findLeader(player.lane, y, false)
+            const leader = findLeader(player.lane, y, PLAYER_LENGTH, false)
             player.cooldown -= dt
 
             // boxed in: look for the adjacent lane with the most room
@@ -119,8 +129,8 @@ export default function Highway() {
                 let bestGap = leader.gap + 0.3
                 for (const lane of [player.lane - 1, player.lane + 1]) {
                     if (lane < 0 || lane >= LANES) continue
-                    const ahead = findLeader(lane, y, false).gap
-                    if (ahead > bestGap && ahead > 0.9 && gapBehind(lane, y) > 0.4) {
+                    const ahead = findLeader(lane, y, PLAYER_LENGTH, false).gap
+                    if (ahead > bestGap && ahead > 0.9 && gapBehindPlayer(lane) > 0.4) {
                         bestLane = lane
                         bestGap = ahead
                     }
@@ -131,7 +141,7 @@ export default function Highway() {
                 }
             }
 
-            const current = findLeader(player.lane, y, false)
+            const current = findLeader(player.lane, y, PLAYER_LENGTH, false)
             const desiredSpeed = isBoosting ? BOOST_SPEED : CRUISE_SPEED
             const targetSpeed = current.gap < 1.4 ? Math.min(desiredSpeed, current.speed) : desiredSpeed
             player.speed += (targetSpeed - player.speed) * Math.min(1, dt * 3)
@@ -144,7 +154,7 @@ export default function Highway() {
 
         const updateTraffic = (dt: number) => {
             for (const car of traffic) {
-                const leader = findLeader(car.lane, car.y, true)
+                const leader = findLeader(car.lane, car.y, CAR_LENGTH, true)
                 const targetSpeed = leader.gap < 1.2 ? Math.min(car.desiredSpeed, leader.speed) : car.desiredSpeed
                 car.speed += (targetSpeed - car.speed) * Math.min(1, dt * 3)
                 if (leader.gap < 0.15) car.speed = Math.min(car.speed, leader.speed)
@@ -189,17 +199,9 @@ export default function Highway() {
             }
         }
 
-        const drawCar = (x: number, y: number, color: string, tilt: number, isPlayer: boolean) => {
-            const width = CAR_WIDTH * unit
-            const length = CAR_LENGTH * unit
-
-            ctx.save()
-            ctx.translate(x * unit, y * unit)
-            ctx.rotate(tilt)
-
-            // headlight beams
+        const drawBeams = (width: number, length: number, alpha: number) => {
             const beam = ctx.createLinearGradient(0, -length / 2, 0, -length * 1.6)
-            beam.addColorStop(0, `rgba(255, 236, 158, ${isPlayer ? 0.28 : 0.14})`)
+            beam.addColorStop(0, `rgba(255, 236, 158, ${alpha})`)
             beam.addColorStop(1, 'rgba(255, 236, 158, 0)')
             ctx.fillStyle = beam
             ctx.beginPath()
@@ -208,16 +210,19 @@ export default function Highway() {
             ctx.lineTo(width * 0.8, -length * 1.6)
             ctx.lineTo(-width * 0.8, -length * 1.6)
             ctx.fill()
+        }
 
-            if (isPlayer) {
-                ctx.shadowColor = PLAYER_COLOR
-                ctx.shadowBlur = 24
-            } else {
-                ctx.shadowColor = 'rgba(0, 0, 0, 0.45)'
-                ctx.shadowBlur = 8
-                ctx.shadowOffsetY = 4
-            }
+        const drawCar = (x: number, y: number, color: string) => {
+            const width = CAR_WIDTH * unit
+            const length = CAR_LENGTH * unit
 
+            ctx.save()
+            ctx.translate(x * unit, y * unit)
+            drawBeams(width, length, 0.14)
+
+            ctx.shadowColor = 'rgba(0, 0, 0, 0.45)'
+            ctx.shadowBlur = 8
+            ctx.shadowOffsetY = 4
             ctx.fillStyle = color
             ctx.beginPath()
             ctx.roundRect(-width / 2, -length / 2, width, length, width * 0.3)
@@ -244,10 +249,84 @@ export default function Highway() {
             ctx.restore()
         }
 
+        // top-down muscle car: flared fenders, racing stripes, ducktail spoiler
+        const drawPlayer = () => {
+            const width = PLAYER_WIDTH * unit
+            const length = PLAYER_LENGTH * unit
+            const w = width / 2
+            const l = length / 2
+
+            ctx.save()
+            ctx.translate(player.x * unit, playerY() * unit)
+            ctx.rotate(player.tilt)
+            drawBeams(width, length, 0.28)
+
+            // tires peeking out past the fenders
+            ctx.fillStyle = '#111111'
+            for (const wheelY of [-length * 0.29, length * 0.27]) {
+                ctx.beginPath()
+                ctx.roundRect(-w - width * 0.04, wheelY - length * 0.085, width * 1.08, length * 0.17, 3)
+                ctx.fill()
+            }
+
+            const body = new Path2D()
+            body.moveTo(0, -l)
+            body.quadraticCurveTo(w * 0.85, -l, w * 0.92, -l + length * 0.1)
+            body.quadraticCurveTo(w, -l + length * 0.2, w * 0.9, -length * 0.05)
+            body.quadraticCurveTo(w * 0.86, length * 0.12, w, length * 0.28)
+            body.quadraticCurveTo(w, l - length * 0.02, w * 0.8, l)
+            body.lineTo(-w * 0.8, l)
+            body.quadraticCurveTo(-w, l - length * 0.02, -w, length * 0.28)
+            body.quadraticCurveTo(-w * 0.86, length * 0.12, -w * 0.9, -length * 0.05)
+            body.quadraticCurveTo(-w, -l + length * 0.2, -w * 0.92, -l + length * 0.1)
+            body.quadraticCurveTo(-w * 0.85, -l, 0, -l)
+
+            ctx.shadowColor = paint.body
+            ctx.shadowBlur = 26
+            ctx.fillStyle = paint.body
+            ctx.fill(body)
+            ctx.shadowColor = 'transparent'
+
+            // mirrors
+            ctx.fillRect(-w - width * 0.07, -length * 0.1, width * 0.09, length * 0.045)
+            ctx.fillRect(w - width * 0.02, -length * 0.1, width * 0.09, length * 0.045)
+
+            ctx.save()
+            ctx.clip(body)
+            ctx.fillStyle = paint.stripe
+            ctx.fillRect(-width * 0.17, -l, width * 0.1, length)
+            ctx.fillRect(width * 0.07, -l, width * 0.1, length)
+            ctx.restore()
+
+            // windshield, rear glass, spoiler
+            ctx.fillStyle = 'rgba(20, 22, 35, 0.88)'
+            ctx.beginPath()
+            ctx.roundRect(-width * 0.34, -length * 0.14, width * 0.68, length * 0.15, 4)
+            ctx.roundRect(-width * 0.3, length * 0.13, width * 0.6, length * 0.11, 3)
+            ctx.fill()
+            ctx.fillStyle = '#151515'
+            ctx.beginPath()
+            ctx.roundRect(-width * 0.44, length * 0.4, width * 0.88, length * 0.05, 2)
+            ctx.fill()
+
+            ctx.shadowBlur = 10
+            ctx.shadowColor = '#ffec9e'
+            ctx.fillStyle = '#ffec9e'
+            ctx.fillRect(-width * 0.36, -l + 1, width * 0.16, 3)
+            ctx.fillRect(width * 0.2, -l + 1, width * 0.16, 3)
+
+            ctx.shadowColor = '#ff4d4d'
+            ctx.fillStyle = '#ff4d4d'
+            ctx.fillRect(-width * 0.38, l - 4, width * 0.28, 3)
+            ctx.fillRect(width * 0.1, l - 4, width * 0.28, 3)
+
+            ctx.restore()
+        }
+
         const draw = () => {
             drawRoad()
-            for (const car of traffic) drawCar(laneCenter(car.lane), car.y, car.color, 0, false)
-            drawCar(player.x, playerY(), PLAYER_COLOR, player.tilt, true)
+            for (const car of traffic) drawCar(laneCenter(car.lane), car.y, car.color)
+            drawPlayer()
         }
 
         const resize = () => {

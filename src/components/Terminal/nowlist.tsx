@@ -11,14 +11,19 @@ interface NowItem {
 // shown under "> Currently Building" in the about terminal
 export default [{
         title: 'Traffic Underground',
-        description: 'Next update to my offline traffic simulation suite for Assetto Corsa.',
+        description: 'Offline traffic simulation suite for Assetto Corsa.',
         status: 'building',
-        tag: 'Assetto Corsa',
+        tag: 'Assetto Corsa Mod',
         url: 'https://vosan.co/paid-mods/traffic-underground'
     }, {
-        title: 'Untitled iOS Game',
+        title: 'On Guard',
         description: 'A mobile game, currently in development.',
         status: 'building',
-        tag: 'iOS'
+        tag: 'iOS Game'
+    }, {
+        title: 'Untitled Track',
+        description: 'A dubstep track produced in Serum.',
+        status: 'building',
+        tag: 'Dubstep · Serum'
     }
 ] as NowItem[]
