@@ -102,12 +102,18 @@
     --status-color: var(--color-azure)
     animation: none
 
-.wave
-    animation-name: wave-animation
-    animation-duration: 2.5s
-    animation-iteration-count: infinite
+.skateboard
     display: inline-block
-    transform-origin: 70% 70%
+    margin-left: 0.3em
+    vertical-align: middle
+
+    svg
+        animation: kickflip 3.2s ease-in-out infinite
+        display: block
+        height: 1em
+        overflow: visible
+        transform-origin: center
+        width: 2.3em
 
 @keyframes pulse
     0%, 100%
@@ -125,20 +131,13 @@
     100%
         opacity: 1
 
-@keyframes wave-animation
-    0%
-        transform: rotate(0deg)
-    10%
-        transform: rotate(14deg)
-    20%
-        transform: rotate(-8deg)
-    30%
-        transform: rotate(14deg)
-    40%
-        transform: rotate(-4deg)
-    50%
-        transform: rotate(10deg)
-    60%
-        transform: rotate(0deg)
-    100%
-        transform: rotate(0deg)
+// roll, pop the tail, flip along the board's length at the peak, land
+@keyframes kickflip
+    0%, 50%
+        transform: translateY(0) rotate(0deg) rotateX(0deg)
+    58%
+        transform: translateY(-0.15em) rotate(-14deg) rotateX(0deg)
+    78%
+        transform: translateY(-0.45em) rotate(0deg) rotateX(360deg)
+    90%, 100%
+        transform: translateY(0) rotate(0deg) rotateX(360deg)

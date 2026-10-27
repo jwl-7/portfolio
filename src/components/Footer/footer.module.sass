@@ -8,3 +8,18 @@
 .text
     color: var(--footer-text-color)
     font-size: var(--footer-font-size)
+
+// a soft highlight that sweeps across the name every few seconds
+.name
+    animation: shimmer 6s ease-in-out infinite
+    background: linear-gradient(90deg, var(--footer-text-color) 40%, var(--color-skyblue) 50%, var(--footer-text-color) 60%)
+    background-clip: text
+    background-size: 300% 100%
+    color: transparent
+    -webkit-background-clip: text
+
+@keyframes shimmer
+    0%
+        background-position: 100% 0
+    60%, 100%
+        background-position: 0 0

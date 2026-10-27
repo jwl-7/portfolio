@@ -2,6 +2,7 @@ import styles from './Terminal.module.sass'
 import { ReactNode, useEffect, useRef, useState } from 'react'
 import clsx from '@utils/clsx'
 import prefersReducedMotion from '@utils/prefersReducedMotion'
+import Skateboard from '@icons/Skateboard'
 import NowList from './nowlist'
 
 const renderNowList = () => {
@@ -103,7 +104,7 @@ export default function Terminal() {
             </div>
             <div className={styles.body}>
                 <div className={styles.section}>
-                    <span className={styles.header}>Hi there! :) <span className={styles.wave}>👋</span></span>
+                    <span className={styles.header}>whoami <span className={styles.skateboard} aria-hidden="true"><Skateboard /></span></span>
                 </div>
 
                 {renderLines()}

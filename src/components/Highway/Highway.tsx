@@ -64,7 +64,7 @@ export default function Highway() {
         let isVisible = false
 
         const traffic: Car[] = []
-        const paint = PLAYER_PAINTS[Math.floor(Math.random() * PLAYER_PAINTS.length)]
+        let paintIndex = Math.floor(Math.random() * PLAYER_PAINTS.length)
         const player: Player = { lane: 1, x: laneCenter(1), speed: CRUISE_SPEED, tilt: 0, cooldown: 0 }
         const playerY = () => viewHeight * PLAYER_Y
         const playerLanes = () => new Set([player.lane, laneAt(player.x)])
@@ -251,6 +251,7 @@ export default function Highway() {
 
         // top-down muscle car: flared fenders, racing stripes, ducktail spoiler
         const drawPlayer = () => {
+            const paint = PLAYER_PAINTS[paintIndex]
             const width = PLAYER_WIDTH * unit
             const length = PLAYER_LENGTH * unit
             const w = width / 2
@@ -298,8 +299,8 @@ export default function Highway() {
             ctx.fillRect(width * 0.07, -l, width * 0.1, length)
             ctx.restore()
 
-            // windshield, rear glass, spoiler
-            ctx.fillStyle = 'rgba(20, 22, 35, 0.88)'
+            // windshield, rear glass, spoiler (opaque so the stripes don't show through)
+            ctx.fillStyle = '#181a26'
             ctx.beginPath()
             ctx.roundRect(-width * 0.34, -length * 0.14, width * 0.68, length * 0.15, 4)
             ctx.roundRect(-width * 0.3, length * 0.13, width * 0.6, length * 0.11, 3)
@@ -387,7 +388,10 @@ export default function Highway() {
         const unboost = (event: PointerEvent) => {
             if (event.pointerType === 'mouse') boostFor(300)
         }
+        // a click or tap repaints the car, and a tap also gives touch users the boost
         const tapBoost = (event: PointerEvent) => {
+            paintIndex = (paintIndex + 1) % PLAYER_PAINTS.length
+            if (reducedMotion) draw()
             if (event.pointerType !== 'mouse') boostFor(2000)
         }
 
